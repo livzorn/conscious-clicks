@@ -1,0 +1,15 @@
+.btn-homepage {
+  color: white;
+  font-family: "Montserrat";
+  font-size: 25px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  &:hover {
+    text-decoration: none;
+    color: white;
+    box-shadow: rgba(255, 255, 255, 0.85) 0px 1px 8px;
+    transition-property: all;
+    transition-duration: .3s
+    }
+}
