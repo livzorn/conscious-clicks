@@ -1,0 +1,20 @@
+.avatar-large {
+  height: 100px;
+  width: 100px;
+}
+.container-dashboard {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+}
+.dashboard-left {
+  width: 30vw;
+}
+.dashboard-right {
+  width: 40vw;
+  margin-left: 40px;
+}
+
+.dashboard-right .p {
+  text-align: center;
+}
