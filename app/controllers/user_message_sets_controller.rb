@@ -1,0 +1,2 @@
+class UserMessageSetsController < ApplicationController
+end

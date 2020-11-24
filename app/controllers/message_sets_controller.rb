@@ -1,0 +1,2 @@
+class MessageSetsController < ApplicationController
+end
