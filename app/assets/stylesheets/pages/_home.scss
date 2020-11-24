@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.homepage-background {
+  background-color: #A5B9FF;
+  height: 100vh;
+}
+
+.container-homepage {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.homepage-top {
+  display: flex;
+}
+
+.homepage-bottom {
+  display: flex;
+  margin-top: 5vh;
+}
+
+.homepage-right {
+  width: 35vw;
+}
+
+.homepage-left {
+  width: 45vw;
+  margin-top: 20vh;
+}
+
+.homepage-bookmarks {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5vh;
+}
+
+.homepage-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 35vw;
+  margin: 0 auto;
+}
+
+.main-message {
+  color: white;
+  font-family: "Montserrat";
+  font-size: 60px;
+  margin: 0 auto 10vh;
+
+}
