@@ -10,10 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_111128) do
+ActiveRecord::Schema.define(version: 2020_11_24_120636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.string "link"
+    t.string "image"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "message_sets", force: :cascade do |t|
+    t.string "theme"
+    t.text "messages", default: [], array: true
+    t.string "link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "moods", force: :cascade do |t|
+    t.string "emoji"
+    t.string "name"
+    t.integer "happiness_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_message_sets", force: :cascade do |t|
+    t.bigint "message_set_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_set_id"], name: "index_user_message_sets_on_message_set_id"
+    t.index ["user_id"], name: "index_user_message_sets_on_user_id"
+  end
+
+  create_table "user_moods", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "mood_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mood_id"], name: "index_user_moods_on_mood_id"
+    t.index ["user_id"], name: "index_user_moods_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +72,9 @@ ActiveRecord::Schema.define(version: 2020_11_24_111128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "user_message_sets", "message_sets"
+  add_foreign_key "user_message_sets", "users"
+  add_foreign_key "user_moods", "moods"
+  add_foreign_key "user_moods", "users"
 end
