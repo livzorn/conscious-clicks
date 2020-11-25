@@ -34,13 +34,17 @@
   }
 }
 
-.big-picture {
+.big-picture-box {
   margin: 15vh auto 5vh;
   padding: 12px 24px;
   color: white;
 }
 
-.little-goals {
+.little-goals-box {
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.hidden {
+  display: none;
 }

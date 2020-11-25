@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/quiz', to: 'pages#quiz'
   get '/dashboard', to: 'pages#dashboard'
   get '/new_user_mood', to: 'pages#new_user_mood'
+  resources :goals, only: [:create], to: 'pages#save_goal'
+  get '/goals', to: 'pages#home'
 end
