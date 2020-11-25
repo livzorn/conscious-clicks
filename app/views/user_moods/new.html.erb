@@ -1,0 +1,9 @@
+<div class="mood-background justify-content-center">
+  <div class="mood">
+
+      <%= simple_form_for @user_mood do |f| %>
+        <%= f.input :mood_id, as: :radio_buttons, collection: Mood.all, label_method: :emoji %>
+        <%= f.submit 'Submit'  %>
+      <% end %>
+  </div>
+</div>
