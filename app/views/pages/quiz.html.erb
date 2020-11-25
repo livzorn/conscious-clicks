@@ -3,7 +3,14 @@
     <div class="quizpage-header">
       <h1 class="stress-message">Which of these add stress to your life?</h1>
     </div>
-    <div class="container-stress-btns">
+      <div class="container-message-sets">
+        <%= simple_form_for @user_message_set do |f| %>
+          <%= f.input :message_set_id, as: :radio_buttons, collection: MessageSet.all, label_method: :theme %>
+          <%= f.submit "Submit" %>
+        <% end %>
+      </div>
+
+   <!--  <div class="container-stress-btns">
       <div class="stress-btn-row">
         <div class="btn-stress">
           <h3>Loneliness/isolation</h3>
@@ -37,6 +44,6 @@
           <h3>Fake news</h3>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

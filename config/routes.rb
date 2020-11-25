@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login'
   get '/quiz', to: 'pages#quiz'
   get '/dashboard', to: 'pages#dashboard'
+  resources :user_message_sets
 end
