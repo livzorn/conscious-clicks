@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :home
 
   def home
-    @big_picture_goal = Goal.last
+    @big_picture = Goal.where(category: "big-picture", user_id: current_user.id).last
+    @little_goals = Goal.where(category: "little-goals", user_id: current_user.id).last
+    @custom_message = Goal.where(category: "custom-message", user_id: current_user.id).last
 
     @message = show_message
 
