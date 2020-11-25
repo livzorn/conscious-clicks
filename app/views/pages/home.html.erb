@@ -24,11 +24,12 @@
         <div class="big-picture-box goals">
           <p>Big picture</p>
           <%= simple_form_for(Goal.new) do |f| %>
-            <%= f.input :content, input_html: {id: 'big-picture', class: 'typebox', value: @big_picture.content}, label: false %>
+            <%= f.input :content, input_html: {id: 'big-picture', class: 'typebox'}, label: false %>
             <!-- <input type="text" id="big-picture" autocomplete="off" label="big picture" class="typebox" name="content"> -->
             <%= f.input :category, input_html: {value: 'big-picture'}, as: :hidden %>
             <%= f.submit '', class: 'hidden', id: "big-picture-submit" %>
           <% end %>
+          <!-- , value: @big_picture.content -->
         </div>
 
         <div class="little-goals-box goals">
@@ -52,8 +53,8 @@
         <% end %>
       </div>
 
-      <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message">
-      <div class="custom-message-box goals">
+      <!-- <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message"> -->
+      <div class="custom-message-box">
           <%= simple_form_for(Goal.new) do |f| %>
             <%= f.input :content, input_html: {id: 'custom-message', class: 'typebox'}, label: false %>
             <%= f.input :category, input_html: {value: 'custom-message'}, as: :hidden %>

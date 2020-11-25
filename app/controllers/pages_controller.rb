@@ -18,10 +18,11 @@ class PagesController < ApplicationController
 
   def save_goal
     @goal = Goal.new(goal_params)
+    @goal.user_id = current_user.id
     @goal.save
-    @big_picture = Goal.where(category: "big-picture").last
-    @little_goals = Goal.where(category: "little-goals").last
-    @custom_message = Goal.where(category: "custom-message").last
+    @big_picture = Goal.where(category: "big-picture", user_id: current_user.id).last
+    @little_goals = Goal.where(category: "little-goals", user_id: current_user.id).last
+    @custom_message = Goal.where(category: "custom-message", user_id: current_user.id).last
     @message = show_message
     render 'home'
   end
@@ -29,7 +30,7 @@ class PagesController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:category, :content)
+    params.require(:goal).permit(:category, :content, :user_id)
   end
 
   def show_message
