@@ -11,6 +11,7 @@
 
 .homepage-top {
   display: flex;
+  justify-content: space-between;
 }
 
 .homepage-bottom {
@@ -19,25 +20,27 @@
 }
 
 .homepage-right {
-  width: 35vw;
+  width: 250px;
 }
 
 .homepage-left {
   width: 45vw;
-  margin-top: 20vh;
+  margin-top: 15vh;
 }
 
 .homepage-bookmarks {
+  width: 40vw;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 5vh;
+  margin: 0 auto 5vh;
+
 }
 
 .homepage-buttons {
   display: flex;
   justify-content: space-around;
   width: 35vw;
-  margin: 0 auto;
+  margin: 0 auto 5vh;
 }
 
 .main-message {
@@ -45,4 +48,18 @@
   font-family: "Montserrat";
   font-size: 60px;
   margin: 0 auto 10vh;
+}
+
+.custom-message input {
+  width: 50vw;
+  margin-left: 12vw;
+  padding: 12px 24px;
+  border: 0.5px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  font-family: "Montserrat";
+  &:focus {
+    outline: none;
+  }
 }
