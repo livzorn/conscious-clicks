@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-positive = Message_set.create(theme: "Positive Affirmations",
+positive = MessageSet.create(theme: "Positive Affirmations",
   messages: ["I deserve wonderful things",
   "I am at peace with who I am",
   "I am an amazing person!",
@@ -16,7 +16,7 @@ positive = Message_set.create(theme: "Positive Affirmations",
   "I’ll let go of things I can’t control",
   ])
 
-ads = Message_set.create(theme: "Advertising",
+ads = MessageSet.create(theme: "Advertising",
   messages: ["I am too smart to be brainwashed by ads",
   "I won’t be tricked into buying things I don’t need",
   "How are ads trying to affect me today?",
@@ -24,8 +24,6 @@ ads = Message_set.create(theme: "Advertising",
   "When I see an ad, I take a deep breath and ignore it."])
 
 olivia = User.new(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
-olivia.message_sets = positive
-olivia.message_sets += ads
 
 Mood.create(emoji: "😃", name: "happy", happiness_level: 10)
 Mood.create(emoji: "🥺", name: "sad", happiness_level: 1)
