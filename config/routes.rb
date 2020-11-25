@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get '/login', to: 'users#login'
+  get '/quiz', to: 'pages#quiz'
   get '/dashboard', to: 'pages#dashboard'
-
-
 end

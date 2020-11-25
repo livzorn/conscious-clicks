@@ -4,6 +4,7 @@
       <div class="homepage-left">
 
         <h2 class="main-message">I'm too smart to be brainwashed by ads.</h2>
+        <h2><%= @message %></h2>
 
         <div class="homepage-bookmarks">
           <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>
@@ -21,17 +22,30 @@
 
       <div class="homepage-right">
 
+        <div class="big-picture goals">
+          <p>Big picture</p>
+          <input type="text" data-test="big-picture" autocomplete="off" label="big picture" class="typebox">
+        </div>
+
+        <div class="little-goals goals">
+          <p>Little goals</p>
+          <input type="text" data-test="little-goals" autocomplete="off" label="little goals" class="typebox">
+        </div>
+
       </div>
+
     </div>
 
     <div class="homepage-bottom">
 
       <div id="lollipop">
-        <img src="https://img.icons8.com/dusk/64/000000/cherry-chupa-chups.png"/>
+        <%= link_to @treat, target: :_blank do %>
+          <img src="https://img.icons8.com/dusk/64/000000/cherry-chupa-chups.png"/>
+        <% end %>
       </div>
-      <div>
 
-      </div>
+      <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message">
+
     </div>
   </div>
 </div>
