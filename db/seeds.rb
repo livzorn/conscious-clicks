@@ -13,8 +13,7 @@ positive = MessageSet.create(theme: "Positive Affirmations",
   "All I can do is try my best",
   "There’s no one I’d rather be than me",
   "I choose what I become",
-  "I’ll let go of things I can’t control",
-  ])
+  "I’ll let go of things I can’t control",])
 
 ads = MessageSet.create(theme: "Advertising",
   messages: ["I am too smart to be brainwashed by ads",
@@ -22,6 +21,16 @@ ads = MessageSet.create(theme: "Advertising",
   "How are ads trying to affect me today?",
   "What are algorithms assuming about me?",
   "When I see an ad, I take a deep breath and ignore it."])
+
+exams = MessageSet.create(theme: "Exams/Deadlines",
+  messages: ["A goal is a dream with a deadline.",
+    "Never do tomorrow what you can do today.",
+    "Success consists of going from failure to failure without loss of enthusiasm.",
+    "What will make today a win for you?",
+    "Trust yourself, you know more than you think you do.",
+    "Without hard work, nothing grows but weeds.",
+    "Either you run the day or the day runs you.",])
+
 
 olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
 

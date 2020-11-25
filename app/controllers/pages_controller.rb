@@ -16,6 +16,8 @@ class PagesController < ApplicationController
   end
 
   def quiz
+    @user_message_set = UserMessageSet.new
+    @message_sets = MessageSet.all
   end
 
   def dashboard
