@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login'
   get '/quiz', to: 'pages#quiz'
   get '/dashboard', to: 'pages#dashboard'
-  get '/new_user_mood', to: 'pages#new_user_mood'
+  resources :user_moods, only: [:new, :create]
 end
