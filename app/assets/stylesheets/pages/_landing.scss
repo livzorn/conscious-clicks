@@ -1,0 +1,58 @@
+
+// .backroundvideo {
+//  width: 100vw;
+//  height: 100vh;
+//  position: absolute;
+//  display: flex;
+//  justify-content: center;
+//  object-fit: cover;
+//  top: 0;
+//  z-index: -2;
+// }
+
+.Homebanner {
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  padding: 200px 0;
+  height: 90vh;
+}
+.Homebanner h1 {
+  color: #BED8FF;
+  text-align: center;
+  text-shadow: 0px 0px 2px rgba(0,0,0,4);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  line-height: 82px;
+  font-size: 80px;
+  font-family: "ribeye marrow";
+}
+.Homebanner p {
+  text-align:center;
+  color: #BAE0FF;
+  line-height: 35px;
+  letter-spacing: 0.1em;
+  font-size: 19px;
+  font-family: "Work Sans";
+}
+.QuizButton {
+  background-color: #BAE0FF;
+  font-size: 22px;
+  margin-left: 490px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  color: black;
+  text-decoration: none;
+  font-family: Righteous;
+  // position: absolute;
+}
+
+.QuizButton:hover {
+  opacity: 1;
+  // background: #BAE0FF;
+  box-shadow: rgba(255, 255, 255, 0.85) 0px 2px 6px;
+  text-decoration: none;
+  color: black;
+  transition-property: all;
+  transition-duration: .3s
+}
