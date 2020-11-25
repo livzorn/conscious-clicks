@@ -24,7 +24,7 @@
 }
 
 .homepage-left {
-  width: 45vw;
+  width: 60vw;
   margin-top: 15vh;
 }
 
@@ -32,7 +32,7 @@
   width: 40vw;
   display: flex;
   justify-content: space-around;
-  margin: 0 auto 5vh;
+  margin: 0 auto 5vh 5vw;
 
 }
 
@@ -40,14 +40,18 @@
   display: flex;
   justify-content: space-around;
   width: 35vw;
-  margin: 0 auto 5vh;
+  margin: 0 auto 5vh 7vw;
 }
 
 .main-message {
+  display: flex;
+  align-items: center;
   color: white;
   font-family: "Montserrat";
   font-size: 60px;
   margin: 0 auto 10vh;
+  height: 150px;
+
 }
 
 .custom-message input {

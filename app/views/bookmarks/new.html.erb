@@ -1,0 +1,6 @@
+<div class="newbookmark_container">
+  <%= simple_form_for [ @user, @bookmark ] do |f| %>
+    <%= f.input :link %>
+    <%= f.submit "create bookmark", class: "btn btn-primary" %>
+  <% end %>
+</div>
