@@ -33,6 +33,7 @@
         </div>
 
         <div class="little-goals-box goals">
+          <p>Little goals</p>
           <%= simple_form_for(Goal.new) do |f| %>
             <%= f.input :content, input_html: {id: 'little-goals', class: 'typebox'}, label: false %>
             <%= f.input :category, input_html: {value: 'little-goals'}, as: :hidden %>
