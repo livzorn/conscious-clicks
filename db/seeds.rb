@@ -23,7 +23,10 @@ ads = MessageSet.create(theme: "Advertising",
   "What are algorithms assuming about me?",
   "When I see an ad, I take a deep breath and ignore it."])
 
-olivia = User.new(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
+olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
+
+UserMessageSet.create(user_id: 1, message_set_id: 1)
+UserMessageSet.create(user_id: 1, message_set_id: 2)
 
 Mood.create(emoji: "😃", name: "happy", happiness_level: 10)
 Mood.create(emoji: "🥺", name: "sad", happiness_level: 1)
