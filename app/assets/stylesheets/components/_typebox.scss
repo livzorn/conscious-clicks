@@ -8,13 +8,17 @@
   }
 }
 
-.custom-message {
+.custom-message-box {
   width: 50vw;
+  height: 75px;
   margin-left: 12vw;
   padding: 12px 24px;
   border: 0.5px solid white;
   font-size: 24px;
   border-radius: 5px;
+  input {
+    width: 90%;
+  }
 }
 
 .goals {
@@ -31,16 +35,21 @@
   input {
     font-size: 25px;
     text-align: left;
+    width: 20px;
   }
 }
 
-.big-picture {
+.big-picture-box {
   margin: 15vh auto 5vh;
   padding: 12px 24px;
   color: white;
 }
 
-.little-goals {
+.little-goals-box {
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.hidden {
+  display: none;
 }
