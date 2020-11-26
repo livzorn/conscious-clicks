@@ -36,6 +36,11 @@ class PagesController < ApplicationController
     @treat = treats.sample
   end
 
+  def refresh_message
+    new_message
+    redirect_to root_path
+  end
+
   private
 
   def goal_params
