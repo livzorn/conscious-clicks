@@ -23,35 +23,39 @@
           <div class="card-dashboard">
              <p class="text-center">Bookmarked sites</p>
              <% current_user.bookmarks.each do |bookmark| %>
-               <p><%= bookmark.link %></p>
+               <%= link_to bookmark.link do%>
+                <button>
+                  <%= bookmark.name %>
+                </button>
+                <%end%>
+                <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt"></i> </p>
+                  <%end%>
                <%end%>
 
              <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Add a bookmark</button>
+
+
                 <div id="myDropdown" class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <div class="newbookmark_container">
+                  <%= simple_form_for [ @user, @bookmark ] do |f| %>
+                  <%= f.input :name %>
+                  <%= f.input :link %>
+                  <%= f.submit "add", class: "btn btn-primary" %>
+                  <% end %>
                 </div>
-              <script>
-                  function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                  }
-                  window.onclick = function(event) {
-                    if (!event.target.matches('.dropbtn')) {
-                      var dropdowns = document.getElementsByClassName("dropdown-content");
-                      var i;
-                      for (i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                          openDropdown.classList.remove('show');
-                        }
-                      }
+                </div>
+                <script>
+                    function myFunction() {
+                      document.getElementById("myDropdown").classList.toggle("show");
                     }
-                  }
-                  </script>
+                     document.querySelector('.dropbtn').onclick = myFunction
+                </script>
               </div>
           </div>
+
+
           <div class="card-dashboard">
              <p class="text-center">My Message sets</p>
           </div>
