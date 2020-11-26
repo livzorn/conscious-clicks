@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/new_user_mood', to: 'pages#new_user_mood'
   resources :goals, only: [:create], to: 'pages#save_goal'
   get '/goals', to: 'pages#home'
+  get '/', to: 'pages#new_message', as: :new_message
   resources :user_message_sets
   resources :user_moods, only: [:new, :create]
   resources :user do

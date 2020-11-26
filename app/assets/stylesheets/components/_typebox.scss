@@ -4,27 +4,30 @@
   color: white;
   border: none;
   width: 100%;
-  height: 100%
+  height: 100%;
+  &:focus {
+    outline: none;
+  }
 }
-
-// .typebox:focus {
-//     outline: none;
-//   }
 
 .custom-message-box {
   width: 50vw;
   height: 75px;
-  margin-left: 12vw;
   padding: 12px 24px;
   border: 0.5px solid white;
   font-size: 24px;
   border-radius: 5px;
   input {
     width: 90%;
+    font-size: 24px;
+    font-family: "Montserrat";
+    background-color: transparent;
+    color: white;
   }
-  input:focus {
+}
+
+.custom-message-box input:focus {
     outline: none;
-  }
 }
 
 .goals {

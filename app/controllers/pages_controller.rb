@@ -50,6 +50,7 @@ class PagesController < ApplicationController
     messages.flatten!
     current_user.current_message = messages.sample
     current_user.current_message_date = Date.today
+    current_user.save!
   end
 
   def set_daily_message
