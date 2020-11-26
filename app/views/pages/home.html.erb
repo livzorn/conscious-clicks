@@ -3,7 +3,7 @@
     <div class="homepage-top">
       <div class="homepage-left">
 
-        <h2 class="main-message"><%= @message %></h2>
+        <h2 class="main-message"><%= current_user.current_message %></h2>
 
         <div class="homepage-bookmarks">
           <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>

@@ -4,10 +4,12 @@
   color: white;
   border: none;
   width: 100%;
-  &:focus {
-    outline: none;
-  }
+  height: 100%
 }
+
+// .typebox:focus {
+//     outline: none;
+//   }
 
 .custom-message-box {
   width: 50vw;
@@ -19,6 +21,9 @@
   border-radius: 5px;
   input {
     width: 90%;
+  }
+  input:focus {
+    outline: none;
   }
 }
 

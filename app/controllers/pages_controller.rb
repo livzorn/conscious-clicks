@@ -1,13 +1,13 @@
+require 'date'
+
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :home
 
   def home
     redirect_to landing_path unless user_signed_in?
 
-    show_message
-
+    set_daily_message
     show_typeboxes
-
     grab_a_treat
   end
 
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     @goal.user_id = current_user.id
     @goal.save
     show_typeboxes
-    show_message
+    set_daily_message
     render 'home'
   end
 
@@ -42,34 +42,35 @@ class PagesController < ApplicationController
     params.require(:goal).permit(:category, :content, :user_id)
   end
 
-  def show_message
+  def new_message
     messages = []
     current_user.message_sets.each do |message_set|
       messages += message_set.messages
     end
     messages.flatten!
-    @message = messages.sample
+    current_user.current_message = messages.sample
+    current_user.current_message_date = Date.today
+  end
+
+  def set_daily_message
+    new_message unless current_user.current_message_date == Date.today
   end
 
   def show_typeboxes
     @big_picture = Goal.where(category: "big-picture", user_id: current_user.id).last
-    # @big_picture = " " if @big_picture.nil?
     @little_goals = Goal.where(category: "little-goals", user_id: current_user.id).last
     @custom_message = Goal.where(category: "custom-message", user_id: current_user.id).last
   end
 
-  # messages = []
-  # current_user.message_sets.each do |message_set|
-  #   messages += message_set.messages
+  # def show_unseen_messages
+  #   upcoming_messages = []
+  #   seen_messages = []
+  #   current_user.message_sets.each do |message_set|
+  #     upcoming_messages += message_set.messages
+  #   end
+  #   messages.flatten!.shuffle!
+  #   current_user.current_message = upcoming_messages.first
+  #   upcoming_messages.delete(current_message)
+  #   seen_messages << current_message
   # end
-  # messages.flatten!
-  # @message = messages.sample
-
-  # make an array of all messages the user will be shown
-  # show User a random message from their message sets
-  # once shown, add that message to seen_messages and remove from upcoming messages
-  # if the Day is the next day, change the message to the next upcoming message
-  #
-
-
 end
