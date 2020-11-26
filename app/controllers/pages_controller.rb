@@ -18,8 +18,6 @@ class PagesController < ApplicationController
 
     treats = ['https://www.youtube.com/watch?v=ynLpZGegiJE', 'https://www.sdzsafaripark.org/giraffe-cam', 'https://www.youtube.com/watch?v=91wX0NRjJqg']
     @treat = treats.sample
-
-
   end
 
   def quiz
@@ -54,7 +52,8 @@ class PagesController < ApplicationController
     end
     messages.flatten!
     messages.sample
-    
+  end
+
   def landing
   end
 end
