@@ -1,5 +1,11 @@
 <div class="mood-background">
-
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
     <div class="greetings-mood">
     <h2>Hey  <%= current_user.name%>, how are you ?</h2>
     </div>
@@ -7,4 +13,5 @@
           <%= f.input :mood_id, as: :radio_buttons, collection: Mood.all, label_method: :emoji %>
           <%= f.submit 'Submit'  %>
         <% end %>
+        <%= @average_mood_today&.emoji %>
 </div>
