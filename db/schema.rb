@@ -10,18 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_120636) do
+
+ActiveRecord::Schema.define(version: 2020_11_26_124327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "link"
-    t.string "image"
+    t.string "name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "category"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "message_sets", force: :cascade do |t|
@@ -68,11 +78,14 @@ ActiveRecord::Schema.define(version: 2020_11_24_120636) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "current_message"
+    t.date "current_message_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "goals", "users"
   add_foreign_key "user_message_sets", "message_sets"
   add_foreign_key "user_message_sets", "users"
   add_foreign_key "user_moods", "moods"

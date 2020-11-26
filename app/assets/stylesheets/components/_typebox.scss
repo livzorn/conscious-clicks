@@ -3,18 +3,31 @@
   background-color: transparent;
   color: white;
   border: none;
+  width: 100%;
+  height: 100%;
   &:focus {
     outline: none;
   }
 }
 
-.custom-message {
+.custom-message-box {
   width: 50vw;
-  margin-left: 12vw;
+  height: 75px;
   padding: 12px 24px;
   border: 0.5px solid white;
   font-size: 24px;
   border-radius: 5px;
+  input {
+    width: 90%;
+    font-size: 24px;
+    font-family: "Montserrat";
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.custom-message-box input:focus {
+    outline: none;
 }
 
 .goals {
@@ -31,16 +44,21 @@
   input {
     font-size: 25px;
     text-align: left;
+    width: 20px;
   }
 }
 
-.big-picture {
+.big-picture-box {
   margin: 15vh auto 5vh;
   padding: 12px 24px;
   color: white;
 }
 
-.little-goals {
+.little-goals-box {
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.hidden {
+  display: none;
 }

@@ -29,7 +29,40 @@
           </div>
           <div class="card-dashboard">
              <p class="text-center">Bookmarked sites</p>
+             <% current_user.bookmarks.each do |bookmark| %>
+               <%= link_to bookmark.link do%>
+                <button>
+                  <%= bookmark.name %>
+                </button>
+                <%end%>
+                <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt"></i> </p>
+                  <%end%>
+               <%end%>
+
+             <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Add a bookmark</button>
+
+
+                <div id="myDropdown" class="dropdown-content">
+                  <div class="newbookmark_container">
+                  <%= simple_form_for [ @user, @bookmark ] do |f| %>
+                  <%= f.input :name %>
+                  <%= f.input :link %>
+                  <%= f.submit "add", class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+                </div>
+                <script>
+                    function myFunction() {
+                      document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                     document.querySelector('.dropbtn').onclick = myFunction
+                </script>
+              </div>
           </div>
+
+
           <div class="card-dashboard">
              <p class="text-center">My Message sets</p>
           </div>

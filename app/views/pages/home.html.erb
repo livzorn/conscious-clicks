@@ -3,8 +3,7 @@
     <div class="homepage-top">
       <div class="homepage-left">
 
-<!--         <h2 class="main-message">I'm too smart to be brainwashed by ads.</h2>
- -->        <h2 class="main-message"><%= @message %></h2>
+        <h2 class="main-message"><%= current_user.current_message %></h2>
 
         <div class="homepage-bookmarks">
           <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>
@@ -15,7 +14,6 @@
 
         <div class="homepage-buttons">
           <%= link_to 'Mood Check-In', new_user_mood_path, class: 'btn-homepage'%>
-          <%= link_to 'test', 'new_user_mood_path'  %>
           <a href="#" class="btn-homepage">Dashboard</a>
         </div>
 
@@ -23,14 +21,24 @@
 
       <div class="homepage-right">
 
-        <div class="big-picture goals">
+        <div class="big-picture-box goals">
           <p>Big picture</p>
-          <input type="text" data-test="big-picture" autocomplete="off" label="big picture" class="typebox">
+          <%= simple_form_for(Goal.new) do |f| %>
+            <%= f.input :content, input_html: {id: 'big-picture', class: 'typebox', value: @big_picture ? @big_picture.content : ""}, label: false %>
+            <!-- <input type="text" id="big-picture" autocomplete="off" label="big picture" class="typebox" name="content"> -->
+            <%= f.input :category, input_html: {value: 'big-picture'}, as: :hidden %>
+            <%= f.submit '', class: 'hidden', id: "big-picture-submit" %>
+          <% end %>
+
         </div>
 
-        <div class="little-goals goals">
+        <div class="little-goals-box goals">
           <p>Little goals</p>
-          <input type="text" data-test="little-goals" autocomplete="off" label="little goals" class="typebox">
+          <%= simple_form_for(Goal.new) do |f| %>
+            <%= f.input :content, input_html: {id: 'little-goals', class: 'typebox', value: @little_goals ? @little_goals.content : ""}, label: false %>
+            <%= f.input :category, input_html: {value: 'little-goals'}, as: :hidden %>
+            <%= f.submit '', class: 'hidden', id: "little-goals-submit" %>
+          <% end %>
         </div>
 
       </div>
@@ -45,7 +53,20 @@
         <% end %>
       </div>
 
-      <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message">
+      <!-- <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message"> -->
+      <div class="custom-message-box">
+        <%= simple_form_for(Goal.new) do |f| %>
+          <%= f.input :content, input_html: {id: 'custom-message', class: 'typebox', value: @custom_message ? @custom_message.content : ""}, label: false %>
+          <%= f.input :category, input_html: {value: 'custom-message'}, as: :hidden %>
+          <%= f.submit '', class: 'hidden', id: "custom-message-submit" %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to refresh_message_path(new_message: true) do %>
+          <i class="fas fa-undo btn-new-message"></i>
+        <% end %>
+      </div>
 
     </div>
   </div>
