@@ -26,6 +26,13 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+
+    @user = current_user
+    @bookmark = Bookmark.new
+
+
+    #move this to pages dashboard
+
   end
 
   def save_goal
