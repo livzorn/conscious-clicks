@@ -28,5 +28,8 @@ olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewago
 UserMessageSet.create(user_id: 1, message_set_id: 1)
 UserMessageSet.create(user_id: 1, message_set_id: 2)
 
-Mood.create(emoji: "😃", name: "happy", happiness_level: 10)
-Mood.create(emoji: "🥺", name: "sad", happiness_level: 1)
+Mood.create(emoji: "🤩", name: "happy", happiness_level: 5)
+Mood.create(emoji: "😃", name: "Okay", happiness_level: 4)
+Mood.create(emoji: "😐", name: "average", happiness_level: 3)
+Mood.create(emoji: "🥺", name: "down", happiness_level: 2)
+Mood.create(emoji: "😪", name: "sad", happiness_level: 1)

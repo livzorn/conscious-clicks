@@ -17,7 +17,14 @@
         <div class="dashboard-right">
 
           <div class="card-dashboard">
+
             <p class="text-center">Calendar</p>
+            <% (Date::DAYNAMES[1..-1] << Date::DAYNAMES.first).each_with_index do |day, index|  %>
+            <div class="weekday">
+              <%= day %>
+              <%= @average_mood_today&.emoji %>
+            </div>
+            <% end %>
 
           </div>
           <div class="card-dashboard">
