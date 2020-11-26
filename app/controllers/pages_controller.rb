@@ -4,11 +4,11 @@ class PagesController < ApplicationController
   def home
     redirect_to landing_path unless user_signed_in?
 
-    @message = show_message
+    show_message
+
     show_typeboxes
 
-    treats = ['https://www.youtube.com/watch?v=ynLpZGegiJE', 'https://www.sdzsafaripark.org/giraffe-cam', 'https://www.youtube.com/watch?v=91wX0NRjJqg']
-    @treat = treats.sample
+    grab_a_treat
   end
 
   def quiz
@@ -24,11 +24,16 @@ class PagesController < ApplicationController
     @goal.user_id = current_user.id
     @goal.save
     show_typeboxes
-    @message = show_message
+    show_message
     render 'home'
   end
 
   def landing
+  end
+
+  def grab_a_treat
+    treats = ['https://www.youtube.com/watch?v=ynLpZGegiJE', 'https://www.sdzsafaripark.org/giraffe-cam', 'https://www.youtube.com/watch?v=91wX0NRjJqg']
+    @treat = treats.sample
   end
 
   private
@@ -43,13 +48,28 @@ class PagesController < ApplicationController
       messages += message_set.messages
     end
     messages.flatten!
-    messages.sample
+    @message = messages.sample
   end
 
   def show_typeboxes
     @big_picture = Goal.where(category: "big-picture", user_id: current_user.id).last
+    # @big_picture = " " if @big_picture.nil?
     @little_goals = Goal.where(category: "little-goals", user_id: current_user.id).last
     @custom_message = Goal.where(category: "custom-message", user_id: current_user.id).last
   end
+
+  # messages = []
+  # current_user.message_sets.each do |message_set|
+  #   messages += message_set.messages
+  # end
+  # messages.flatten!
+  # @message = messages.sample
+
+  # make an array of all messages the user will be shown
+  # show User a random message from their message sets
+  # once shown, add that message to seen_messages and remove from upcoming messages
+  # if the Day is the next day, change the message to the next upcoming message
+  #
+
 
 end
