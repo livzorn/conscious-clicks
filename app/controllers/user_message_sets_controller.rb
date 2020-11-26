@@ -1,14 +1,13 @@
 class UserMessageSetsController < ApplicationController
 
   def create
-    @user_message_set = UserMessageSet.new(user_message_params)
-    @user_message_set.user_id = current_user.id
-    if @user_message_set.save!
-      redirect_to root_path
-    else
-      render 'quiz'
+    current_user.user_message_sets.destroy_all
+    params[:user_message_set][:message_set_id].each do |message_set_id|
+      @user_message_set = UserMessageSet.create(message_set_id: message_set_id, user_id: current_user.id)
     end
+    redirect_to root_path
   end
+  # changed nq 19/11
 
 
 private
