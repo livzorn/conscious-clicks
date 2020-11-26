@@ -1,49 +1,23 @@
-<div class="quizpage-background">
-  <div class="container-quizpage">
+<div class="background-quizpage">
+
+  <div class="container-top">
     <div class="quizpage-header">
       <h1 class="stress-message">Which of these add stress to your life?</h1>
     </div>
-      <div class="container-message-sets">
-        <%= simple_form_for @user_message_set do |f| %>
-          <%= f.input :message_set_id, as: :radio_buttons, collection: MessageSet.all, label_method: :theme %>
-          <%= f.submit "Submit" %>
-        <% end %>
-      </div>
-
-   <!--  <div class="container-stress-btns">
-      <div class="stress-btn-row">
-        <div class="btn-stress">
-          <h3>Loneliness/isolation</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Climate change</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Social media</h3>
-        </div>
-      </div>
-      <div class="stress-btn-row">
-        <div class="btn-stress">
-          <h3>Traditional gender roles</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Employment status</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Beauty standards</h3>
-        </div>
-      </div>
-      <div class="stress-btn-row">
-        <div class="btn-stress">
-          <h3>Materialism</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Exams/deadlines</h3>
-        </div>
-        <div class="btn-stress">
-          <h3>Fake news</h3>
-        </div>
-      </div>
-    </div> -->
+    <div class="quizpage-select">
+      <h6 class="select-message">Select all that apply.</h6>
+    </div>
   </div>
-</div>
+
+  <div class="container-bottom">
+      <%= simple_form_for @user_message_set do |f| %>
+        <% MessageSet.all.each_slice(3).to_a.each do |message_subset| %>
+          <div class="message-row">
+            <%= f.association :message_set, collection: message_subset, label: false, label_method: :theme, as: :check_boxes, include_hidden: false %>
+          </div>
+        <% end %>
+      <div>
+        <%= f.submit "Create your homepage!" %>
+      </div>
+      <% end %>
+  </div>

@@ -1,4 +1,4 @@
 class Bookmark < ApplicationRecord
   belongs_to :user
-  validates :link, presence: true
+  validates :link, :name, presence: true
 end
