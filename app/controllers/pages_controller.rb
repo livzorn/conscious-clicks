@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   def home
     redirect_to landing_path unless user_signed_in?
 
+    @user_mood = UserMood.new
+
     set_daily_message
     show_typeboxes
     grab_a_treat
