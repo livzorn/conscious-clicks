@@ -48,3 +48,22 @@ button:focus {
     transition-duration: .3s
   }
 }
+
+.btn-mood-submit {
+  background-color: #A5B9FF;
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat";
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    box-shadow: rgba(166, 184, 255, 0.85) 0px 1px 8px;
+    transition-property: all;
+    transition-duration: .3s
+  }
+}
