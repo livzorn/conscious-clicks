@@ -74,14 +74,14 @@ fake = MessageSet.create(theme: "Fake news",
     "blah blah blah Fake news 6.",
     "blah blah blah Fake news 7.",])
 
-time = MessageSet.create(theme: "Time management",
-  messages: ["blah blah blah Time management 1.",
-    "blah blah blah Time management 2.",
-    "blah blah blah Time management 3.",
-    "blah blah blah Time management 4.",
-    "blah blah blah Time management 5.",
-    "blah blah blah Time management 6.",
-    "blah blah blah Time management 7.",])
+# time = MessageSet.create(theme: "Time management",
+#   messages: ["blah blah blah Time management 1.",
+#     "blah blah blah Time management 2.",
+#     "blah blah blah Time management 3.",
+#     "blah blah blah Time management 4.",
+#     "blah blah blah Time management 5.",
+#     "blah blah blah Time management 6.",
+#     "blah blah blah Time management 7.",])
 
 olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
 
