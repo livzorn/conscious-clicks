@@ -7,14 +7,13 @@
         <h3 class="user-name"><%= current_user.name%></h3>
         <div class="dashboard-buttons">
           <%= link_to 'Home', root_path, class: 'btn-homepage' %>
-          <%= link_to 'Update Messages', quiz_path, class: 'btn-homepage'  %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
         </div>
       </div>
 
-      <div class="card-dashboard">
+      <div class="card-dashboard stats">
         <p class="text-center">Stats</p>
-        <p class="text-center">Your mood improved 18% this week!</p>
-        <p></p>
+        <p class="text-center">Your mood improved 77% this week!</p>
       </div>
     </div>
 
@@ -41,60 +40,64 @@
       </div>
 
 
-      <div class="card-dashboard">
+      <div class="card-dashboard my-messages">
         <p class="text-center">My Message sets</p>
-          <% current_user.message_sets.each do |message_set| %>
-            <%= message_set.theme %>
-        <% end %>
+          <div class="grid-message-sets">
+            <% current_user.message_sets.each do |message_set| %>
+              <p> <%= message_set.theme %> </p>
+            <% end %>
+          </div>
+          <div class="mt-4">
+            <%= link_to 'Update Messages', quiz_path, class: 'btn-create'  %>
+          </div>
       </div>
 
 
       <div class="card-dashboard">
-       <div class="d-flex justify-content-center">
-        <p class="text-center">Bookmarked sites</p>
-          <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
-          <div id="myDropdown" class="dropdown-content">
-            <div class="newbookmark_container p-1">
-            <%= simple_form_for [ @user, @bookmark ] do |f| %>
-            <%= f.input :name %>
-            <%= f.input :link %>
-            <%= f.submit "add", class: "btn btn-primary" %>
+
+        <div class="justify-content-center">
+
+          <div class="d-flex justify-content-center">
+            <p class="text-center">Bookmarked sites</p>
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <div class="newbookmark_container p-1">
+                    <%= simple_form_for [ @user, @bookmark ] do |f| %>
+                    <%= f.input :name %>
+                    <%= f.input :link %>
+                    <%= f.submit "add", class: "btn btn-primary" %>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="bookmarks-all d-flex">
+            <% current_user.bookmarks.each do |bookmark| %>
+              <div class="mr-4">
+                <%= link_to bookmark.link do%>
+                  <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "80px" %>
+                  <!--  <%= bookmark.name %> -->
+                <% end %>
+                <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt"></i> </p>
+                <% end %>
+              </div>
             <% end %>
           </div>
 
-          </div>
-
-
         </div>
-
-          <script>
-              function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-              }
-               document.querySelector('.dropbtn').onclick = myFunction
-          </script>
-        </div>
-       </div>
-          <div class="d-flex">
-          <% current_user.bookmarks.each do |bookmark| %>
-            <div class="mr-4">
-              <%= link_to bookmark.link do%>
-                <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "80px" %>
-                 <!--  <%= bookmark.name %> -->
-
-              <% end %>
-
-              <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="far fa-trash-alt"></i> </p>
-              <% end %>
-            </div>
-        <% end %>
-        </div>
-
 
       </div>
 
     </div>
   </div>
 </div>
+
+<script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+     document.querySelector('.dropbtn').onclick = myFunction
+</script>

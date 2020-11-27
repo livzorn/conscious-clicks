@@ -1,0 +1,36 @@
+.container-devise-form {
+  background-color: white;
+  padding: 40px;
+  width: 30vw;
+  margin: 50px auto;
+  a {
+    color: black;
+    text-align: center;
+  }
+  h2 {
+    font-family: "Montserrat", "sans-serif";
+  }
+  input {
+    background-color: transparent;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.form-actions {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.devise-links {
+  text-align: center;
+}
+
+.devise-links a:hover {
+  transition-property: all;
+  transition-duration: 0.2s;
+  text-shadow: 0px 0.5px 0.5px #535353;
+  text-decoration: none;
+  text-align: center;
+}
