@@ -5,6 +5,7 @@
 
         <h2 class="main-message"><%= current_user.current_message %></h2>
 
+
         <div class="homepage-bookmarks">
           <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>
           <%= image_tag("google-screenshot.png", class: "bookmark-circle") %>
@@ -23,6 +24,7 @@
             </div>
           </div>
           <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage' %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
         </div>
 
       </div>
