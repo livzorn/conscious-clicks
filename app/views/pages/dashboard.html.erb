@@ -30,6 +30,15 @@
         <% end %>
       </div>
 
+
+      <div class="card-dashboard">
+        <p class="text-center">My Message sets</p>
+          <% current_user.message_sets.each do |message_set| %>
+            <%= message_set.theme %>
+        <% end %>
+      </div>
+
+
       <div class="card-dashboard">
         <p class="text-center">Bookmarked sites</p>
         <% current_user.bookmarks.each do |bookmark| %>
@@ -53,7 +62,7 @@
             <%= f.submit "add", class: "btn btn-primary" %>
             <% end %>
           </div>
-          </div>
+        </div>
           <script>
               function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
