@@ -16,15 +16,13 @@ ads = MessageSet.create(theme: "Advertising",
   "How are ads trying to affect me today?",
   "What are algorithms assuming about me?",
   "When I see an ad, I take a deep breath and ignore it.",
-  "Do I realllly need that think I want to buy?"])
+  "Do I realllly need that thing I want to buy?"])
 
 exams = MessageSet.create(theme: "Exams/Deadlines",
   messages: ["A goal is a dream with a deadline.",
     "Never do tomorrow what you can do today.",
-    "Success consists of going from failure to failure without loss of enthusiasm.",
     "What will make today a win for you?",
     "Trust yourself, you know more than you think you do.",
-    "Without hard work, nothing grows but weeds.",
     "Either you run the day or the day runs you.",])
 
 social = MessageSet.create(theme: "Social Media",
@@ -44,12 +42,9 @@ beauty = MessageSet.create(theme: "Beauty Standards",
 
 loneliness = MessageSet.create(theme: "Loneliness/isolation",
   messages: ["Check in with someone you care about.",
-    "blah blah blah Loneliness/isolation 2.",
-    "blah blah blah Loneliness/isolation 3.",
-    "blah blah blah Loneliness/isolation 4.",
-    "blah blah blah Loneliness/isolation 5.",
-    "blah blah blah Loneliness/isolation 6.",
-    "blah blah blah Loneliness/isolation 7."])
+    "Who could you reach out to today?",
+    "Am I intentionally or accidentally isolating myself?",
+    "Performing small acts of kindness release endorphins that improve our mood.",])
 
 climate = MessageSet.create(theme: "Climate change",
   messages: ["What's one small thing I can do to help the environment?",
@@ -58,7 +53,7 @@ climate = MessageSet.create(theme: "Climate change",
     "How can I produce less trash today?"])
 
 gender = MessageSet.create(theme: "Traditional gender roles",
-  messages: ["blah blah blah Traditional gender roles 1.",
+  messages: ["What do I want from myself?",
     "blah blah blah Traditional gender roles 2.",
     "blah blah blah Traditional gender roles 3.",
     "blah blah blah Traditional gender roles 4.",
@@ -67,24 +62,11 @@ gender = MessageSet.create(theme: "Traditional gender roles",
     "blah blah blah Traditional gender roles 7.",])
 
 fake = MessageSet.create(theme: "Fake news",
-  messages: ["blah blah blah Fake news 1.",
-    "blah blah blah Fake news 2.",
-    "blah blah blah Fake news 3.",
-    "blah blah blah Fake news 4.",
-    "blah blah blah Fake news 5.",
-    "blah blah blah Fake news 6.",
-    "blah blah blah Fake news 7.",])
+  messages: ["Do you know and trust the source of the article you're reading?",
+    "Full Fact and Snopes are two of many great fact-checking websites.",
+    "Did you read beyond the headline of the article?",])
 
 puts "Created Message Sets"
-
-# time = MessageSet.create(theme: "Time management",
-#   messages: ["blah blah blah Time management 1.",
-#     "blah blah blah Time management 2.",
-#     "blah blah blah Time management 3.",
-#     "blah blah blah Time management 4.",
-#     "blah blah blah Time management 5.",
-#     "blah blah blah Time management 6.",
-#     "blah blah blah Time management 7.",])
 
 olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
 
