@@ -1,78 +1,81 @@
 <div class="dashboard-background">
   <div class="container-dashboard">
-        <div class="dashboard-left">
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-            <h3 class="padding">  <%= current_user.email%></h3>
-          </div>
-          <div class="stats">
-            <p class="text-center">Stats</p>
-          </div>
-          <div class="card-dashboard">
 
+    <div class="dashboard-left">
+      <div class="user_info">
+        <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
+        <h3 class="user-name"><%= current_user.name%></h3>
+        <div class="dashboard-buttons">
+          <%= link_to 'Home', root_path, class: 'btn-homepage' %>
+          <%= link_to 'Update Messages', quiz_path, class: 'btn-homepage'  %>
+        </div>
+      </div>
+
+      <div class="card-dashboard">
+        <p class="text-center">Stats</p>
+        <p class="text-center">Your mood improved 18% this week!</p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="dashboard-right">
+
+      <div class="card-dashboard">
+        <p class="text-center">Calendar</p>
+        <% (Date::DAYNAMES[1..-1] << Date::DAYNAMES.first).each_with_index do |day, index|  %>
+          <div class="weekday">
+            <%= day %>
+            <%= @average_mood_today&.emoji %>
+          </div>
+        <% end %>
+      </div>
+
+
+      <div class="card-dashboard">
+        <p class="text-center">My Message sets</p>
+          <% current_user.message_sets.each do |message_set| %>
+            <%= message_set.theme %>
+        <% end %>
+      </div>
+
+
+      <div class="card-dashboard">
+        <p class="text-center">Bookmarked sites</p>
+        <% current_user.bookmarks.each do |bookmark| %>
+          <%= link_to bookmark.link do%>
+            <button>
+              <%= bookmark.name %>
+            </button>
+          <% end %>
+          <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i> </p>
+          <% end %>
+        <% end %>
+
+       <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="newbookmark_container">
+            <%= simple_form_for [ @user, @bookmark ] do |f| %>
+            <%= f.input :name %>
+            <%= f.input :link %>
+            <%= f.submit "add", class: "btn btn-primary" %>
+            <% end %>
           </div>
         </div>
-
-
-        <div class="dashboard-right">
-
-          <div class="card-dashboard">
-
-            <p class="text-center">Calendar</p>
-            <% (Date::DAYNAMES[1..-1] << Date::DAYNAMES.first).each_with_index do |day, index|  %>
-            <div class="weekday">
-              <%= day %>
-              <%= @average_mood_today&.emoji %>
-            </div>
-            <% end %>
-
-          </div>
-          <div class="card-dashboard">
-             <p class="text-center">Bookmarked sites</p>
-             <% current_user.bookmarks.each do |bookmark| %>
-               <%= link_to bookmark.link do%>
-                <button>
-                  <%= bookmark.name %>
-                </button>
-                <%end%>
-                <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="far fa-trash-alt"></i> </p>
-                  <%end%>
-               <%end%>
-
-             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
-
-
-                <div id="myDropdown" class="dropdown-content">
-                  <div class="newbookmark_container">
-                  <%= simple_form_for [ @user, @bookmark ] do |f| %>
-                  <%= f.input :name %>
-                  <%= f.input :link %>
-                  <%= f.submit "add", class: "btn btn-primary" %>
-                  <% end %>
-                </div>
-                </div>
-                <script>
-                    function myFunction() {
-                      document.getElementById("myDropdown").classList.toggle("show");
-                    }
-                     document.querySelector('.dropbtn').onclick = myFunction
-                </script>
-              </div>
-          </div>
-
-          <div class="card-dashboard">
-            <p class="text-center">My Message sets</p>
-              <% current_user.message_sets.each do |message_set| %>
-                <%= message_set.theme %>
-            <% end %>
-
-          </div>
-          <div class="card-dashboard">
-             <p class="text-center">Others</p>
-          </div>
-
+          <script>
+              function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+              }
+               document.querySelector('.dropbtn').onclick = myFunction
+          </script>
         </div>
+      </div>
+
+      <div class="card-dashboard">
+         <p class="text-center">My Message sets</p>
+      </div>
+
+    </div>
   </div>
 </div>
