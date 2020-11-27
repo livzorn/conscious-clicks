@@ -41,11 +41,11 @@ class PagesController < ApplicationController
 
   def avg_mood(day)
     moods = UserMood.where(user: current_user, date: day)
-    if moods
+    if moods.present?
       happiness_levels = moods.map {|u| u.mood.happiness_level}
       average_mood = Mood.find_by(happiness_level: happiness_levels.sum / @user_mood_today.count)
     else
-      average_mood = ""
+      average_mood = nil
     end
     average_mood
   end
