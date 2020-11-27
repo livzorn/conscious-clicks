@@ -1,7 +1,22 @@
-.avatar-large {
-  height: 100px;
-  width: 100px;
+.user_info {
+  text-align: center;
+  margin: 50px auto;
 }
+
+.avatar-large {
+  height: 200px;
+  width: 200px;
+}
+
+.user-name {
+  font-size: 40px;
+  margin: 24px auto 48px;
+}
+
+.dash-home {
+  margin-top: 50px;
+}
+
 .container-dashboard {
   width: 70vw;
   margin: 0 auto;

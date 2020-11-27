@@ -17,9 +17,9 @@
   border: 0.5px solid white;
   font-size: 24px;
   border-radius: 5px;
-  input {
+  textarea {
     width: 90%;
-    font-size: 24px;
+    font-size: 30px;
     font-family: "Montserrat";
     background-color: transparent;
     color: white;
@@ -36,15 +36,14 @@
   height: 175px;
   padding: 12px 24px;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 200;
   font-style: italic;
   font-family: "Montserrat";
   text-align: center;
-  input {
-    font-size: 25px;
-    text-align: left;
-    width: 20px;
+  textarea {
+    width: 90%;
+    font-size: 22px;
   }
 }
 
