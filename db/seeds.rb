@@ -1,5 +1,6 @@
 UserMessageSet.destroy_all
 MessageSet.destroy_all
+# Mood.destroy_all
 
 
 # positive = MessageSet.create(theme: "Positive Affirmations",
@@ -74,6 +75,8 @@ fake = MessageSet.create(theme: "Fake news",
     "blah blah blah Fake news 6.",
     "blah blah blah Fake news 7.",])
 
+puts "Created Message Sets"
+
 # time = MessageSet.create(theme: "Time management",
 #   messages: ["blah blah blah Time management 1.",
 #     "blah blah blah Time management 2.",
@@ -85,11 +88,27 @@ fake = MessageSet.create(theme: "Fake news",
 
 olivia = User.create(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
 
+puts "Created user Olivia"
+
 UserMessageSet.create(user: User.first, message_set: MessageSet.first)
 UserMessageSet.create(user: User.last, message_set: MessageSet.last)
 
-Mood.create(emoji: "🤩", name: "happy", happiness_level: 5)
-Mood.create(emoji: "😃", name: "okay", happiness_level: 4)
+puts "gave Olivia 1 message set"
+
+Mood.create(emoji: "🤩", name: "happy", happiness_level: 6)
+Mood.create(emoji: "😄", name: "happy", happiness_level: 5)
+Mood.create(emoji: "🙂", name: "okay", happiness_level: 4)
 Mood.create(emoji: "😐", name: "average", happiness_level: 3)
-Mood.create(emoji: "🥺", name: "down", happiness_level: 2)
-Mood.create(emoji: "😪", name: "sad", happiness_level: 1)
+Mood.create(emoji: "😔", name: "down", happiness_level: 2)
+Mood.create(emoji: "😣", name: "sad", happiness_level: 1)
+
+puts "Created 6 moods"
+
+# UserMood.create(mood_id: 6, user: olivia, date: (Date.today - 6))
+# UserMood.create(mood_id: 5, user: olivia, date: (Date.today - 5))
+# UserMood.create(mood_id: 4, user: olivia, date: (Date.today - 4))
+# UserMood.create(mood_id: 3, user: olivia, date: (Date.today - 3))
+# UserMood.create(mood_id: 2, user: olivia, date: (Date.today - 2))
+# UserMood.create(mood_id: 1, user: olivia, date: (Date.today - 1))
+
+# puts "gave Olivia 6 mood check-ins"

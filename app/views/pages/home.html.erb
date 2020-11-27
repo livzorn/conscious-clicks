@@ -17,7 +17,7 @@
             <button class="btn-homepage">Mood Check-in</button>
             <div class="dropdown-content">
               <%= simple_form_for @user_mood do |f| %>
-                <%= f.input :mood_id, as: :radio_buttons, collection: Mood.all, label_method: :emoji %>
+                <%= f.association :mood, as: :radio_buttons, label_method: :emoji %>
                 <%= f.submit 'Submit'  %>
               <% end %>
             </div>
