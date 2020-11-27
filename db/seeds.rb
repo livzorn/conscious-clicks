@@ -1,6 +1,6 @@
 UserMessageSet.destroy_all
 MessageSet.destroy_all
-# Mood.destroy_all
+Mood.destroy_all
 
 
 # positive = MessageSet.create(theme: "Positive Affirmations",
@@ -18,7 +18,7 @@ ads = MessageSet.create(theme: "Advertising",
   "When I see an ad, I take a deep breath and ignore it.",
   "Do I realllly need that think I want to buy?"])
 
-exams = MessageSet.create(theme: "Exams/Deadlines",
+exams = MessageSet.create(theme: "Deadlines",
   messages: ["A goal is a dream with a deadline.",
     "Never do tomorrow what you can do today.",
     "Success consists of going from failure to failure without loss of enthusiasm.",
@@ -42,7 +42,7 @@ beauty = MessageSet.create(theme: "Beauty Standards",
     "There’s no one I’d rather be than me",
     "I won't let society choose my definition of beauty."])
 
-loneliness = MessageSet.create(theme: "Loneliness/isolation",
+loneliness = MessageSet.create(theme: "Isolation",
   messages: ["Check in with someone you care about.",
     "blah blah blah Loneliness/isolation 2.",
     "blah blah blah Loneliness/isolation 3.",
@@ -57,7 +57,7 @@ climate = MessageSet.create(theme: "Climate change",
     "If I can, I'll walk instead of driving.",
     "How can I produce less trash today?"])
 
-gender = MessageSet.create(theme: "Traditional gender roles",
+gender = MessageSet.create(theme: "Gender Roles",
   messages: ["blah blah blah Traditional gender roles 1.",
     "blah blah blah Traditional gender roles 2.",
     "blah blah blah Traditional gender roles 3.",
@@ -104,11 +104,11 @@ Mood.create(emoji: "😣", name: "sad", happiness_level: 1)
 
 puts "Created 6 moods"
 
-# UserMood.create(mood_id: 6, user: olivia, date: (Date.today - 6))
-# UserMood.create(mood_id: 5, user: olivia, date: (Date.today - 5))
-# UserMood.create(mood_id: 4, user: olivia, date: (Date.today - 4))
-# UserMood.create(mood_id: 3, user: olivia, date: (Date.today - 3))
-# UserMood.create(mood_id: 2, user: olivia, date: (Date.today - 2))
-# UserMood.create(mood_id: 1, user: olivia, date: (Date.today - 1))
+UserMood.create(mood_id: 6, user: olivia, date: (Date.today - 6))
+UserMood.create(mood_id: 5, user: olivia, date: (Date.today - 5))
+UserMood.create(mood_id: 4, user: olivia, date: (Date.today - 4))
+UserMood.create(mood_id: 3, user: olivia, date: (Date.today - 3))
+UserMood.create(mood_id: 2, user: olivia, date: (Date.today - 2))
+UserMood.create(mood_id: 1, user: olivia, date: (Date.today - 1))
 
-# puts "gave Olivia 6 mood check-ins"
+puts "gave Olivia 6 mood check-ins"

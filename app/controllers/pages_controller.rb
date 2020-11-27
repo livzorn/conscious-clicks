@@ -23,9 +23,9 @@ class PagesController < ApplicationController
     @bookmark = Bookmark.new
     @user_mood_today = UserMood.where(user: current_user, date: Date.current)
     @user_mood_today = @user_mood_today.map {|u| u.mood.happiness_level}
-    if @user_mood_today.present?
-      @average_mood_today = Mood.find_by(happiness_level: @user_mood_today.sum / @user_mood_today.count)
-    end
+    # if @user_mood_today.present?
+    #   @average_mood_today = Mood.find_by(happiness_level: @user_mood_today.sum / @user_mood_today.count)
+    # end
     avg_mood_for_weekdays
   end
 

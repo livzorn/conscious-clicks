@@ -14,15 +14,14 @@
   margin: 0 auto;
   padding-top: 5vh;
   display: flex;
-  a{
-    color:black;
-  }
   a:hover {
     text-decoration: none;
   }
-
 }
 
+.stats {
+  margin-top: 125px;
+}
 
 .user_info {
   text-align: center;
@@ -30,20 +29,19 @@
 }
 
 .avatar-large {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border: 3px solid white;
 }
 
 .user-name {
   font-size: 40px;
-  margin: 16px auto 48px;
+  margin: 16px auto 30px;
   color: white;
   font-family: Montserrat;
 }
 
 .dashboard-buttons {
-  margin-top: 50px;
   display: flex;
   justify-content: space-around;
 }
@@ -55,6 +53,19 @@
 .dashboard-right {
   width: 40vw;
   margin-left: 40px;
+}
+
+.my-messages {
+  text-align: center;
+}
+
+.grid-message-sets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  p {
+    font-family: "Montserrat";
+    font-size: 18px;
+  }
 }
 
 .dropbtn {
