@@ -16,15 +16,20 @@
         <div class="homepage-buttons">
           <div class="dropdown">
             <button class="btn-homepage">Mood Check-in</button>
-            <div class="dropdown-content">
+            <div class="dropdown-content dropdown-content-moods text-center p-3">
               <%= simple_form_for @user_mood do |f| %>
-                <%= f.association :mood, as: :radio_buttons, label_method: :emoji %>
-                <%= f.submit 'Submit'  %>
+                <%= f.association :mood,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'}, label: false, label_method: :emoji %>
+
+                <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
               <% end %>
             </div>
           </div>
           <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage' %>
-          <%= button_to "logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
         </div>
 
       </div>

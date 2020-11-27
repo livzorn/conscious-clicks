@@ -21,11 +21,11 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @bookmark = Bookmark.new
-    @user_mood_today = UserMood.where(user: current_user, date: Date.current)
-    @user_mood_today = @user_mood_today.map {|u| u.mood.happiness_level}
-    if @user_mood_today.present?
-      @average_mood_today = Mood.find_by(happiness_level: @user_mood_today.sum / @user_mood_today.count)
-    end
+    # @user_mood_today = UserMood.where(user: current_user, date: Date.current)
+    # @user_mood_today = @user_mood_today.map {|u| u.mood.happiness_level}
+    # if @user_mood_today.present?
+    #   @average_mood_today = Mood.find_by(happiness_level: @user_mood_today.sum / @user_mood_today.count)
+    # end
     avg_mood_for_weekdays
   end
 
@@ -41,11 +41,11 @@ class PagesController < ApplicationController
 
   def avg_mood(day)
     moods = UserMood.where(user: current_user, date: day)
-    if moods
+    if moods.present?
       happiness_levels = moods.map {|u| u.mood.happiness_level}
-      average_mood = Mood.find_by(happiness_level: happiness_levels.sum / @user_mood_today.count)
+      average_mood = Mood.find_by(happiness_level: happiness_levels.sum / moods.count)
     else
-      average_mood = ""
+      average_mood = nil
     end
     average_mood
   end
