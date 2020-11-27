@@ -21,13 +21,23 @@
     <div class="dashboard-right">
 
       <div class="card-dashboard">
-        <p class="text-center">Calendar</p>
-        <% (Date::DAYNAMES[1..-1] << Date::DAYNAMES.first).each_with_index do |day, index|  %>
-          <div class="weekday">
-            <%= day %>
-            <%= @average_mood_today&.emoji %>
-          </div>
-        <% end %>
+        <p class="text-center">Mood Calendar</p>
+        <div class="grid-calendar">
+          <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= (Date.today - 5).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= (Date.today - 4).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= (Date.today - 3).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= (Date.today - 2).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= (Date.today - 1).strftime("%A")[0..2] %> </p>
+          <p class="weekday"> <%= Date.today.strftime("%A")[0..2] %> </p>
+          <p> <%= @minus_six %> </p>
+          <p> <%= @minus_five %> </p>
+          <p> <%= @minus_four %> </p>
+          <p> <%= @minus_three %> </p>
+          <p> <%= @minus_two %> </p>
+          <p> <%= @minus_one %> </p>
+          <p> <%= @today %> </p>
+        </div>
       </div>
 
 
@@ -83,10 +93,6 @@
         </div>
 
 
-      </div>
-
-      <div class="card-dashboard">
-         <p class="text-center">My Message sets</p>
       </div>
 
     </div>

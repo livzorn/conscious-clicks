@@ -26,6 +26,7 @@ class PagesController < ApplicationController
     if @user_mood_today.present?
       @average_mood_today = Mood.find_by(happiness_level: @user_mood_today.sum / @user_mood_today.count)
     end
+    avg_mood_for_weekdays
   end
 
   def save_goal
@@ -36,6 +37,27 @@ class PagesController < ApplicationController
     set_daily_message
     @treat = grab_a_treat
     redirect_to root_path
+  end
+
+  def avg_mood(day)
+    moods = UserMood.where(user: current_user, date: day)
+    if moods
+      happiness_levels = moods.map {|u| u.mood.happiness_level}
+      average_mood = Mood.find_by(happiness_level: happiness_levels.sum / @user_mood_today.count)
+    else
+      average_mood = ""
+    end
+    average_mood
+  end
+
+  def avg_mood_for_weekdays
+    @today = avg_mood(Date.today)&.emoji
+    @minus_one = avg_mood(Date.today - 1)&.emoji
+    @minus_two = avg_mood(Date.today - 2)&.emoji
+    @minus_three = avg_mood(Date.today - 3)&.emoji
+    @minus_four = avg_mood(Date.today - 4)&.emoji
+    @minus_five = avg_mood(Date.today - 5)&.emoji
+    @minus_six = avg_mood(Date.today - 6)&.emoji
   end
 
   def landing
