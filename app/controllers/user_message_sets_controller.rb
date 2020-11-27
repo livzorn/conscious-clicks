@@ -4,14 +4,10 @@ class UserMessageSetsController < ApplicationController
     current_user.user_message_sets.destroy_all
     if params[:user_message_set]
       params[:user_message_set][:message_set_id].each do |message_set_id|
-        @user_message_set = UserMessageSet.new(message_set_id: message_set_id, user_id: current_user.id)
+        @user_message_set = UserMessageSet.create(message_set_id: message_set_id, user_id: current_user.id)
       end
     end
-    if @user_message_set.save!
-      redirect_to root_path
-    else
-      render 'quiz'
-    end
+    redirect_to dashboard_path
   end
   # changed nq 19/11
 
