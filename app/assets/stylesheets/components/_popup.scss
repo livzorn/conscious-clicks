@@ -1,0 +1,39 @@
+.overlay {
+    position:fixed;
+    display:none;
+
+    /* color with alpha channel */
+    background-color: rgba(0, 0, 0, 0.7); /* 0.7 = 70% opacity */
+
+    /* stretch to screen edges */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.mood-icons {
+  font-size: 40px;
+  padding: 32px;
+  background-color: white;
+  border-radius: 30px;
+  width: 450px;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  p {
+    font-size: 24px;
+  }
+  input {
+    width: 300px;
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
+    background-color: #A6B7FE;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+  }
+}

@@ -19,3 +19,32 @@
   color: white;
   margin-top: 50px;
 }
+
+button {
+  border: none;
+  outline:none;
+}
+
+button:focus {
+  border: none;
+  outline:none;
+}
+
+.btn-create {
+  background-color: #A5B9FF;
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat";
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-top: 40px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    box-shadow: rgba(166, 184, 255, 0.85) 0px 1px 8px;
+    transition-property: all;
+    transition-duration: .3s
+  }
+}

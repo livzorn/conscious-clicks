@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
     set_daily_message
     show_typeboxes
-    grab_a_treat
+    @treat = grab_a_treat
   end
 
   def quiz
@@ -34,15 +34,17 @@ class PagesController < ApplicationController
     @goal.save
     show_typeboxes
     set_daily_message
-    render 'home'
+    @treat = grab_a_treat
+    redirect_to root_path
   end
 
   def landing
   end
 
   def grab_a_treat
-    treats = ['https://www.youtube.com/watch?v=ynLpZGegiJE', 'https://www.sdzsafaripark.org/giraffe-cam', 'https://www.youtube.com/watch?v=91wX0NRjJqg']
-    @treat = treats.sample
+    treats = ['https://www.pixelthoughts.co/', "https://www.catlinseaviewsurvey.com/raja-ampat-second-dive",
+      "https://www.google.com/search?q=unlikely+animal+friends&sxsrf=ALeKk01Wjxzu9x4QoKlugNLRQVWGuRbqlA:1606438391519&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjC7retwaHtAhWKY8AKHVq_A6UQ_AUoAXoECAUQAw&biw=1440&bih=728"]
+    treats.sample
   end
 
   def refresh_message

@@ -1,24 +1,46 @@
-.avatar-large {
-  height: 100px;
-  width: 100px;
-}
-.container-dashboard {
-  width: 70vw;
-  margin: 0 auto;
-  display: flex;
-}
-.dashboard-left {
-  width: 30vw;
-}
-.dashboard-right {
-  width: 40vw;
-  margin-left: 40px;
-}
-
-
 .dashboard-background {
   background-color: #A5B8FF;
   height: 100vh;
+}
+
+.container-dashboard {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 5vh;
+  display: flex;
+}
+
+.user_info {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.avatar-large {
+  height: 200px;
+  width: 200px;
+  border: 3px solid white;
+}
+
+.user-name {
+  font-size: 40px;
+  margin: 16px auto 48px;
+  color: white;
+  font-family: Montserrat;
+}
+
+.dashboard-buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard-left {
+  width: 30vw;
+}
+
+.dashboard-right {
+  width: 40vw;
+  margin-left: 40px;
 }
 
 .dropbtn {
