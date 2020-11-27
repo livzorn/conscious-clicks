@@ -11,13 +11,19 @@ Mood.destroy_all
 #   "I choose what I become",
 #   "I’ll let go of things I can’t control",])
 
+
 ads = MessageSet.create(theme: "Advertising",
   messages: ["I am too smart to be brainwashed by ads",
   "I won’t be tricked into buying things I don’t need",
-  "How are ads trying to affect me today?",
-  "What are algorithms assuming about me?",
-  "When I see an ad, I take a deep breath and ignore it.",
   "Do I realllly need that thing I want to buy?"])
+
+# ads = MessageSet.create(theme: "Advertising",
+#   messages: ["I am too smart to be brainwashed by ads",
+#   "I won’t be tricked into buying things I don’t need",
+#   "How are ads trying to affect me today?",
+#   "What are algorithms assuming about me?",
+#   "When I see an ad, I take a deep breath and ignore it.",
+#   "Do I realllly need that thing I want to buy?"])
 
 exams = MessageSet.create(theme: "Deadlines",
   messages: ["A goal is a dream with a deadline.",
@@ -27,12 +33,15 @@ exams = MessageSet.create(theme: "Deadlines",
     "Either you run the day or the day runs you.",])
 
 social = MessageSet.create(theme: "Social Media",
-  messages: ["Spend a few hours without your phone today.",
-    "No one's life is as perfect as it seems on Instagram.",
-    "Resist the instinct to click on Instagram.",
-    "I won't compare myself to strangers on the internet.",
-    "Stop scrolling and enjoy being alive!",
-    "Will checking social media make me happier today?"])
+  messages: ["I won't compare myself to strangers on the internet."])
+
+# social = MessageSet.create(theme: "Social Media",
+#   messages: ["Spend a few hours without your phone today.",
+#     "No one's life is as perfect as it seems on Instagram.",
+#     "Resist the instinct to click on Instagram.",
+#     "I won't compare myself to strangers on the internet.",
+#     "Stop scrolling and enjoy being alive!",
+#     "Will checking social media make me happier today?"])
 
 beauty = MessageSet.create(theme: "Beauty Standards",
   messages: ["My imperfections are what make me perfect.",
