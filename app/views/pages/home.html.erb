@@ -1,22 +1,9 @@
 <div class="homepage-background">
-  <div class="mood-icons hidden-mood">
-    <p>How are you feeling?</p>
-    <i class="fas fa-grin-beam mood-choice" style="color:#B08CFF"></i>
-    <i class="fas fa-grin" style="color:#70D3FF"></i>
-    <i class="fas fa-smile mood-choice" style="color:#8EFF9B"></i>
-    <i class="fas fa-meh mood-choice" style="color:#ffe62d"></i>
-    <i class="fas fa-frown mood-choice" style="color:#FFCC6F"></i>
-    <i class="fas fa-tired mood-choice" style="color:#FF7878"></i>
-    <input type="text" placeholder="in a few words...">
-    <br>
-    <button>save</button>
-  </div>
   <div class="container-homepage">
     <div class="homepage-top">
       <div class="homepage-left">
 
         <h2 class="main-message"><%= current_user.current_message %></h2>
-
 
         <div class="homepage-bookmarks">
           <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>
@@ -27,7 +14,7 @@
 
         <div class="homepage-buttons">
           <div class="dropdown">
-            <button class="btn-homepage">Mood Check-in</button>
+            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalLong">Mood Check-in</button>
             <div class="dropdown-content dropdown-content-moods text-center p-3">
               <%= simple_form_for @user_mood do |f| %>
                 <%= f.association :mood,

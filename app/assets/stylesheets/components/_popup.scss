@@ -9,7 +9,7 @@
   top: 30%;
   left: 35%;
   z-index: 1;
-  display: none;
+  // position: relative;
   p {
     font-size: 24px;
   }
@@ -24,4 +24,17 @@
     border-radius: 4px;
     padding: 5px 10px;
   }
+}
+
+.invisible {
+  display: none;
+}
+
+#mood-exit {
+  // position: absolute;
+  top: 20px;
+  right: 30px;
+  color: $main-purple;
+  font-size: 20px;
+  font-family: "Montserrat";
 }
