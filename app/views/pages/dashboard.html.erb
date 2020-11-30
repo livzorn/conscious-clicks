@@ -7,6 +7,7 @@
         <h3 class="user-name"><%= current_user.name%></h3>
         <div class="dashboard-buttons">
           <%= link_to 'Home', root_path, class: 'btn-homepage' %>
+          <%= link_to "Messages", community_path, class: 'btn-homepage' %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
         </div>
       </div>

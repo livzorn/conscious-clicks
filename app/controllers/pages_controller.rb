@@ -31,6 +31,7 @@ class PagesController < ApplicationController
   end
 
   def community
+    @admin = User.find_by(name: "Conscious Clicks")
   end
 
   def save_goal

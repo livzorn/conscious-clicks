@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   resources :user_moods, only: [:new, :create]
   resources :user do
     resources :bookmarks, only: [:new, :create]
-    resources :message_sets, only: [:new, :create, :edit, :update, :destroy]
+    resources :message_sets, only: [:new, :create]
   end
   resources :bookmarks, only: [:edit, :destroy]
+  resources :message_sets, only: [:edit, :update, :destroy]
 end

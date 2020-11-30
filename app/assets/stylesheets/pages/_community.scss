@@ -1,0 +1,59 @@
+.community-content-container {
+  height: 76vh;
+  width: 60vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4px;
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.community-top {
+  width: 65vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 16px;
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+  }
+}
+
+.my-message-set {
+  display: flex;
+  justify-content: space-between;
+}
+
+.set-info {
+  display: flex;
+  p {
+    font-size: 12px;
+  }
+}
+
+.messages-list {
+  li {
+    font-size: 16px;
+  }
+}
+
+.manage-buttons {
+  display: flex;
+  margin-left: 48px;
+  margin-bottom: 16px;
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    margin-right: 16px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  p {
+    font-size: 12px;
+    margin-right: 16px;
+  }
+}

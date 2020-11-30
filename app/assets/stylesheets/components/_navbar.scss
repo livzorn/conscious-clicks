@@ -1,12 +1,23 @@
-.navbar-lewagon {
+.community-navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  color: white;
+  font-family: "Montserrat";
+  padding: 16px 32px;
+  background-color: $main-purple;
+  h1 {
+    font-size: 36px;
+    font-family: "Montserrat";
+    font-weight: 300;
+  }
+  a {
+    font-size: 30px;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 300;
+    margin-right: 32px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }

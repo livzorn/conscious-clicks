@@ -1,3 +1,38 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">How are you feeling?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mood-icons" id="mood-form">
+          <!-- <i class="far fa-times-circle" id="mood-exit"></i> -->
+          <!-- <i class="fas fa-grin-beam mood-choice" style="color:#B08CFF"></i>
+          <i class="fas fa-grin" style="color:#70D3FF"></i>
+          <i class="fas fa-smile mood-choice" style="color:#8EFF9B"></i>
+          <i class="fas fa-meh mood-choice" style="color:#ffe62d"></i>
+          <i class="fas fa-frown mood-choice" style="color:#FFCC6F"></i>
+          <i class="fas fa-tired mood-choice" style="color:#FF7878"></i> -->
+          <%= simple_form_for @user_mood do |f| %>
+            <%= f.association :mood,
+              as: :radio_buttons,
+              # collection_wrapper_tag: 'div',
+              # collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'}, label: false, label_method: :emoji %>
+
+            <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="homepage-background">
   <div class="container-homepage">
     <div class="homepage-top">
@@ -18,7 +53,7 @@
 
         <div class="homepage-buttons">
           <div class="dropdown">
-            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalLong">Mood Check-in</button>
+            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter"">Mood Check-in</button>
             <div class="dropdown-content dropdown-content-moods text-center p-3">
               <%= simple_form_for @user_mood do |f| %>
                 <%= f.association :mood,
