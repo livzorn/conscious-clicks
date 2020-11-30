@@ -13,7 +13,9 @@
   position: absolute;
   top: 0px;
   right: 12px;
-  color: $main-purple;
+  a {
+    color: $main-purple;
+  }
 }
 
 .bookmark-icon-container {
