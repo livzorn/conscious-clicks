@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login'
   get '/quiz', to: 'pages#quiz'
   get '/dashboard', to: 'pages#dashboard'
+  get '/community', to: 'pages#community'
 
   resources :goals, only: [:create], to: 'pages#save_goal'
   get '/goals', to: 'pages#home'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :user_moods, only: [:new, :create]
   resources :user do
     resources :bookmarks, only: [:new, :create]
+    resources :message_sets, only: [:new, :create, :edit, :update, :destroy]
   end
   resources :bookmarks, only: [:edit, :destroy]
 end
