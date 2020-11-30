@@ -35,6 +35,14 @@ const customMessageSave = () => {
   });
 };
 
+const togglePopup = () => {
+  const moodButton = document.getElementById('mood-check-in');
+  const moodForm = document.getElementById('mood-form');
+  moodButton.addEventListener('click', (event) => {
+    moodForm.classList.toggle('invisible');
+  });
+};
+
 document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
   littleGoalsSave();

@@ -1,8 +1,29 @@
 .bookmark-circle {
   max-width: 90px;
   max-height: 90px;
-  border: 4px solid #FFCD82;
+  border: 4px solid #white;
   border-radius: 100px;
   object-fit: cover;
-  opacity: 75%;
+  opacity: 50%;
+  transition: opacity 0.5s;
+  &:hover {
+    opacity: 75%;
+    transition: opacity 0.5s;
+  }
+}
+
+.bookmark-trash {
+  // margin-left: 26px;
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  a {
+    color: $main-purple;
+  }
+}
+
+.bookmark-icon-container {
+  position: relative;
+  margin: 0 8px;
 }

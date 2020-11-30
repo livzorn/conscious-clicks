@@ -67,3 +67,37 @@ button:focus {
     transition-duration: .3s
   }
 }
+
+#lollipop {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation-name: continuous_shake;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+  img:hover {
+    animation: shake 0.5s ease;
+  }
+}
+
+@keyframes continuous_shake {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  1% { transform: translate(0px, 0px) rotate(-2deg); }
+  2% { transform: translate(0px,2px) rotate(2deg); }
+  3% { transform: translate(2px, -4px) rotate(0deg); }
+  4% { transform: translate(4px, 0px) rotate(2deg); }
+  5% { transform: translate(0px, 4px) rotate(-2deg); }
+  6% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  20% { transform: translate(0px, 0px) rotate(-4deg); }
+  40% { transform: translate(0px,2px) rotate(4deg); }
+  60% { transform: translate(2px, -4px) rotate(0deg); }
+  80% { transform: translate(2px, 0px) rotate(4deg); }
+  90% { transform: translate(0px, 2px) rotate(-4deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+

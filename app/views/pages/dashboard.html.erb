@@ -11,10 +11,6 @@
         </div>
       </div>
 
-      <div class="card-dashboard stats">
-        <p class="text-center">Stats</p>
-        <p class="text-center">Your mood improved 77% this week!</p>
-      </div>
     </div>
 
     <div class="dashboard-right">
@@ -73,17 +69,23 @@
             </div>
           </div>
 
-          <div class="bookmarks-all d-flex">
+          <div class="bookmarks-all d-flex justify-content-center">
             <% current_user.bookmarks.each do |bookmark| %>
-              <div class="mr-4">
-                <%= link_to bookmark.link do%>
-                  <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "80px" %>
-                  <!--  <%= bookmark.name %> -->
-                <% end %>
-                <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="far fa-trash-alt"></i> </p>
-                <% end %>
+
+              <div class="bookmark-icon-container">
+                <div class="bookmark-icon mr-4">
+                  <%= link_to bookmark.link do%>
+                    <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "70px" %>
+                    <!--  <%= bookmark.name %> -->
+                  <% end %>
+                </div>
+                <div class="bookmark-trash">
+                  <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="far fa-times-circle"></i>
+                  <% end %>
+                </div>
               </div>
+
             <% end %>
           </div>
 

@@ -1,17 +1,3 @@
-.overlay {
-    position:fixed;
-    display:none;
-
-    /* color with alpha channel */
-    background-color: rgba(0, 0, 0, 0.7); /* 0.7 = 70% opacity */
-
-    /* stretch to screen edges */
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 .mood-icons {
   font-size: 40px;
   padding: 32px;
@@ -20,8 +6,10 @@
   width: 450px;
   text-align: center;
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 30%;
+  left: 35%;
+  z-index: 1;
+  // position: relative;
   p {
     font-size: 24px;
   }
@@ -36,4 +24,17 @@
     border-radius: 4px;
     padding: 5px 10px;
   }
+}
+
+.invisible {
+  display: none;
+}
+
+#mood-exit {
+  // position: absolute;
+  top: 20px;
+  right: 30px;
+  color: $main-purple;
+  font-size: 20px;
+  font-family: "Montserrat";
 }
