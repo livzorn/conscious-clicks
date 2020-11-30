@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_124327) do
+ActiveRecord::Schema.define(version: 2020_11_30_104945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_124327) do
     t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.boolean "public", default: false
+    t.index ["user_id"], name: "index_message_sets_on_user_id"
   end
 
   create_table "moods", force: :cascade do |t|
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_124327) do
 
   add_foreign_key "bookmarks", "users"
   add_foreign_key "goals", "users"
+  add_foreign_key "message_sets", "users"
   add_foreign_key "user_message_sets", "message_sets"
   add_foreign_key "user_message_sets", "users"
   add_foreign_key "user_moods", "moods"

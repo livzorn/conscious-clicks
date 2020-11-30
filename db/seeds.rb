@@ -3,6 +3,11 @@ UserMessageSet.destroy_all
 MessageSet.destroy_all
 Mood.destroy_all
 
+olivia = User.create!(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
+puts "Created user Olivia"
+
+conscious_clicks = User.create(name: "Conscious Clicks", email: "admin@consciousclicks.org", password: "lewagon")
+puts "Created user Conscious Clicks"
 
 # positive = MessageSet.create(theme: "Positive Affirmations",
 #   messages: ["I deserve wonderful things",
@@ -12,10 +17,16 @@ Mood.destroy_all
 #   "I’ll let go of things I can’t control",])
 
 
-ads = MessageSet.create(theme: "Advertising",
-  messages: ["I am too smart to be brainwashed by ads",
-  "I won’t be tricked into buying things I don’t need",
-  "Do I realllly need that thing I want to buy?"])
+ads = MessageSet.new(theme: "Advertising",
+  messages: ["Five words to ask before making any purchase, 'but what if I don't?'",
+  "IHow can you buy less stuff that you don't need?",
+  "Do I really need this? 7 things to ask yourself before you buy:"],
+  link: ["https://www.becomingminimalist.com/what-if-i-dont/",
+    "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
+    "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"
+  ])
+ads.user = conscious_clicks
+ads.save
 
 # ads = MessageSet.create(theme: "Advertising",
 #   messages: ["I am too smart to be brainwashed by ads",
@@ -25,15 +36,19 @@ ads = MessageSet.create(theme: "Advertising",
 #   "When I see an ad, I take a deep breath and ignore it.",
 #   "Do I realllly need that thing I want to buy?"])
 
-exams = MessageSet.create(theme: "Deadlines",
+exams = MessageSet.new(theme: "Deadlines",
   messages: ["A goal is a dream with a deadline.",
     "Never do tomorrow what you can do today.",
     "What will make today a win for you?",
     "Trust yourself, you know more than you think you do.",
     "Either you run the day or the day runs you.",])
+exams.user = conscious_clicks
+exams.save
 
-social = MessageSet.create(theme: "Social Media",
+social = MessageSet.new(theme: "Social Media",
   messages: ["I won't compare myself to strangers on the internet."])
+social.user = conscious_clicks
+social.save
 
 # social = MessageSet.create(theme: "Social Media",
 #   messages: ["Spend a few hours without your phone today.",
@@ -43,26 +58,32 @@ social = MessageSet.create(theme: "Social Media",
 #     "Stop scrolling and enjoy being alive!",
 #     "Will checking social media make me happier today?"])
 
-beauty = MessageSet.create(theme: "Beauty Standards",
+beauty = MessageSet.new(theme: "Beauty Standards",
   messages: ["My imperfections are what make me perfect.",
     "I'm beautiful as I am",
     "I am at peace with who I am",
     "There’s no one I’d rather be than me",
     "I won't let society choose my definition of beauty."])
+beauty.user = conscious_clicks
+beauty.save
 
-loneliness = MessageSet.create(theme: "Isolation",
+loneliness = MessageSet.new(theme: "Isolation",
   messages: ["Check in with someone you care about.",
     "Who could you reach out to today?",
     "Am I intentionally or accidentally isolating myself?",
     "Performing small acts of kindness release endorphins that improve our mood.",])
+loneliness.user = conscious_clicks
+loneliness.save
 
-climate = MessageSet.create(theme: "Climate change",
+climate = MessageSet.new(theme: "Climate change",
   messages: ["What's one small thing I can do to help the environment?",
     "If it's wrapped in plastic, I'll think twice about buying it.",
     "If I can, I'll walk instead of driving.",
     "How can I produce less trash today?"])
+climate.user = conscious_clicks
+climate.save
 
-gender = MessageSet.create(theme: "Gender Roles",
+gender = MessageSet.new(theme: "Gender Roles",
   messages: ["blah blah blah Traditional gender roles 1.",
     "blah blah blah Traditional gender roles 2.",
     "blah blah blah Traditional gender roles 3.",
@@ -70,11 +91,15 @@ gender = MessageSet.create(theme: "Gender Roles",
     "blah blah blah Traditional gender roles 5.",
     "blah blah blah Traditional gender roles 6.",
     "blah blah blah Traditional gender roles 7.",])
+gender.user = conscious_clicks
+gender.save
 
-fake = MessageSet.create(theme: "Fake news",
+fake = MessageSet.new(theme: "Fake news",
   messages: ["Do you know and trust the source of the article you're reading?",
     "Full Fact and Snopes are two of many great fact-checking websites.",
     "Did you read beyond the headline of the article?",])
+fake.user = conscious_clicks
+fake.save
 
 puts "Created Message Sets"
 
@@ -86,10 +111,6 @@ puts "Created Message Sets"
 #     "blah blah blah Time management 5.",
 #     "blah blah blah Time management 6.",
 #     "blah blah blah Time management 7.",])
-
-olivia = User.create!(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
-
-puts "Created user Olivia"
 
 UserMessageSet.create(user: User.first, message_set: MessageSet.first)
 UserMessageSet.create(user: User.last, message_set: MessageSet.last)
