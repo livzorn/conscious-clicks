@@ -38,6 +38,39 @@
 
       <div class="card-dashboard my-messages">
         <p class="text-center">My Message sets</p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn-create" data-toggle="modal" data-target="#exampleModalCenter">
+            Create your own
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Create your own Message Set</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="newmessage_container p-1">
+                    <%= simple_form_for [ @user, @message_set ] do |f| %>
+                    <%= f.input :theme %>
+                    <%= f.input :messages %>
+                    <%= f.input :link %>
+                    <%= f.input :public %>
+                    <%= f.submit "add", class: "btn btn-primary" %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="grid-message-sets">
             <% current_user.message_sets.each do |message_set| %>
               <p> <%= message_set.theme %> </p>
