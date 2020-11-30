@@ -6,10 +6,14 @@
         <h2 class="main-message"><%= current_user.current_message %></h2>
 
         <div class="homepage-bookmarks">
-          <%= image_tag("gmail-screenshot.png", class: "bookmark-circle") %>
-          <%= image_tag("google-screenshot.png", class: "bookmark-circle") %>
-          <%= image_tag("kitt-screenshot.png", class: "bookmark-circle") %>
-          <%= image_tag("rubydocs-screenshot.png", class: "bookmark-circle") %>
+          <% current_user.bookmarks.each do |bookmark| %>
+
+            <%= link_to bookmark.link do%>
+              <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon bookmark-circle" %>
+              <!--  <%= bookmark.name %> -->
+            <% end %>
+
+          <% end %>
         </div>
 
         <div class="homepage-buttons">
