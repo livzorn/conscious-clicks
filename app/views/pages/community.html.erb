@@ -15,13 +15,12 @@
 <div class="community-content-container">
 
   <div class="tab">
-    <div><button class="tablinks" id="defaultOpen" onclick="openTab(event, 'my-custom-sets')">my custom sets</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'by-conscious-clicks')">by Conscious Clicks</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'by-other-clickers')">by other clickers</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'my-favorites')">my favorites</button></div>
+    <div><button class="tablinks" id="defaultOpen">my custom sets</button></div>
+    <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
+    <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
   </div>
 
-  <div id="my-custom-sets" class="tabcontents">
+  <div id="my-custom-sets" class="tabcontent">
 
     <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set, index| %>
 
@@ -29,10 +28,12 @@
         <div class="set-info">
           <i class="fas fa-chevron-circle-down btn-show mt-1 show-btn<%= index %>"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
-          <% message_set.public ? @published = "published" : @published = "unpublished" %>
+          <% message_set.public ? @published = "published" : @published = "private" %>
           <p class="ml-2 mt-1"> <%= @published %> </p>
         </div>
-        <i class="fas fa-plus-circle btn-add"></i>
+        <%=link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
+            <i class="fas fa-plus-circle btn-add"></i>
+        <%end%>
       </div>
       <div class="messages-list messages-list<%= index %>">
         <ul>
@@ -43,8 +44,8 @@
       </div>
       <div class="manage-buttons">
         <p>edit</p>
-        <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
-        <p><%= @publish %></p>
+        <% message_set.public ? @publish = "make private" : @publish = "publish" %>
+        <p><%= link_to @publish, publish_message_set_path(message_set), method: :patch %></p>
         <p>delete</p>
       </div>
     <% end %>
@@ -59,7 +60,9 @@
           <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
         </div>
-        <i class="fas fa-plus-circle btn-add"></i>
+        <%=link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
+            <i class="fas fa-plus-circle btn-add"></i>
+        <%end%>
       </div>
       <div class="messages-list">
         <ul>
@@ -71,7 +74,7 @@
     <% end %>
   </div>
 
-  <div id="by-conscious-clicks" class="tabcontent">
+  <div id="by-other-clickers" class="tabcontent">
 
     <% MessageSet.where.not(user_id: @admin.id).where.not(user_id: current_user.id).where(public: true).each do |message_set| %>
 
@@ -94,7 +97,3 @@
 
 </div>
 
-<script>
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
