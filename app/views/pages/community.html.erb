@@ -123,7 +123,7 @@
                 <%= simple_form_for @message_set do |f| %>
                   <div class="form-inputs">
                     <%= f.input :theme, label: "theme" %>
-                    <%= f.input :messages, label: "add your messages" %>
+                    <%= f.input :messages, as: :string, label: "add your messages" %>
                     <%= f.input :link, label: "add your links" %>
                   </div>
 
