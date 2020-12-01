@@ -20,5 +20,7 @@ Rails.application.routes.draw do
     resources :message_sets, only: [:new, :create]
   end
   resources :bookmarks, only: [:edit, :destroy]
-  resources :message_sets, only: [:edit, :update, :destroy]
+  resources :message_sets, only: [:edit, :update, :destroy] do
+    patch "publish", to: "message_sets#publish", on: :member
+  end
 end
