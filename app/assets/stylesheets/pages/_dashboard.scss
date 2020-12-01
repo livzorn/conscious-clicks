@@ -112,3 +112,16 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+.newbookmark_container {
+  background-color:#98abf5;
+  color:white;
+  font-family:"Montserrat";
+  font-size: 20px;
+}
+.btn-addbookmark {
+  margin-top: 10px;
+  background-color: white;
+  color:#98abf5;
+  border-style: none;
+}

@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   resources :message_sets, only: [:edit, :update, :destroy] do
     post '/add_one', to: 'user_message_sets#add_one'
     patch "publish", to: "message_sets#publish", on: :member
+    delete '/take_one', to: 'user_message_sets#take_one'
   end
 end
