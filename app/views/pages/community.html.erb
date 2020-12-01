@@ -28,7 +28,7 @@
         <div class="set-info">
           <i class="fas fa-chevron-circle-down btn-show mt-1 show-btn<%= index %>"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
-          <% message_set.public ? @published = "published" : @published = "unpublished" %>
+          <% message_set.public ? @published = "published" : @published = "private" %>
           <p class="ml-2 mt-1"> <%= @published %> </p>
         </div>
         <%=link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
@@ -44,8 +44,8 @@
       </div>
       <div class="manage-buttons">
         <p>edit</p>
-        <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
-        <p><%= @publish %></p>
+        <% message_set.public ? @publish = "make private" : @publish = "publish" %>
+        <p><%= link_to @publish, publish_message_set_path(message_set), method: :patch %></p>
         <p>delete</p>
       </div>
     <% end %>

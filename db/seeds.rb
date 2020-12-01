@@ -26,8 +26,7 @@ ads = MessageSet.new(theme: "Advertising",
   "'Do I really need this?' 7 things to ask yourself before you buy:"],
   link: ["https://www.becomingminimalist.com/what-if-i-dont/",
     "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
-    "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"]
-)
+    "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"])
 ads.user = conscious_clicks
 ads.save!
 
@@ -39,19 +38,25 @@ ads.save!
 #   "When I see an ad, I take a deep breath and ignore it.",
 #   "Do I realllly need that thing I want to buy?"])
 
-# exams = MessageSet.new(theme: "Deadlines",
-#   messages: ["A goal is a dream with a deadline.",
-#     "Never do tomorrow what you can do today.",
-#     "What will make today a win for you?",
-#     "Trust yourself, you know more than you think you do.",
-#     "Either you run the day or the day runs you."])
-# exams.user = conscious_clicks
-# exams.save
+exams = MessageSet.new(theme: "Deadlines",
+  messages: ["Forgive yourself for procrastinating, we all do it!",
+    "You know more than you think!",
+    "What will make today a win for you?"],
+  link: ["https://medium.com/swlh/its-time-to-forgive-your-procrastination-4cadc7bb3c44",
+    "https://www.scientificamerican.com/article/you-know-more-than-you-think/",
+    "https://www.success.com/5-rules-to-win-today-and-every-day/"])
+exams.user = conscious_clicks
+exams.save
 
-# social = MessageSet.new(theme: "Social Media",
-#   messages: ["I won't compare myself to strangers on the internet."])
-# social.user = conscious_clicks
-# social.save
+social = MessageSet.new(theme: "Social Media",
+  messages: ["What could you achieve today if you spent less time on your phone?",
+    "No one's life is as perfect as their Instagram feed!",
+    "What other websites could I check instead of social media?"],
+  link: ["https://medium.com/personal-growth-lab/15-tips-to-spend-less-time-on-your-phone-cdbdc63a5a72",
+    "https://nextwithnita.com/no-ones-life-is-as-perfect-as-their-instagram-feed/",
+    "https://www.lifehack.org/318009/25-websites-other-than-social-media-upgrade-your-life"])
+social.user = conscious_clicks
+social.save
 
 # social = MessageSet.create(theme: "Social Media",
 #   messages: ["Spend a few hours without your phone today.",
@@ -61,48 +66,55 @@ ads.save!
 #     "Stop scrolling and enjoy being alive!",
 #     "Will checking social media make me happier today?"])
 
-# beauty = MessageSet.new(theme: "Beauty Standards",
-#   messages: ["My imperfections are what make me perfect.",
-#     "I'm beautiful as I am",
-#     "I am at peace with who I am",
-#     "There’s no one I’d rather be than me",
-#     "I won't let society choose my definition of beauty."])
-# beauty.user = conscious_clicks
-# beauty.save
+beauty = MessageSet.new(theme: "Beauty Standards",
+  messages: ["Follow Leonard Cohen's advice - Champion your imperfections!",
+    "I will continue loving myself everyday regardless of what society thinks!",
+    "Focus on being better looking on the inside not the outside!"],
+  link: ["https://onbeing.org/blog/leonard-cohen-champion-of-our-cracked-imperfections/",
+    "https://medium.com/@ResilientBella/not-letting-society-choose-control-how-i-live-my-life-f59cc3e5f80d",
+    "https://medium.com/swlh/why-you-must-focus-on-being-better-looking-on-the-inside-than-the-outside-310d174e408"])
+beauty.user = conscious_clicks
+beauty.save
 
-# loneliness = MessageSet.new(theme: "Isolation",
-#   messages: ["Check in with someone you care about.",
-#     "Who could you reach out to today?",
-#     "Am I intentionally or accidentally isolating myself?",
-#     "Performing small acts of kindness release endorphins that improve our mood."])
-# loneliness.user = conscious_clicks
-# loneliness.save
+loneliness = MessageSet.new(theme: "Isolation",
+  messages: ["Performing random acts of kindness can improve your well-being!",
+    "What creative and inspiring acts can you do when feeling lonely?",
+    "Who could you reach out to today?"],
+  link: ["https://positivepsychology.com/random-acts-kindness/",
+    "https://www.keepinspiring.me/25-creative-and-surprising-things-to-do-when-you-feel-lonely/",
+    "https://happiful.com/how-to-reach-out-if-youre-feeling-lonely/"])
+loneliness.user = conscious_clicks
+loneliness.save
 
-# climate = MessageSet.new(theme: "Climate change",
-#   messages: ["What's one small thing I can do to help the environment?",
-#     "If it's wrapped in plastic, I'll think twice about buying it.",
-#     "If I can, I'll walk instead of driving.",
-#     "How can I produce less trash today?"])
-# climate.user = conscious_clicks
-# climate.save
+climate = MessageSet.new(theme: "Climate change",
+  messages: ["Being eco-friendly is often easier on your wallet!",
+    "If you can, how about walking instead of driving today?",
+    "What could you do today to reduce your plastic footprint?"],
+  link: ["https://greatist.com/happiness/ways-help-environment",
+    "http://www.energysavingsecrets.co.uk/walking.html",
+    "https://www.wwf.org.uk/updates/ten-tips-reduce-your-plastic-footprint"])
+climate.user = conscious_clicks
+climate.save
 
-# gender = MessageSet.new(theme: "Gender Roles",
-#   messages: ["blah blah blah Traditional gender roles 1.",
-#     "blah blah blah Traditional gender roles 2.",
-#     "blah blah blah Traditional gender roles 3.",
-#     "blah blah blah Traditional gender roles 4.",
-#     "blah blah blah Traditional gender roles 5.",
-#     "blah blah blah Traditional gender roles 6.",
-#     "blah blah blah Traditional gender roles 7."])
-# gender.user = conscious_clicks
-# gender.save
+gender = MessageSet.new(theme: "Gender Roles",
+  messages: ["Want to know how UNICEF is tackling gender stereotypes?",
+    "What kinds of non-binary genders exist?",
+    "The Trevor Project provides guidance and support to young LGBTQ people."],
+  link: ["https://www.unicef.org/innovation/stories/breaking-gender-stereotypes",
+    "https://www.outlife.org.uk/being-non-binary",
+    "https://www.thetrevorproject.org/trvr_support_center/trans-gender-identity/"])
+gender.user = conscious_clicks
+gender.save
 
-# fake = MessageSet.new(theme: "Fake news",
-#   messages: ["Do you know and trust the source of the article you're reading?",
-#     "Full Fact and Snopes are two of many great fact-checking websites.",
-#     "Did you read beyond the headline of the article?"])
-# fake.user = conscious_clicks
-# fake.save
+fake = MessageSet.new(theme: "Fake news",
+  messages: ["What is the right way to fight fake news?",
+    "What can you do to stop fake news and misinformation?",
+    "Resolve to reading news articles beyond the headline!"],
+  link: ["https://www.nytimes.com/2020/03/24/opinion/fake-news-social-media.html",
+    "https://www.bbc.co.uk/news/av/stories-46199347",
+    "https://medium.com/@emilyrosethorne6/we-need-to-start-reading-past-the-headline-but-not-for-the-reasons-you-think-fc64ec53f77b"])
+fake.user = conscious_clicks
+fake.save
 
 puts "Created Message Sets"
 
