@@ -30,6 +30,16 @@ class UserMessageSetsController < ApplicationController
     #link to by default is a get so it has to be a post
   end
 
+  def take_one
+    @message_set = MessageSet.find(params[:message_set_id])
+
+    user_message_set = UserMessageSet.find_by( message_set: @message_set, user: current_user)
+
+    user_message_set.destroy
+
+    redirect_to community_path
+
+  end
 
 private
 def user_message_params
