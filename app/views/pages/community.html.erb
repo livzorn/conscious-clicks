@@ -1,1 +1,100 @@
-<h1>Community</h1>
+<div class="community-navbar">
+  <h1>Conscious Clicks Community</h1>
+  <div class="navbar-buttons">
+    <%= link_to "Home", root_path %>
+    <%= link_to "Dashboard", dashboard_path %>
+    <img class="avatar" alt="avatar" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
+  </div>
+</div>
+
+<div class="community-top">
+  <h2>Explore message sets</h2>
+  <h2>search bar</h2>
+</div>
+
+<div class="community-content-container">
+
+  <div class="tab">
+    <div><button class="tablinks" id="defaultOpen" onclick="openTab(event, 'my-custom-sets')">my custom sets</button></div>
+    <div><button class="tablinks" onclick="openTab(event, 'by-conscious-clicks')">by Conscious Clicks</button></div>
+    <div><button class="tablinks" onclick="openTab(event, 'by-other-clickers')">by other clickers</button></div>
+    <div><button class="tablinks" onclick="openTab(event, 'my-favorites')">my favorites</button></div>
+  </div>
+
+  <div id="my-custom-sets" class="tabcontents">
+
+    <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set, index| %>
+
+      <div class="my-message-set" id="defaultOpen">
+        <div class="set-info">
+          <i class="fas fa-chevron-circle-down btn-show mt-1 show-btn<%= index %>"></i>
+          <h3 class="ml-2"> <%= message_set.theme %> </h3>
+          <% message_set.public ? @published = "published" : @published = "unpublished" %>
+          <p class="ml-2 mt-1"> <%= @published %> </p>
+        </div>
+        <i class="fas fa-plus-circle btn-add"></i>
+      </div>
+      <div class="messages-list messages-list<%= index %>">
+        <ul>
+        <% message_set.messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="manage-buttons">
+        <p>edit</p>
+        <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
+        <p><%= @publish %></p>
+        <p>delete</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="by-conscious-clicks" class="tabcontent">
+
+    <% MessageSet.where(user_id: @admin.id).each do |message_set| %>
+
+      <div class="my-message-set">
+        <div class="set-info">
+          <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
+          <h3 class="ml-2"> <%= message_set.theme %> </h3>
+        </div>
+        <i class="fas fa-plus-circle btn-add"></i>
+      </div>
+      <div class="messages-list">
+        <ul>
+        <% message_set.messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="by-conscious-clicks" class="tabcontent">
+
+    <% MessageSet.where.not(user_id: @admin.id).where.not(user_id: current_user.id).where(public: true).each do |message_set| %>
+
+      <div class="my-message-set">
+        <div class="set-info">
+          <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
+          <h3 class="ml-2"> <%= message_set.theme %> </h3>
+        </div>
+        <i class="fas fa-plus-circle btn-add"></i>
+      </div>
+      <div class="messages-list">
+        <ul>
+        <% message_set.messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

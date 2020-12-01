@@ -31,6 +31,17 @@ class MessageSetsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def publish
+    @message_set = MessageSet.find(params[:id])
+    if @message_set.public?
+      @message_set.public = false
+    else
+      @message_set.public = true
+    end
+    @message_set.save!
+    redirect_to community_path
+  end
+
   private
   def message_set_params
     params.require(:message_set).permit(:theme, :messages, :link)
