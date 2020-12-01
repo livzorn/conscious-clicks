@@ -23,11 +23,15 @@
     font-family: "Montserrat";
     background-color: transparent;
     color: white;
+    resize:none;
   }
   textarea:focus {
     outline: none;
   }
 }
+textarea {
+    resize: none;
+  }
 
 .goals {
   border: 0.5px solid white;
