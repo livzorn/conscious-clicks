@@ -84,6 +84,7 @@ document.addEventListener('turbolinks:load', () => {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
   document.getElementById("defaultOpen").addEventListener('click', (event) => {
     openTab(event, 'my-custom-sets');
   });
@@ -93,6 +94,10 @@ document.addEventListener('turbolinks:load', () => {
   document.getElementById("byOtherClickers").addEventListener('click', (event) => {
     openTab(event, 'by-other-clickers');
   });
+  document.getElementById("addSet").addEventListener('click', (event) => {
+    openTab(event, 'add-set');
+  });
+
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 });

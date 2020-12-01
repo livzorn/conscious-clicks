@@ -18,36 +18,130 @@
     <div><button class="tablinks" id="defaultOpen">my custom sets</button></div>
     <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
     <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
+    <div><button class="tablinks" id="addSet">Make your own</button></div>
   </div>
 
   <div id="my-custom-sets" class="tabcontent">
 
-    <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set, index| %>
+    <% MessageSet.where(user_id: current_user.id).each do |message_set| %>
 
       <div class="my-message-set" id="defaultOpen">
         <div class="set-info">
-          <i class="fas fa-chevron-circle-down btn-show mt-1 show-btn<%= index %>"></i>
+          <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
-          <% message_set.public ? @published = "published" : @published = "unpublished" %>
+          <% message_set.public ? @published = "published" : @published = "private" %>
           <p class="ml-2 mt-1"> <%= @published %> </p>
         </div>
-        <i class="fas fa-plus-circle btn-add"></i>
+
+        <% if current_user.message_sets.include?(message_set) %>
+          <%= link_to message_set_take_one_path(message_set.id), method: :delete, data: { confirm: "removing these messages from your homepage" } do %>
+            <i class="fas fa-minus-circle btn-minus"></i>
+          <% end %>
+        <% else %>
+          <%= link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
+                <i class="fas fa-plus-circle btn-add"></i>
+          <% end %>
+       <% end %>
       </div>
-      <div class="messages-list messages-list<%= index %>">
+
+      <div class="messages-list">
         <ul>
         <% message_set.messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
       </div>
+
       <div class="manage-buttons">
-        <p>edit</p>
-        <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
-        <p><%= @publish %></p>
-        <p>delete</p>
+        <button class="btn-homepage" id="edit-set" type="button" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
+        <%= link_to "Edit", edit_message_set_path(message_set), class: "btn-edit"%>
+        <% message_set.public ? @publish = "make private" : @publish = "publish" %>
+        <p><%= link_to @publish, publish_message_set_path(message_set), method: :patch %></p>
+        <%= link_to message_set_path(message_set.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <p>Delete</p>
+        <% end %>
       </div>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="exampleModalLongTitle">Edit your message set</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-devise-form">
+
+                <div class="add_message_set">
+                  <div class="container">
+                    <div class="form-inputs">
+                      <%= simple_form_for message_set do |f| %>
+                        <div class="form-inputs">
+                          <%= f.input :theme, label: "theme" %>
+                          <%= f.input :messages, label: "add your messages" %>
+                          <%= f.input :link, label: "add your links" %>
+                        </div>
+
+                        <div class="form-actions">
+                          <div class="book">
+                            <%= f.submit "add your message set", class: "btn-pink"%>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     <% end %>
+
   </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">Edit your message set</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-devise-form">
+          <h2 >Edit your message_set</h2>
+
+          <div class="add_message_set">
+            <div class="container">
+              <div class="form-inputs">
+                <%= simple_form_for @message_set do |f| %>
+                  <div class="form-inputs">
+                    <%= f.input :theme, label: "theme" %>
+                    <%= f.input :messages, label: "add your messages" %>
+                    <%= f.input :link, label: "add your links" %>
+                  </div>
+
+                  <div class="form-actions">
+                    <div class="book">
+                      <%= f.submit "add your message set", class: "btn-pink"%>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
   <div id="by-conscious-clicks" class="tabcontent">
 
@@ -58,7 +152,17 @@
           <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
         </div>
-        <i class="fas fa-plus-circle btn-add"></i>
+  <!--       we need to create and if statement -- if this message set belongs to this user show delete else show add -->
+        <% if current_user.message_sets.include?(message_set) %>
+          <%=link_to message_set_take_one_path(message_set.id), method: :delete, data: { confirm: "removing these messages from your homepage" } do %>
+            <i class="fas fa-minus-circle btn-minus"></i>
+          <% end %>
+        <% else %>
+          <%=link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
+                <i class="fas fa-plus-circle btn-add"></i>
+          <% end %>
+       <% end %>
+
       </div>
       <div class="messages-list">
         <ul>
@@ -79,7 +183,15 @@
           <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
         </div>
-        <i class="fas fa-plus-circle btn-add"></i>
+         <% if current_user.message_sets.include?(message_set) %>
+          <%=link_to message_set_take_one_path(message_set.id), method: :delete, data: { confirm: "removing these messages from your homepage" } do %>
+            <i class="fas fa-minus-circle btn-minus"></i>
+          <% end %>
+        <% else %>
+          <%=link_to message_set_add_one_path(message_set.id), method: :post, data: { confirm: "adding these messages to your homepage" } do %>
+                <i class="fas fa-plus-circle btn-add"></i>
+          <% end %>
+        <% end %>
       </div>
       <div class="messages-list">
         <ul>
@@ -89,6 +201,33 @@
         </ul>
       </div>
     <% end %>
+  </div>
+
+  <div id="add-set" class="tabcontent">
+    <div class="container-devise-form">
+      <h2 >Add a message_set</h2>
+
+      <div class="add_message_set">
+        <div class="container">
+          <div class="form-inputs">
+            <%= simple_form_for @message_set do |f| %>
+              <div class="form-inputs">
+                <%= f.input :theme, label: "theme" %>
+                <%= f.input :messages, label: "add your messages" %>
+                <%= f.input :link, label: "add your links" %>
+              </div>
+
+              <div class="form-actions">
+                <div class="book">
+                  <%= f.submit "add your message set", class: "btn-pink"%>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to 'back', root_path, class: "btn-back" %>
+      </div>
+    </div>
   </div>
 
 </div>

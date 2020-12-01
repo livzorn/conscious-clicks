@@ -1,23 +1,27 @@
 class MessageSetsController < ApplicationController
 
   def new
-
+    @message_set = MessageSet.new
+    @user = current_user
   end
 
   def create
-
+    messages = params[:message_set][:messages]
+    messages_array = messages.split('*')
     @message_set = MessageSet.new(message_set_params)
+    @message_set.messages = messages_array
     @message_set.user = current_user
-    if @message_set.save
-      redirect_to dashboard_path
-      #add a code to the homepage html user.bookmark .each do |bookmark| --> figure out how to display
+
+    if @message_set.save!
+      redirect_to community_path
     else
-      redirect_to dashboard_path
+      render 'new'
     end
   end
 
   def edit
     @message_set = MessageSet.find(params[:id])
+    @user = current_user
   end
 
   def update
@@ -25,14 +29,14 @@ class MessageSetsController < ApplicationController
     if @message_set.update
       redirect_to dashboard_path
     else
-    render "edit"
+      render "edit"
     end
   end
 
   def destroy
     @message_set = MessageSet.find(params[:id])
     @message_set.destroy
-    redirect_to dashboard_path
+    redirect_to community_path
   end
 
   def publish
@@ -48,6 +52,6 @@ class MessageSetsController < ApplicationController
 
   private
   def message_set_params
-    params.require(:message_set).permit(:theme, :messages, :link)
+    params.require(:message_set).permit(:theme, :link)
   end
 end
