@@ -18,6 +18,7 @@
     <div><button class="tablinks" id="defaultOpen">my custom sets</button></div>
     <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
     <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
+    <div><button class="tablinks" id="editSet">edit</button></div>
   </div>
 
   <div id="my-custom-sets" class="tabcontent">
@@ -44,7 +45,7 @@
         <p>edit</p>
         <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
         <p><%= @publish %></p>
-        <p>delete</p>
+        <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?"} %>
       </div>
     <% end %>
   </div>
@@ -89,6 +90,10 @@
         </ul>
       </div>
     <% end %>
+  </div>
+
+  <div id="edit-set" class="tabcontent">
+
   </div>
 
 </div>
