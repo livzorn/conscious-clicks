@@ -1,11 +1,12 @@
 class MessageSetsController < ApplicationController
 
   def new
+    @message_set = MessageSet.new
 
   end
 
   def create
-
+    raise
     @message_set = MessageSet.new(message_set_params)
     @message_set.user = current_user
     if @message_set.save

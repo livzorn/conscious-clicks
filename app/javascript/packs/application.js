@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import {addInputFields} from './add_input_fields'
 import 'bootstrap';
 
 const bigPictureSave = () => {
@@ -80,6 +81,7 @@ document.addEventListener('turbolinks:load', () => {
   littleGoalsSave();
   customMessageSave();
   toggleMessagesList();
+  addInputFields();
 });
 
 
