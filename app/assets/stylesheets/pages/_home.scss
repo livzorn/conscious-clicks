@@ -53,5 +53,10 @@
   font-size: 60px;
   margin: 0 auto 10vh;
   height: 150px;
-
+  a {
+    color: white;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
