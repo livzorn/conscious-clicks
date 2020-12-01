@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     @user_mood = UserMood.new
 
     set_daily_message
+    @message = current_user.current_message
     show_typeboxes
     @treat = grab_a_treat
   end
@@ -86,14 +87,16 @@ class PagesController < ApplicationController
   end
 
   def new_message
-    messages = []
-    current_user.message_sets.each do |message_set|
-      messages += message_set.messages
-    end
-    messages.flatten!
-    current_user.current_message = messages.sample
+    message_set = current_user.message_sets.sample
+    return if message_set.nil?
+
+    recommendation_index = rand(1..message_set.messages.length) - 1
+    message = message_set.messages[recommendation_index]
+    link = message_set.link[recommendation_index]
+    current_user.current_message = {message: message, link: link}
     current_user.current_message_date = Date.today
     current_user.save!
+
   end
 
   def set_daily_message
