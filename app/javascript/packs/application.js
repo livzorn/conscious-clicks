@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import {addInputFields} from './add_input_fields'
 import 'bootstrap';
 
 const bigPictureSave = () => {
@@ -62,6 +63,7 @@ document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
   littleGoalsSave();
   customMessageSave();
+  addInputFields();
   // toggleMessagesList();
 
   function openTab(evt, tabName) {

@@ -1,8 +1,13 @@
 class MessageSetsController < ApplicationController
 
+  def new
+    @message_set = MessageSet.new
+
+  end
+
   def create
+    raise
     @message_set = MessageSet.new(message_set_params)
-    @user = User.find(params[:user_id])
     @message_set.user = current_user
     if @message_set.save
       redirect_to dashboard_path
