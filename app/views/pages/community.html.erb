@@ -23,18 +23,18 @@
 
   <div id="my-custom-sets" class="tabcontents">
 
-    <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set,| %>
+    <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set, index| %>
 
       <div class="my-message-set" id="defaultOpen">
         <div class="set-info">
-          <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
+          <i class="fas fa-chevron-circle-down btn-show mt-1 show-btn<%= index %>"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
           <% message_set.public ? @published = "published" : @published = "unpublished" %>
           <p class="ml-2 mt-1"> <%= @published %> </p>
         </div>
         <i class="fas fa-plus-circle btn-add"></i>
       </div>
-      <div class="messages-list">
+      <div class="messages-list messages-list<%= index %>">
         <ul>
         <% message_set.messages.each do |message| %>
           <li><%= message %></li>
@@ -43,7 +43,8 @@
       </div>
       <div class="manage-buttons">
         <p>edit</p>
-        <p>unpublish</p>
+        <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
+        <p><%= @publish %></p>
         <p>delete</p>
       </div>
     <% end %>

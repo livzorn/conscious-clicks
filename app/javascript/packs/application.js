@@ -66,16 +66,20 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-const toggleDropdown = () => {
-  const showButton = document.querySelectorAll(".btn-show");
-
+const toggleMessagesList = () => {
+  console.log("is this working?")
+  document.querySelectorAll(".btn-show").forEach((button, index) => {
+    button.addEventListener("click", (event) => {
+      document.querySelector(`.messages-list${index}`).classList.toggle("invisible");
+    });
+  });
 };
 
 document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
   littleGoalsSave();
   customMessageSave();
-  toggleDropdown();
+  toggleMessagesList();
 });
 
 
