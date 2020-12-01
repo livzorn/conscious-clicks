@@ -1,0 +1,30 @@
+<div class="text-center">
+
+  <h2 >Edit your message set</h2>
+
+  <div class="">
+
+    <div class="container">
+
+      <div class="form-inputs">
+        <%= simple_form_for(@message_set) do |f| %>
+          <%= f.input :name, label: "Name" %>
+          <%= f.input :description, label: "Description" %>
+          <%= f.input :location, label: "Location" %>
+          <%= f.input :price, label: "Price per night" %>
+          <%= f.input :sleeps, label: "How many people does it sleep?" %>
+          <%= f.input :bedrooms, label: "Number of bedrooms" %>
+          <%= f.input :bathrooms, label: "Number of bathrooms" %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload Photos" %>
+      </div>
+
+        <div class="book">
+          <%= f.submit  "Save changes", class: "btn-pink"%>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to 'back', root_path, class: "btn-back" %>
+  </div>
+
+</div>

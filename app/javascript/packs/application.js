@@ -95,6 +95,9 @@ document.addEventListener('turbolinks:load', () => {
   document.getElementById("byOtherClickers").addEventListener('click', (event) => {
     openTab(event, 'by-other-clickers');
   });
+  document.getElementById("editSet").addEventListener('click', (event) => {
+    openTab(event, 'edit-set');
+  });
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 });

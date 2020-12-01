@@ -18,6 +18,7 @@
     <div><button class="tablinks" id="defaultOpen">my custom sets</button></div>
     <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
     <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
+    <div><button class="tablinks" id="editSet">edit</button></div>
   </div>
 
   <div id="my-custom-sets" class="tabcontent">
@@ -43,10 +44,13 @@
         </ul>
       </div>
       <div class="manage-buttons">
+        <%= link_to "Edit", edit_message_set_path(message_Set), class: "btn-edit"%>
         <p>edit</p>
         <% message_set.public ? @publish = "make private" : @publish = "publish" %>
         <p><%= link_to @publish, publish_message_set_path(message_set), method: :patch %></p>
-        <p>delete</p>
+        <%=link_to message_set_path(message_set.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <p>Delete</p>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -93,6 +97,10 @@
         </ul>
       </div>
     <% end %>
+  </div>
+
+  <div id="edit-set" class="tabcontent">
+
   </div>
 
 </div>
