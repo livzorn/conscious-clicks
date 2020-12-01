@@ -2,8 +2,8 @@ Goal.destroy_all
 Bookmark.destroy_all
 UserMood.destroy_all
 UserMessageSet.destroy_all
-User.destroy_all
 MessageSet.destroy_all
+User.destroy_all
 Mood.destroy_all
 
 olivia = User.create!(name: "Olivia", email: "olivia@zorn.com", password: "lewagon")
