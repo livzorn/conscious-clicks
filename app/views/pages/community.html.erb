@@ -42,10 +42,13 @@
         </ul>
       </div>
       <div class="manage-buttons">
+        <%= link_to "Edit", edit_message_set_path(message_Set), class: "btn-edit"%>
         <p>edit</p>
         <% message_set.public ? @publish = "unpublish" : @publish = "publish" %>
         <p><%= @publish %></p>
-        <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?"} %>
+        <%=link_to message_set_path(message_set.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <p>Delete</p>
+        <% end %>
       </div>
     <% end %>
   </div>

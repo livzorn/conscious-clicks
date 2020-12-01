@@ -28,7 +28,7 @@ class MessageSetsController < ApplicationController
   def destroy
     @message_set = MessageSet.find(params[:id])
     @message_set.destroy
-    redirect_to dashboard_path
+    redirect_to community_path
   end
 
   def publish
