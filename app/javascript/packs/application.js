@@ -8,7 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import {addInputFields} from './add_input_fields'
 import 'bootstrap';
 
 const bigPictureSave = () => {
@@ -63,7 +62,6 @@ document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
   littleGoalsSave();
   customMessageSave();
-  addInputFields();
   // toggleMessagesList();
 
   function openTab(evt, tabName) {
@@ -86,6 +84,7 @@ document.addEventListener('turbolinks:load', () => {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
   document.getElementById("defaultOpen").addEventListener('click', (event) => {
     openTab(event, 'my-custom-sets');
   });
@@ -95,9 +94,10 @@ document.addEventListener('turbolinks:load', () => {
   document.getElementById("byOtherClickers").addEventListener('click', (event) => {
     openTab(event, 'by-other-clickers');
   });
-  document.getElementById("editSet").addEventListener('click', (event) => {
-    openTab(event, 'edit-set');
+  document.getElementById("addSet").addEventListener('click', (event) => {
+    openTab(event, 'add-set');
   });
+
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 });

@@ -4,21 +4,16 @@
   <div class="add_message_set">
     <div class="container">
       <div class="form-inputs">
-        <%= simple_form_for(@message_set) do |f| %>
+        <%= simple_form_for @message_set do |f| %>
           <div class="form-inputs">
             <%= f.input :theme, label: "theme" %>
-            <%= f.input :messages, label: "add your messages" do %>
-              <%= f.input :messages %>
-              <%= f.input :messages %>
-            <% end %>
-
-            <%= f.input :link, label: "add your link" %>
-            <div id='add_input_field'> add message </div>
+            <%= f.input :messages, label: "add your messages" %>
+            <%= f.input :link, label: "add your links" %>
           </div>
 
           <div class="form-actions">
             <div class="book">
-              <%= f.submit  "add your message set", class: "btn-pink"%>
+              <%= f.submit "add your message set", class: "btn-pink"%>
             </div>
           </div>
         <% end %>
