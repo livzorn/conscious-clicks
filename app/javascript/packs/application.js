@@ -13,28 +13,31 @@ import 'bootstrap';
 const bigPictureSave = () => {
   const bigPictureInput = document.getElementById('big-picture');
   const bigPictureSubmit = document.getElementById('big-picture-submit');
-  bigPictureInput.addEventListener('blur', (event) => {
-    console.log(bigPictureInput.value);
-    bigPictureSubmit.click();
-  });
+  if (bigPictureInput && bigPictureSubmit) {
+    bigPictureInput.addEventListener('blur', (event) => {
+      bigPictureSubmit.click();
+    });
+  }
 };
 
 const littleGoalsSave = () => {
   const littleGoalsInput = document.getElementById('little-goals');
   const littleGoalsSubmit = document.getElementById('little-goals-submit');
-  littleGoalsInput.addEventListener('blur', (event) => {
-    console.log(littleGoalsInput.value);
-    littleGoalsSubmit.click();
-  });
+  if (littleGoalsInput && littleGoalsSubmit) {
+    littleGoalsInput.addEventListener('blur', (event) => {
+      littleGoalsSubmit.click();
+    });
+  }
 };
 
 const customMessageSave = () => {
   const customMessageInput = document.getElementById('custom-message');
   const customMessageSubmit = document.getElementById('custom-message-submit');
-  customMessageInput.addEventListener('blur', (event) => {
-    console.log(customMessageInput.value);
-    customMessageSubmit.click();
-  });
+  if (customMessageInput && customMessageSubmit) {
+    customMessageInput.addEventListener('blur', (event) => {
+      customMessageSubmit.click();
+    });
+  }
 };
 
 const togglePopup = () => {
@@ -45,26 +48,6 @@ const togglePopup = () => {
   });
 };
 
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
 
 const toggleMessagesList = () => {
   console.log("is this working?")
@@ -79,7 +62,39 @@ document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
   littleGoalsSave();
   customMessageSave();
-  toggleMessagesList();
+  // toggleMessagesList();
+
+  function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").addEventListener('click', (event) => {
+    openTab(event, 'my-custom-sets');
+  });
+  document.getElementById("byConsciousClicks").addEventListener('click', (event) => {
+    openTab(event, 'by-conscious-clicks');
+  });
+  document.getElementById("byOtherClickers").addEventListener('click', (event) => {
+    openTab(event, 'by-other-clickers');
+  });
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 });
 
 

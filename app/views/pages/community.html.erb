@@ -15,13 +15,12 @@
 <div class="community-content-container">
 
   <div class="tab">
-    <div><button class="tablinks" id="defaultOpen" onclick="openTab(event, 'my-custom-sets')">my custom sets</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'by-conscious-clicks')">by Conscious Clicks</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'by-other-clickers')">by other clickers</button></div>
-    <div><button class="tablinks" onclick="openTab(event, 'my-favorites')">my favorites</button></div>
+    <div><button class="tablinks" id="defaultOpen">my custom sets</button></div>
+    <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
+    <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
   </div>
 
-  <div id="my-custom-sets" class="tabcontents">
+  <div id="my-custom-sets" class="tabcontent">
 
     <% MessageSet.where(user_id: current_user.id).each_with_index do |message_set, index| %>
 
@@ -71,7 +70,7 @@
     <% end %>
   </div>
 
-  <div id="by-conscious-clicks" class="tabcontent">
+  <div id="by-other-clickers" class="tabcontent">
 
     <% MessageSet.where.not(user_id: @admin.id).where.not(user_id: current_user.id).where(public: true).each do |message_set| %>
 
@@ -94,7 +93,3 @@
 
 </div>
 
-<script>
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
