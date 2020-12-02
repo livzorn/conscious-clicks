@@ -124,7 +124,6 @@
                   <div class="form-inputs">
                     <%= f.input :theme, label: "theme" %>
                     <%= f.input :messages, as: :string, label: "add your messages" %>
-                    <%= f.input :link, label: "add your links" %>
                   </div>
 
                   <div class="form-actions">
@@ -203,22 +202,18 @@
     <% end %>
   </div>
 
-    <div id="add-set" class="tabcontent msg-set-tab">
-        <h2 >Add a message set</h2>
+  <div id="add-set" class="tabcontent">
+    <div class="container-devise-form">
+      <h2 >Add a message_set</h2>
 
-        <div class="add_message_set">
-          <div class="">
-            <div class="form-inputs">
-              <%= simple_form_for @message_set do |f| %>
-                <div class="form-inputs">
-                  <%= f.label :theme , label: 'Theme'%> <br/>
-                  <%= f.input :theme, label: false  %> <br/>
-                  <%= f.label :messages, label: 'add your messages' %><br/>
-                  <%= f.input :messages, label: false %><br/>
-                  <%= f.label :link, label: 'add your links *(url)' %><br/>
-                  <%= f.input :link, label: false %><br/>
-
-                </div>
+      <div class="add_message_set">
+        <div class="container">
+          <div class="form-inputs">
+            <%= simple_form_for @message_set do |f| %>
+              <div class="form-inputs">
+                <%= f.input :theme, label: "theme" %>
+                <%= f.input :messages, label: "add your messages" %>
+              </div>
 
                 <div class="form-actions">
                   <div class="book">

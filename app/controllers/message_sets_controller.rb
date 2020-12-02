@@ -7,7 +7,7 @@ class MessageSetsController < ApplicationController
 
   def create
     messages = params[:message_set][:messages]
-    messages_array = messages.split('*')
+    messages_array = messages.split('/')
     @message_set = MessageSet.new(message_set_params)
     @message_set.messages = messages_array
     @message_set.user = current_user
