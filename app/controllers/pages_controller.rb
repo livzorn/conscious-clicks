@@ -92,21 +92,24 @@ class PagesController < ApplicationController
     message_set = current_user.message_sets.sample
     return if message_set.nil?
 
-    recommendation_index = rand(1..message_set.messages.length) - 1
-    message = message_set.messages[recommendation_index]
-    if message_set.link
-      link = message_set.link[recommendation_index]
-      current_user.current_message = {message: message, link: link}
+    # recommendation_index = rand(1..message_set.messages.length) - 1
+    message = message_set.messages.keys.sample
+    if message_set.messages[message].present?
+      link = message_set.messages[message]
+      current_user.current_message = Hash[message: message, link: link]
     else
-      current_user.current_message = message
+      current_user.current_message = Hash[message: message]
     end
 
     current_user.current_message_date = Date.today
     current_user.save!
+
+    # current_user.update!(current_message: {message: message})
+
   end
 
   def set_daily_message
-    new_message unless current_user.current_message_date == Date.today
+    new_message #unless current_user.current_message_date == Date.today
   end
 
   def show_typeboxes

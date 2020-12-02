@@ -33,8 +33,10 @@
 
         <h1 class="invisible">Conscious Clicks</h1>
         <h2 class="main-message">
-          <% if @message %>
-            <%= link_to @message[:message], @message[:link], target: "_blank" %>
+          <% if @message.has_key?("link") %>
+              <%= link_to @message["message"], @message["link"], target: "_blank" %>
+            <% else %>
+              <%= @message["message"] %>
           <% end %>
         </h2>
 
