@@ -1,4 +1,6 @@
 
+
+
 .favicon{
   border-radius: 50%;
 }
@@ -6,14 +8,14 @@
 
 .dashboard-background {
   background-color: #A5B8FF;
-  height: 100vh;
+  // height: 2000px;
 }
 
 .container-dashboard {
-  width: 70vw;
+
   margin: 0 auto;
   padding-top: 5vh;
-  display: flex;
+  // display: flex;
   a:hover {
     text-decoration: none;
   }
@@ -46,14 +48,6 @@
   justify-content: space-around;
 }
 
-.dashboard-left {
-  width: 30vw;
-}
-
-.dashboard-right {
-  width: 40vw;
-  margin-left: 40px;
-}
 
 .my-messages {
   text-align: center;
@@ -125,3 +119,24 @@
   color:#98abf5;
   border-style: none;
 }
+
+// .d-flex {
+//   display: flex;
+//   margin-top: 500px;
+//   padding: 50px;
+
+// }
+
+// .flex-container > div {
+//   margin: 10px;
+//   padding: 20px;
+//   font-size: 30px;
+// }
+.container-dashboard{
+  flex-direction: column;
+  height:100vh;
+
+
+
+}
+
