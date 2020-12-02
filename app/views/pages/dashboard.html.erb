@@ -1,3 +1,7 @@
+
+<div class="dashboard-background">
+  <div class="container-dashboard d-flex">
+
 <!-- Color scheme nodal: -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -20,17 +24,21 @@
   </div>
 </div>
 <!-- Dashboard: -->
-<div class="dashboard-background" style="background: <%= current_user.color %>">
-  <div class="container-dashboard">
+<div class="dashboard-background" style="background: <%= current_user.color %>"
+   <div class="container-dashboard d-flex">
+ 
+  
+ 
+
     <h1 class="invisible">Dashboard</h1>
-    <div class="dashboard-left">
+
       <div class="user_info">
         <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
         <h3 class="user-name"><%= current_user.name%></h3>
-        <div class="dashboard-buttons">
-          <%= link_to 'Home', root_path, class: 'btn-homepage' %>
-          <%= link_to "Messages", community_path, class: 'btn-homepage' %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
+        <div class="dashboard-buttons" >
+          <%= link_to 'Home', root_path, class: 'btn-homepage m-2' %>
+          <%= link_to "Messages", community_path, class: 'btn-homepage m-2' %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage m-2' %>
         </div>
         <br>
         <div class="dashboard-buttons">
@@ -38,11 +46,12 @@
         </div>
       </div>
 
-    </div>
 
-    <div class="dashboard-right">
 
-      <div class="card-dashboard">
+    <div class="">
+     <div class="row justify-content-center">
+      <div class="col-5 m-1 ">
+       <div class="card-dashboard">
         <p class="text-center">Mood Calendar</p>
         <div class="grid-calendar">
           <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
@@ -60,23 +69,31 @@
           <p class="mood-day"> <%= @minus_one %> </p>
           <p class="mood-day"> <%= @today %> </p>
         </div>
+       </div>
       </div>
 
 
-      <div class="card-dashboard my-messages">
-        <p class="text-center">My Message sets</p>
-          <div class="grid-message-sets">
-            <% current_user.message_sets.each do |message_set| %>
-              <p> <%= message_set.theme %> </p>
-            <% end %>
-          </div>
-          <div class="mt-4">
-            <%= link_to 'Update Messages', quiz_path, class: 'btn-create'  %>
-          </div>
+
+
+      <div class="col-5 m-1">
+       <div class="card-dashboard my-messages">
+         <div class ="anyClass">
+          <p class="text-center">My Message sets</p>
+            <div class="grid-message-sets">
+              <% current_user.message_sets.each do |message_set| %>
+                <p> <%= message_set.theme %> </p>
+              <% end %>
+            </div>
+            <div class="mt-4">
+              <%= link_to 'Update Messages', quiz_path, class: 'btn-create'  %>
+            </div>
+       </div>
       </div>
+     </div>
+    </div>
+   </div>
 
-
-      <div class="card-dashboard">
+      <div class="card-dashboard" style="width:600px;">
 
         <div class="justify-content-center">
 
@@ -117,8 +134,8 @@
           </div>
 
         </div>
-
-      </div>
+<!--
+      </div> -->
 
     </div>
   </div>
