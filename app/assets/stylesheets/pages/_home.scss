@@ -6,7 +6,7 @@
 }
 
 .container-homepage {
-  width: 80vw;
+  width: 85vw;
   margin: 0 auto;
 }
 
@@ -17,24 +17,29 @@
 
 .homepage-bottom {
   display: flex;
-  margin-top: 5vh;
+  margin-top: 7vh;
   justify-content: space-between;
+  vertical-align: middle;
+  a {
+    align-self: flex-end;
+  }
 }
 
 .homepage-right {
   width: 250px;
+  margin-top: 15vh;
 }
 
 .homepage-left {
-  width: 60vw;
+  width: 850px;
   margin-top: 15vh;
+  // height: 390px;
 }
 
 .homepage-bookmarks {
   width: 40vw;
   display: flex;
   justify-content: space-around;
-  margin: 0 auto 5vh 5vw;
 
 }
 
@@ -42,7 +47,8 @@
   display: flex;
   justify-content: space-around;
   width: 35vw;
-  margin: 0 auto 5vh 7vw;
+  margin: 120px auto 0;
+
 }
 
 .main-message {
@@ -51,8 +57,9 @@
   color: white;
   font-family: "Montserrat";
   font-size: 60px;
-  margin: 0 auto 10vh;
+  margin: 5vh auto 10vh;
   height: 150px;
+  // text-align: center;
   a {
     color: white;
   }

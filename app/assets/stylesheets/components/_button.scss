@@ -5,6 +5,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.25);
+  // background-color: transparent;
   &:hover {
     text-decoration: none;
     color: white;
@@ -12,12 +13,6 @@
     transition-property: all;
     transition-duration: .3s
     }
-}
-
-.btn-new-message {
-  font-size: 20px;
-  color: white;
-  margin-top: 50px;
 }
 
 button {
@@ -75,6 +70,7 @@ button:focus {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-delay: 4s;
+  align-self: flex-end;
   img:hover {
     animation: shake 0.5s ease;
   }
@@ -99,6 +95,11 @@ button:focus {
   80% { transform: translate(2px, 0px) rotate(4deg); }
   90% { transform: translate(0px, 2px) rotate(-4deg); }
   100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.btn-refresh {
+  font-size: 28px;
+  color: white;
 }
 
 .btn-show {

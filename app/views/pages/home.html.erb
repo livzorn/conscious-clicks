@@ -10,13 +10,6 @@
       </div>
       <div class="modal-body">
         <div class="mood-icons" id="mood-form">
-          <!-- <i class="far fa-times-circle" id="mood-exit"></i> -->
-          <!-- <i class="fas fa-grin-beam mood-choice" style="color:#B08CFF"></i>
-          <i class="fas fa-grin" style="color:#70D3FF"></i>
-          <i class="fas fa-smile mood-choice" style="color:#8EFF9B"></i>
-          <i class="fas fa-meh mood-choice" style="color:#ffe62d"></i>
-          <i class="fas fa-frown mood-choice" style="color:#FFCC6F"></i>
-          <i class="fas fa-tired mood-choice" style="color:#FF7878"></i> -->
           <%= simple_form_for @user_mood do |f| %>
             <%= f.association :mood,
               as: :radio_buttons,
@@ -37,18 +30,6 @@
   <div class="container-homepage">
     <div class="homepage-top">
       <div class="homepage-left">
-        <div class="d-flex">
-          <div class="pr-1">
-            <%= link_to refresh_message_path(new_message: true) do %>
-              <i class="fas fa-undo btn-new-message" style="font-size: 28px;"></i>
-            <% end %>
-          </div>
-          <h2 class="main-message">
-            <% if @message %>
-              <%= link_to @message[:message], @message[:link], target: "_blank" %>
-            <% end %>
-          </h2>
-        </div>
 
         <h1 class="invisible">Conscious Clicks</h1>
         <h2 class="main-message">
@@ -57,32 +38,9 @@
           <% end %>
         </h2>
 
-        <div class="homepage-bookmarks">
-          <% current_user.bookmarks.each do |bookmark| %>
-
-            <%= link_to bookmark.link do%>
-              <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon bookmark-circle" %>
-              <!--  <%= bookmark.name %> -->
-            <% end %>
-
-          <% end %>
-        </div>
-
         <div class="homepage-buttons">
           <div class="dropdown">
             <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Mood Check-in</button>
-            <div class="dropdown-content dropdown-content-moods text-center p-3">
-              <%= simple_form_for @user_mood do |f| %>
-                <%= f.association :mood,
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'category-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'category-selector'}, label: false, label_method: :emoji %>
-
-                <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
-              <% end %>
-            </div>
           </div>
           <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage' %>
         </div>
@@ -123,16 +81,28 @@
         <% end %>
       </div>
 
-      <!-- <input type="text" data-test="custom-messages" autocomplete="off" class="typebox custom-message"> -->
-      <div class="custom-message-box">
+      <!-- <div class="custom-message-box">
         <%= simple_form_for(Goal.new) do |f| %>
           <%= f.input :content, input_html: {id: 'custom-message', class: 'typebox', value: @custom_message ? @custom_message.content : ""}, label: false %>
           <%= f.input :category, input_html: {value: 'custom-message'}, as: :hidden %>
           <%= f.submit '', class: 'hidden', id: "custom-message-submit" %>
         <% end %>
+      </div> -->
+
+      <div class="homepage-bookmarks">
+        <% current_user.bookmarks.each do |bookmark| %>
+
+          <%= link_to bookmark.link do%>
+            <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon bookmark-circle" %>
+            <!--  <%= bookmark.name %> -->
+          <% end %>
+
+        <% end %>
       </div>
 
-
+      <%= link_to refresh_message_path(new_message: true) do %>
+        <i class="fas fa-undo btn-new-message btn-refresh" style=""></i>
+      <% end %>
 
     </div>
   </div>

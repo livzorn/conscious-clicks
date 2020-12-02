@@ -10,31 +10,8 @@
   }
 }
 
-.custom-message-box {
-  width: 50vw;
-  height: 75px;
-  padding: 12px 24px;
-  border: 0.5px solid white;
-  font-size: 24px;
-  border-radius: 5px;
-  textarea {
-    width: 90%;
-    font-size: 30px;
-    font-family: "Montserrat";
-    background-color: transparent;
-    color: white;
-    resize:none;
-  }
-  textarea:focus {
-    outline: none;
-  }
-}
-textarea {
-    resize: none;
-  }
-
 .goals {
-  border: 0.5px solid white;
+  border: 1px solid white;
   width: 250px;
   height: 175px;
   padding: 12px 8px;
@@ -49,6 +26,7 @@ textarea {
     width: 90%;
     height: 100px;
     font-size: 22px;
+    resize: none;
   }
   p {
     margin-bottom: 0;
@@ -56,13 +34,36 @@ textarea {
 }
 
 .big-picture-box {
-  margin: 15vh auto 5vh;
+
 }
 
 .little-goals-box {
-  margin: 0 auto;
+  margin: 5vh auto;
 }
 
 .hidden {
   display: none;
 }
+
+// .custom-message-box {
+//   width: 50vw;
+//   height: 75px;
+//   padding: 12px 24px;
+//   border: 0.5px solid white;
+//   font-size: 24px;
+//   border-radius: 5px;
+//   textarea {
+//     width: 90%;
+//     font-size: 30px;
+//     font-family: "Montserrat";
+//     background-color: transparent;
+//     color: white;
+//     resize:none;
+//   }
+//   textarea:focus {
+//     outline: none;
+//   }
+// }
+// textarea {
+//     resize: none;
+//   }
