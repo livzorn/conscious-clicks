@@ -180,6 +180,8 @@
         <div class="set-info">
           <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
           <h3 class="ml-2"> <%= message_set.theme %> </h3>
+          <% author = User.find_by(id: message_set.user_id) %>
+          <p class="ml-3">by <%= author.name %> </p>
         </div>
          <% if current_user.message_sets.include?(message_set) %>
           <%=link_to message_set_take_one_path(message_set.id), method: :delete, data: { confirm: "removing these messages from your homepage" } do %>
