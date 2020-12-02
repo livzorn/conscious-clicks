@@ -85,21 +85,41 @@ document.addEventListener('turbolinks:load', () => {
     evt.currentTarget.className += " active";
   }
 
-  document.getElementById("defaultOpen").addEventListener('click', (event) => {
-    openTab(event, 'my-custom-sets');
-  });
-  document.getElementById("byConsciousClicks").addEventListener('click', (event) => {
-    openTab(event, 'by-conscious-clicks');
-  });
-  document.getElementById("byOtherClickers").addEventListener('click', (event) => {
-    openTab(event, 'by-other-clickers');
-  });
-  document.getElementById("addSet").addEventListener('click', (event) => {
-    openTab(event, 'add-set');
-  });
+  const tabopen = document.getElementById("defaultOpen")
+  if (tabopen) {
+    tabopen.addEventListener('click', (event) => {
+       openTab(event, 'my-custom-sets');
+    });
+  }
+  const byConsciousClicks = document.getElementById("byConsciousClicks")
+  if (byConsciousClicks) {
+      byConsciousClicks.addEventListener('click', (event) => {
+      openTab(event, 'by-conscious-clicks');
+    });
+  }
+  const byOtherClickers = document.getElementById("byOtherClickers")
+  if (byOtherClickers) {
+      byOtherClickers.addEventListener('click', (event) => {
+      openTab(event, 'by-other-clickers');
+    });
+  }
+  const addSet = document.getElementById("addSet")
+    if (addSet) {
+      addSet.addEventListener('click', (event) => {
+      openTab(event, 'add-set');
+    });
+  }
 
   // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+  // document.getElementById("defaultOpen").click();
+  const items = document.querySelectorAll('.category-item label')
+  console.log(items)
+  items.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      items.forEach(item => item.classList.remove('active-emoji'))
+      event.currentTarget.classList.add('active-emoji')
+    })
+  })
 });
 
 
