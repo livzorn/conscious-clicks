@@ -202,7 +202,7 @@
   </div>
 
   <div id="add-set" class="tabcontent">
-    <div class="container-devise-form">
+    <div class="container-devise-form msg-set-tab ">
       <h2 >Add a message_set</h2>
 
       <div class="add_message_set">
@@ -210,8 +210,10 @@
           <div class="form-inputs">
             <%= simple_form_for @message_set do |f| %>
               <div class="form-inputs">
-                <%= f.input :theme, label: "theme" %>
-                <%= f.input :messages, label: "add your messages" %>
+                  <%= f.label :theme , label: 'Message theme'%> <br/>
+                  <%= f.input :theme, label: false  %> <br/>
+                  <%= f.label :messages, label: 'Your messages' %><br/>
+                  <%= f.input :messages, label: false %><br/>
               </div>
 
                 <div class="form-actions">
