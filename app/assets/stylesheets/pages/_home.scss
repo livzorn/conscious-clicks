@@ -5,6 +5,14 @@
   position: relative;
 }
 
+.website-name {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
 .container-homepage {
   width: 85vw;
   margin: 0 auto;
@@ -45,7 +53,7 @@
 
 .homepage-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 35vw;
   margin: 120px auto 0;
 

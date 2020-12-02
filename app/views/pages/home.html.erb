@@ -31,28 +31,21 @@
     <div class="homepage-top">
       <div class="homepage-left">
 
-        <h1 class="invisible">Conscious Clicks</h1>
+        <h1 class="website-name">Conscious Clicks</h1>
         <h2 class="main-message">
           <% if @message.has_key?("link") %>
-              <%= link_to @message["message"], @message["link"], target: "_blank" %>
+              <%= link_to @message["message"], @message["link"] %>
             <% else %>
               <%= @message["message"] %>
           <% end %>
         </h2>
-
-        <div class="homepage-buttons">
-          <div class="dropdowns">
-            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Mood Check-in</button>
-          </div>
-          <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage' %>
-        </div>
 
       </div>
 
       <div class="homepage-right">
 
         <div class="big-picture-box goals">
-          <p>Big picture</p>
+          <p>big picture goals</p>
           <%= simple_form_for(Goal.new) do |f| %>
             <%= f.input :content, input_html: {id: 'big-picture', class: 'typebox', value: @big_picture ? @big_picture.content : ""}, label: false %>
             <!-- <input type="text" id="big-picture" autocomplete="off" label="big picture" class="typebox" name="content"> -->
@@ -62,17 +55,24 @@
 
         </div>
 
-        <div class="little-goals-box goals">
+        <!-- <div class="little-goals-box goals">
           <p>Little goals</p>
           <%= simple_form_for(Goal.new) do |f| %>
             <%= f.input :content, input_html: {id: 'little-goals', class: 'typebox', value: @little_goals ? @little_goals.content : ""}, label: false %>
             <%= f.input :category, input_html: {value: 'little-goals'}, as: :hidden %>
             <%= f.submit '', class: 'hidden', id: "little-goals-submit" %>
           <% end %>
-        </div>
+        </div> -->
 
       </div>
 
+    </div>
+
+    <div class="homepage-buttons">
+      <div class="dropdowns">
+        <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Mood Check-in</button>
+      </div>
+      <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage ml-5' %>
     </div>
 
     <div class="homepage-bottom">

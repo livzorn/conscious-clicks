@@ -33,7 +33,15 @@ class PagesController < ApplicationController
 
   def community
     @admin = User.find_by(name: "Conscious Clicks")
-    @message_set = MessageSet.new(messages: " / type.. /   /   /   /   / ")
+    @message_set = MessageSet.new(messages: "~
+      ~
+      ~
+      ~
+      ~
+      ~
+      ~
+      ~
+      ")
     @user = current_user
   end
 
