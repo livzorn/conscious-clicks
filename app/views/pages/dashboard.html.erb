@@ -43,15 +43,17 @@
 
       <div class="col-5 m-1">
        <div class="card-dashboard my-messages">
-        <p class="text-center">My Message sets</p>
-          <div class="grid-message-sets">
-            <% current_user.message_sets.each do |message_set| %>
-              <p> <%= message_set.theme %> </p>
-            <% end %>
-          </div>
-          <div class="mt-4">
-            <%= link_to 'Update Messages', quiz_path, class: 'btn-create'  %>
-          </div>
+         <div class ="anyClass">
+          <p class="text-center">My Message sets</p>
+            <div class="grid-message-sets">
+              <% current_user.message_sets.each do |message_set| %>
+                <p> <%= message_set.theme %> </p>
+              <% end %>
+            </div>
+            <div class="mt-4">
+              <%= link_to 'Update Messages', quiz_path, class: 'btn-create'  %>
+            </div>
+       </div>
       </div>
      </div>
     </div>
