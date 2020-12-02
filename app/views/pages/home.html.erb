@@ -49,20 +49,28 @@
             <% end %>
           </h2>
         </div>
-               <div class="homepage-bookmarks">
-                  <% current_user.bookmarks.each do |bookmark| %>
 
-                    <%= link_to bookmark.link do%>
-                      <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon bookmark-circle" %>
-                      <!--  <%= bookmark.name %> -->
-                    <% end %>]
+        <h1 class="invisible">Conscious Clicks</h1>
+        <h2 class="main-message">
+          <% if @message %>
+            <%= link_to @message[:message], @message[:link], target: "_blank" %>
+          <% end %>
+        </h2>
+
+        <div class="homepage-bookmarks">
+          <% current_user.bookmarks.each do |bookmark| %>
+
+            <%= link_to bookmark.link do%>
+              <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon bookmark-circle" %>
+              <!--  <%= bookmark.name %> -->
+            <% end %>
 
           <% end %>
         </div>
 
         <div class="homepage-buttons">
           <div class="dropdown">
-            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter"">Mood Check-in</button>
+            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Mood Check-in</button>
             <div class="dropdown-content dropdown-content-moods text-center p-3">
               <%= simple_form_for @user_mood do |f| %>
                 <%= f.association :mood,

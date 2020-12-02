@@ -33,6 +33,8 @@ class PagesController < ApplicationController
 
   def community
     @admin = User.find_by(name: "Conscious Clicks")
+    @message_set = MessageSet.new(messages: " / type.. /   /   /   /   / ")
+    @user = current_user
   end
 
   def save_goal
@@ -92,11 +94,15 @@ class PagesController < ApplicationController
 
     recommendation_index = rand(1..message_set.messages.length) - 1
     message = message_set.messages[recommendation_index]
-    link = message_set.link[recommendation_index]
-    current_user.current_message = {message: message, link: link}
+    if message_set.link
+      link = message_set.link[recommendation_index]
+      current_user.current_message = {message: message, link: link}
+    else
+      current_user.current_message = message
+    end
+
     current_user.current_message_date = Date.today
     current_user.save!
-
   end
 
   def set_daily_message

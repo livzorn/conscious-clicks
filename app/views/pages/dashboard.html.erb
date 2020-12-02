@@ -22,7 +22,7 @@
 <!-- Dashboard: -->
 <div class="dashboard-background" style="background: <%= current_user.color %>">
   <div class="container-dashboard">
-
+    <h1 class="invisible">Dashboard</h1>
     <div class="dashboard-left">
       <div class="user_info">
         <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
@@ -89,7 +89,7 @@
                     <%= simple_form_for [ @user, @bookmark ] do |f| %>
                     <%= f.input :name %>
                     <%= f.input :link %>
-                    <%= f.submit "add", class: "btn btn-primary" %>
+                    <%= f.submit "add", class: "btn-addbookmark" %>
                     <% end %>
                   </div>
                 </div>
