@@ -46,7 +46,7 @@
 
       <div class="messages-list">
         <ul>
-        <% message_set.messages.each do |message| %>
+        <% message_set.messages.each_key do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
@@ -164,7 +164,7 @@
       </div>
       <div class="messages-list">
         <ul>
-        <% message_set.messages.each do |message| %>
+        <% message_set.messages.each_key do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
