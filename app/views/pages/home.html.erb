@@ -28,21 +28,20 @@
 
 <div class="homepage-background">
   <div class="container-homepage">
+    <%= link_to "dashboard", dashboard_path, class: "btn-dashboard" %>
     <div class="homepage-top">
       <div class="homepage-left">
 
         <h1 class="invisible">Conscious Clicks</h1>
         <h2 class="main-message">
-          <% if @message %>
+          <% if @message.link %>
             <%= link_to @message[:message], @message[:link], target: "_blank" %>
           <% end %>
         </h2>
 
         <div class="homepage-buttons">
-          <div class="dropdown">
-            <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Mood Check-in</button>
-          </div>
-          <%= link_to 'Dashboard', dashboard_path, class: 'btn-homepage' %>
+
+
         </div>
 
       </div>
@@ -98,6 +97,12 @@
           <% end %>
 
         <% end %>
+      </div>
+
+      <div class="">
+        <button class="btn-mood align" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+          🌝
+        </button>
       </div>
 
       <%= link_to refresh_message_path(new_message: true) do %>

@@ -1,7 +1,6 @@
 class UserMessageSetsController < ApplicationController
 
   def create
-    raise
     current_user.user_message_sets.destroy_all
     if params[:user_message_set]
       params[:user_message_set][:message_set_id].each do |message_set_id|

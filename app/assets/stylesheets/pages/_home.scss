@@ -8,11 +8,13 @@
 .container-homepage {
   width: 85vw;
   margin: 0 auto;
+  position: relative;
 }
 
 .homepage-top {
   display: flex;
   justify-content: space-between;
+  height: 73vh;
 }
 
 .homepage-bottom {
@@ -46,8 +48,8 @@
 .homepage-buttons {
   display: flex;
   justify-content: space-around;
-  width: 35vw;
-  margin: 120px auto 0;
+  width: 30vw;
+  margin: 160px 0 0 24vw;
 
 }
 

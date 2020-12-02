@@ -1,8 +1,8 @@
 .btn-homepage {
   color: white;
   font-family: "Montserrat";
-  font-size: 20px;
-  padding: 10px 20px;
+  font-size: 18px;
+  padding: 8px 18px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.25);
   // background-color: transparent;
@@ -120,4 +120,39 @@ button:focus {
 .btn-minus {
   color: #b4dd6f;
   font-size: 18px;
+}
+
+// .align {
+//   align-self: flex-end;
+//   a {
+//     align-self: center;
+//   }
+// }
+
+.btn-mood {
+  background-color: transparent;
+  font-size: 50px;
+  opacity: 80%;
+  align-self: flex-end;
+  img {
+    width: 70px;
+  }
+  p {
+    align-self: flex-end;
+  }
+}
+
+.btn-dashboard {
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat";
+  font-weight: 300px;
+  padding: 16px;
+  text-align: right;
+  margin-bottom: 16px;
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  // background-color: rgba(255, 255, 255, 0.25);
+  padding: 4px 8px;
 }
