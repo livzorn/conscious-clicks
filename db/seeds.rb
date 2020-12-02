@@ -18,36 +18,36 @@ puts "Created Shia LaBeouf"
 oprah = User.create(name: "Oprah Winfrey", email: "oprah@winfrey.com", password: "yougetacar")
 puts "Created Oprah"
 
-positive = MessageSet.new(theme: "Positive Affirmations",
-  messages: ["I deserve wonderful things",
-  "I am an amazing person!",
-  "All I can do is try my best",
-  "I choose what I become",
-  "I’ll let go of things I can’t control",], link: ["http://www.consciousclicks.org/"])
-positive.user = conscious_clicks
-positive.save!
+# positive = MessageSet.new(theme: "Positive Affirmations",
+#   messages: ["I deserve wonderful things",
+#   "I am an amazing person!",
+#   "All I can do is try my best",
+#   "I choose what I become",
+#   "I’ll let go of things I can’t control",], link: ["http://www.consciousclicks.org/"])
+# positive.user = conscious_clicks
+# positive.save!
 
-just_do_it = MessageSet.new(theme: "Motivate Yourself", messages: ["Just do it",
-  "Don't let your dreams be dreams", "Make your dreams come true", "Nothing is impossible",
-  "Yes you can", "If you're tired of starting over, stop giving up"],
-  link: ["https://www.youtube.com/watch?v=ZXsQAXx_ao0"], public: true)
-just_do_it.user = shia
-just_do_it.save!
+# just_do_it = MessageSet.new(theme: "Motivate Yourself", messages: ["Just do it",
+#   "Don't let your dreams be dreams", "Make your dreams come true", "Nothing is impossible",
+#   "Yes you can", "If you're tired of starting over, stop giving up"],
+#   link: ["https://www.youtube.com/watch?v=ZXsQAXx_ao0"], public: true)
+# just_do_it.user = shia
+# just_do_it.save!
 
-oprah_quotes = MessageSet.new(theme: "Words of Wisdom", messages: ["Surround yourself only with people who are going to take you higher.",
-  "You get in life what you have the courage to ask for.",
-  "The more you praise and celebrate your life, the more there is in life to celebrate.",
-  "Breathe. Let go. And remind yourself that this very moment is the only one you know you have for sure.",
-  "Forgiveness is giving up the hope that the past could have been any different.",
-  "Where there is no struggle, there is no strength.",
-  "Turn your wounds into wisdom.",
-  "Doing the best at this moment puts you in the best place for the next moment."], link: ["http://www.consciousclicks.org/"], public: true)
-oprah_quotes.user = oprah
-oprah_quotes.save!
+# oprah_quotes = MessageSet.new(theme: "Words of Wisdom", messages: ["Surround yourself only with people who are going to take you higher.",
+#   "You get in life what you have the courage to ask for.",
+#   "The more you praise and celebrate your life, the more there is in life to celebrate.",
+#   "Breathe. Let go. And remind yourself that this very moment is the only one you know you have for sure.",
+#   "Forgiveness is giving up the hope that the past could have been any different.",
+#   "Where there is no struggle, there is no strength.",
+#   "Turn your wounds into wisdom.",
+#   "Doing the best at this moment puts you in the best place for the next moment."], link: ["http://www.consciousclicks.org/"], public: true)
+# oprah_quotes.user = oprah
+# oprah_quotes.save!
 
 ads = MessageSet.new(theme: "Materialism",
   messages: ["How can I live with less?",
-  "Having fewer things is freeing", "I don't need material things to be happy",
+    "I don't need material things to be happy",
   "What material things can I live without?"],
   link: ["https://www.becomingminimalist.com/what-if-i-dont/",
     "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
@@ -76,7 +76,6 @@ exams.save
 social = MessageSet.new(theme: "Social Media",
   messages: ["What could you achieve today if you spent less time on your phone?",
     "No one's life is as perfect as their Instagram feed!",
-    "Resist the instinct to click on Instagram",
     "I won't compare myself to strangers on the internet"],
   link: ["https://medium.com/personal-growth-lab/15-tips-to-spend-less-time-on-your-phone-cdbdc63a5a72",
     "https://nextwithnita.com/no-ones-life-is-as-perfect-as-their-instagram-feed/",
@@ -95,8 +94,7 @@ social.save
 beauty = MessageSet.new(theme: "Beauty Standards",
   messages: ["Love your imperfections!",
     "I will continue loving myself everyday regardless of what society thinks!",
-    "Focus on being better looking on the inside not the outside!",
-    "Keep in mind how much make-up and photoshop go into the images you see"],
+    "Focus on being better looking on the inside not the outside!"],
   link: ["https://onbeing.org/blog/leonard-cohen-champion-of-our-cracked-imperfections/",
     "https://medium.com/@ResilientBella/not-letting-society-choose-control-how-i-live-my-life-f59cc3e5f80d",
     "https://medium.com/swlh/why-you-must-focus-on-being-better-looking-on-the-inside-than-the-outside-310d174e408"])
@@ -106,10 +104,7 @@ beauty.save
 loneliness = MessageSet.new(theme: "Isolation",
   messages: ["Performing random acts of kindness can improve your well-being!",
     "What creative and inspiring acts can you do when feeling lonely?",
-    "Who could you reach out to today?",
-    "Check in with someone you care about",
-    "We can only love others as much as we love ourselves",
-    "Enjoying alonetime is important. You're always with yourself, after all."],
+    "Who could you reach out to today?"],
   link: ["https://positivepsychology.com/random-acts-kindness/",
     "https://www.keepinspiring.me/25-creative-and-surprising-things-to-do-when-you-feel-lonely/",
     "https://happiful.com/how-to-reach-out-if-youre-feeling-lonely/"])
@@ -117,8 +112,7 @@ loneliness.user = conscious_clicks
 loneliness.save
 
 climate = MessageSet.new(theme: "Climate change",
-  messages: ["If it's wrapped in plastic, I'll think twice about buying it.",
-    "If you can, how about walking instead of driving today?",
+  messages: ["If you can, how about walking instead of driving today?",
     "What could you do today to reduce your plastic footprint?",
     "Every little thing we can do to protect the earth is worth it."],
   link: ["https://greatist.com/happiness/ways-help-environment",
