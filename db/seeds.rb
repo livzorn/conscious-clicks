@@ -12,6 +12,12 @@ puts "Created user Olivia"
 conscious_clicks = User.create(name: "Conscious Clicks", email: "admin@consciousclicks.org", password: "lewagon")
 puts "Created user Conscious Clicks"
 
+shia = User.create(name: "Shia LaBeouf", email: "shia@justdoit.com", password: "justdoit")
+puts "Created Shia LaBeouf"
+
+oprah = User.create(name: "Oprah Winfrey", email: "oprah@winfrey.com", password: "yougetacar")
+puts "Created Oprah"
+
 # positive = MessageSet.create(theme: "Positive Affirmations",
 #   messages: ["I deserve wonderful things",
 #   "I am an amazing person!",
@@ -28,17 +34,76 @@ puts "Created user Conscious Clicks"
 #     "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
 #     "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"])
 
-
-ads = MessageSet.new(
+advertising = MessageSet.new(
   theme: "Advertising",
   messages: {
-    "Ask yourself this before making any purchase; 'but what if I don't?'": "https://www.becomingminimalist.com/what-if-i-dont/",
-    "How can you buy less stuff that you don't need?": "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
-    "'Do I really need this?' 7 things to ask yourself before you buy:": "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"
+    "I'm too smart to be brainwashed by ads": "",
+    "I won't be tricked into buying things I don't need": "",
   }
 )
-ads.user = conscious_clicks
-ads.save!
+advertising.user = conscious_clicks
+advertising.save!
+
+positive = MessageSet.new(
+  theme: "Positive Affirmations",
+  messages: {
+    "I deserve wonderful things": "",
+    "I am an amazing person!": "",
+    "All I can do is try my best": "",
+    "I choose what I become": "",
+    "I’ll let go of things I can’t control": ""
+  }
+)
+positive.user = conscious_clicks
+positive.save!
+
+just_do_it = MessageSet.new(
+  theme: "Motivate Yourself",
+  messages: {"Just do it": "",
+  "Don't let your dreams be dreams": "",
+  "Make your dreams come true": "",
+  "Nothing is impossible": "",
+  "Yes you can": "",
+  "If you're tired of starting over, stop giving up": ""},
+  public: true)
+just_do_it.user = shia
+just_do_it.save!
+
+oprah_quotes = MessageSet.new(
+  theme: "Words of Wisdom",
+  messages: {
+    "Surround yourself only with people who are going to take you higher.": "",
+  "You get in life what you have the courage to ask for.": "",
+  "The more you praise and celebrate your life, the more there is in life to celebrate.": "",
+  "Breathe. Let go. And remind yourself that this very moment is the only one you know you have for sure.": "",
+  "Forgiveness is giving up the hope that the past could have been any different.": "",
+  "Where there is no struggle, there is no strength.": "",
+  "Turn your wounds into wisdom.": "",
+  "Doing the best at this moment puts you in the best place for the next moment.": ""},
+  public: true)
+oprah_quotes.user = oprah
+oprah_quotes.save!
+
+# ads = MessageSet.new(
+#   theme: "Advertising",
+#   messages: {
+#     "Ask yourself this before making any purchase; 'but what if I don't?'": "https://www.becomingminimalist.com/what-if-i-dont/",
+#     "How can you buy less stuff that you don't need?": "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
+#     "'Do I really need this?' 7 things to ask yourself before you buy:": "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/"
+#   }
+# )
+# ads.user = conscious_clicks
+# ads.save!
+
+materialism = MessageSet.new(
+  theme: "Materialism",
+  messages: {"How can I live with less?": "https://www.becomingminimalist.com/what-if-i-dont/",
+    "I don't need material things to be happy": "https://www.honestlymodern.com/how-to-really-buy-less-stuff-we-do-not-need/",
+  "What material things can I live without?": "https://ha-na.nl/2020/07/do-i-really-need-this-before-u-buy/",
+  "Having fewer things is freeing": ""}
+)
+materialism.user = conscious_clicks
+materialism.save!
 
 # ads = MessageSet.create(theme: "Advertising",
 #   messages: ["I am too smart to be brainwashed by ads",
