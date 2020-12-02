@@ -1,4 +1,26 @@
-<div class="dashboard-background">
+<!-- Color scheme nodal: -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">What colors inspire you?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mood-icons" id="mood-form">
+          <%= simple_form_for current_user do |f| %>
+            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#CAECFF", "#8CE7E9", "#B1D992", "#000000"] %>
+          <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Dashboard: -->
+<div class="dashboard-background" style="background: <%= current_user.color %>">
   <div class="container-dashboard">
     <h1 class="invisible">Dashboard</h1>
     <div class="dashboard-left">
@@ -9,6 +31,10 @@
           <%= link_to 'Home', root_path, class: 'btn-homepage' %>
           <%= link_to "Messages", community_path, class: 'btn-homepage' %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage' %>
+        </div>
+        <br>
+        <div class="dashboard-buttons">
+          <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Choose Color Scheme</button>
         </div>
       </div>
 
