@@ -45,7 +45,7 @@
 }
 
 .homepage-bookmarks {
-  width: 40vw;
+  width: 450px;
   display: flex;
   justify-content: space-around;
 
@@ -54,8 +54,9 @@
 .homepage-buttons {
   display: flex;
   justify-content: center;
-  width: 35vw;
+  width: 450px;
   margin: 120px auto 0;
+  padding-left: 30px;
 
 }
 
@@ -67,6 +68,7 @@
   font-size: 60px;
   margin: 5vh auto 10vh;
   height: 150px;
+  width: auto;
   // text-align: center;
   a {
     color: white;
