@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_153334) do
+ActiveRecord::Schema.define(version: 2020_12_02_145534) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
@@ -35,12 +36,11 @@ ActiveRecord::Schema.define(version: 2020_12_01_153334) do
 
   create_table "message_sets", force: :cascade do |t|
     t.string "theme"
-    t.text "messages", default: [], array: true
-    t.text "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.boolean "public", default: false
+    t.hstore "messages", default: {}, null: false
     t.index ["user_id"], name: "index_message_sets_on_user_id"
   end
 
@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 2020_12_01_153334) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "current_message"
     t.date "current_message_date"
     t.string "color", default: "#A5B8FF"
+    t.hstore "current_message", default: {}, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

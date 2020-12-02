@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :goals, dependent: :destroy
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  serialize :current_message
+  # serialize :current_message
 end
