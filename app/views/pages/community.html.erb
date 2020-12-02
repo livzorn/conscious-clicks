@@ -215,18 +215,16 @@
                 <%= f.input :messages, label: "add your messages" %>
               </div>
 
-              <div class="form-actions">
-                <div class="book">
-                  <%= f.submit "add your message set", class: "btn-pink"%>
+                <div class="form-actions">
+                  <div class="book">
+                    <%= f.submit "ADD", class: "btn-primary"%>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %><br/>
+            </div>
           </div>
+          <%= link_to 'back', root_path, class: "btn-back" %>
         </div>
-        <%= link_to 'back', root_path, class: "btn-back" %>
-      </div>
     </div>
-  </div>
 
-</div>
 
