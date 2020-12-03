@@ -32,12 +32,12 @@
     <h1 class="invisible">Dashboard</h1>
 
       <div class="user_info">
-        <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
+        <img class="avatar-large m-3" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
         <h3 class="user-name"><%= current_user.name%></h3>
         <div class="dashboard-buttons" >
-          <%= link_to 'Home', root_path, class: 'btn-homepage m-2' %>
-          <%= link_to "Messages", community_path, class: 'btn-homepage m-2' %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage m-2' %>
+          <%= link_to 'Home', root_path, class: 'btn-homepagedash m-2' %>
+          <%= link_to "Messages", community_path, class: 'btn-homepagedash m-2' %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepagedash m-2' %>
         </div>
         <br>
         <div class="dashboard-buttons">
@@ -47,11 +47,11 @@
 
 
 
-    <div class="">
+    <div class=""><ul id= "shuffle" >
      <div class="row justify-content-center">
       <div class="col-5 m-1 ">
        <div class="card-dashboard">
-        <p class="text-center" style="text-decoration: underline; font-family: roboto; font-size: 25px;">Mood Calendar</p>
+        <p class="text-center" style="/*text-decoration: underline;*/ font-family: roboto; font-size: 25px;">Mood Calendar</p>
         <div class="grid-calendar">
           <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
           <p class="weekday"> <%= (Date.today - 5).strftime("%A")[0..2] %> </p>
@@ -75,7 +75,7 @@
 
 
       <div class="col-5 m-1">
-       <div class="card-dashboard my-messages" >
+       <div class="card-dashboard my-messages"><ul id= "shuffle" >
         <p class="text-center margins p-1" style="font-family: roboto; font-size: 25px;" >My Message Sets</p>
             <div class="messagesets_cardleft scroll" style="vertical-align: center;">
               <% current_user.message_sets.each do |message_set| %>
@@ -88,12 +88,12 @@
     </div>
    </div>
 
-      <div class="card-dashboard" style="width:600px; box-shadow: 0 10px 30px rgba(0,0,0,.1);">
+      <div class="card-dashboard" style="width:600px; box-shadow: 0 10px 30px rgba(0,0,0,.1);"><ul id= "shuffle" >
 
         <div class="justify-content-center">
 
           <div class="d-flex justify-content-center">
-            <p class="text-center" style="text-decoration: underline; font-family: roboto; font-size: 25px;">Bookmarked Sites</p>
+            <p class="text-center" style="/*text-decoration: underline;*/ font-family: roboto; font-size: 25px;">Bookmarked Sites</p>
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 <div id="myDropdown" class="dropdown-content">
