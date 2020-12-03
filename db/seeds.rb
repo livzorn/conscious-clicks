@@ -216,7 +216,7 @@ fake = MessageSet.new(
   messages: {
     "Am I being sure to resist fake news?": 'https://www.nytimes.com/2020/03/24/opinion/fake-news-social-media.html',
     "Make sure you trust the sources of your news today.": 'https://www.bbc.co.uk/news/av/stories-46199347',
-    "Read a news articles beyond the headline!": 'https://medium.com/@emilyrosethorne6/we-need-to-start-reading-past-the-headline-but-not-for-the-reasons-you-think-fc64ec53f77b',
+    "Read a news article beyond the headline!": 'https://medium.com/@emilyrosethorne6/we-need-to-start-reading-past-the-headline-but-not-for-the-reasons-you-think-fc64ec53f77b',
     "I know a conspiracy theory when I see one": '',
     "Question every news source!": '',
     "Educate youself about what happened in the world today.": ''

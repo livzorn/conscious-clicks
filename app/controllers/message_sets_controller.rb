@@ -19,7 +19,7 @@ class MessageSetsController < ApplicationController
     end
 
     if @message_set.save!
-      redirect_to community_path
+      redirect_to community_path(params: {tab: "mycustomsets"})
     else
       render 'new'
     end
