@@ -20,49 +20,8 @@ const bigPictureSave = () => {
   }
 };
 
-const littleGoalsSave = () => {
-  const littleGoalsInput = document.getElementById('little-goals');
-  const littleGoalsSubmit = document.getElementById('little-goals-submit');
-  if (littleGoalsInput && littleGoalsSubmit) {
-    littleGoalsInput.addEventListener('blur', (event) => {
-      littleGoalsSubmit.click();
-    });
-  }
-};
-
-const customMessageSave = () => {
-  const customMessageInput = document.getElementById('custom-message');
-  const customMessageSubmit = document.getElementById('custom-message-submit');
-  if (customMessageInput && customMessageSubmit) {
-    customMessageInput.addEventListener('blur', (event) => {
-      customMessageSubmit.click();
-    });
-  }
-};
-
-const togglePopup = () => {
-  const moodButton = document.getElementById('mood-check-in');
-  const moodForm = document.getElementById('mood-form');
-  moodButton.addEventListener('click', (event) => {
-    moodForm.classList.toggle('invisible');
-  });
-};
-
-
-const toggleMessagesList = () => {
-  console.log("is this working?")
-  document.querySelectorAll(".btn-show").forEach((button, index) => {
-    button.addEventListener("click", (event) => {
-      document.querySelector(`.messages-list${index}`).classList.toggle("invisible");
-    });
-  });
-};
-
 document.addEventListener('turbolinks:load', () => {
   bigPictureSave();
-  littleGoalsSave();
-  customMessageSave();
-  // toggleMessagesList();
 
   function openTab(evt, tabName) {
     // Declare all variables
@@ -85,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
     evt.currentTarget.className += " active";
   }
 
-  const tabopen = document.getElementById("defaultOpen")
+  const tabopen = document.getElementById("myCustomSets")
   if (tabopen) {
     tabopen.addEventListener('click', (event) => {
       openTab(event, 'my-custom-sets');
@@ -130,7 +89,43 @@ document.addEventListener('turbolinks:load', () => {
   })
 });
 
+// const littleGoalsSave = () => {
+//   const littleGoalsInput = document.getElementById('little-goals');
+//   const littleGoalsSubmit = document.getElementById('little-goals-submit');
+//   if (littleGoalsInput && littleGoalsSubmit) {
+//     littleGoalsInput.addEventListener('blur', (event) => {
+//       littleGoalsSubmit.click();
+//     });
+//   }
+// };
 
+// const customMessageSave = () => {
+//   const customMessageInput = document.getElementById('custom-message');
+//   const customMessageSubmit = document.getElementById('custom-message-submit');
+//   if (customMessageInput && customMessageSubmit) {
+//     customMessageInput.addEventListener('blur', (event) => {
+//       customMessageSubmit.click();
+//     });
+//   }
+// };
+
+// const togglePopup = () => {
+//   const moodButton = document.getElementById('mood-check-in');
+//   const moodForm = document.getElementById('mood-form');
+//   moodButton.addEventListener('click', (event) => {
+//     moodForm.classList.toggle('invisible');
+//   });
+// };
+
+
+// const toggleMessagesList = () => {
+//   console.log("is this working?")
+//   document.querySelectorAll(".btn-show").forEach((button, index) => {
+//     button.addEventListener("click", (event) => {
+//       document.querySelector(`.messages-list${index}`).classList.toggle("invisible");
+//     });
+//   });
+// };
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
