@@ -23,10 +23,12 @@
 <div class="dashboard-background" style="background: linear-gradient(359.61deg, #FFFFFF -186.67%, rgba(255, 255, 255, 0) 99.72%), <%= current_user.color %>;">
   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage logout' %>
 
-  <div class="website-name">
-    <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
-    <h1 class="ml-2 mt-2">Conscious Clicks</h1>
-  </div>
+  <%= link_to root_path do %>
+    <div class="website-name">
+      <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+      <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+    </div>
+  <% end %>
 
   <div class="container-dashboard">
 
