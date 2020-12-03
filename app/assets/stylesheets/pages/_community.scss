@@ -65,3 +65,14 @@ textarea#message_set_messages {
   height: 240px;
   width: 400px;
 }
+
+.fa-lightbulb {
+  color: $darker-purple;
+  font-size: 32px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.no-messages {
+  text-align: center;
+}

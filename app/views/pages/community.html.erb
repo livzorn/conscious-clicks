@@ -1,6 +1,6 @@
-<div class="community-navbar">
+<div class="community-navbar" style="background: <%= current_user.color %>">
 
-  <div class="navbar-logo">
+  <div class="navbar-logo" >
     <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
     <h1 class="ml-2 mt-2">Conscious Clicks</h1>
   </div>
@@ -26,6 +26,16 @@
   </div>
 
   <div id="my-custom-sets" class="tabcontent">
+
+    <% if MessageSet.where(user_id: current_user.id) == [] %>
+
+      <div class="no-messages">
+        <h3 class="text-center mt-5">You have no custom message sets yet.</h3>
+        <p class="text-center">Come up with some inspiration!</p>
+        <i class="fas fa-lightbulb"></i>
+      </div>
+
+    <% end %>
 
     <% MessageSet.where(user_id: current_user.id).each do |message_set| %>
 
