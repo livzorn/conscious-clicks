@@ -255,29 +255,30 @@
   </div>
 
   <div id="add-set" class="tabcontent">
-    <div class="container-devise-form msg-set-tab ">
-      <h2 >Add a message set</h2>
+    <div class="container-devise-form msg-set-tab">
+      <h2 class="spartan">Add a message set</h2>
 
       <div class="add_message_set">
         <div class="container">
           <div class="form-inputs">
             <%= simple_form_for @message_set do |f| %>
               <div class="form-inputs">
-                  <%= f.label :theme , label: 'Message theme'%> <br/>
-                  <%= f.input :theme, label: false  %> <br/>
-                  <%= f.label :messages, label: 'Your messages' %><br/>
-                  <%= f.input :messages, label: false %><br/>
+                <%= f.label :theme , label: 'Message theme'%> <br/>
+                <%= f.input :theme, label: false  %> <br/>
+                <%= f.label :messages, label: 'Your messages' %><br/>
+                <%= f.input :messages, label: false %><br/>
               </div>
 
-                <div class="form-actions">
-                  <div class="book">
-                    <%= f.submit "add", class: "btn-form"%>
-                  </div>
+              <div class="form-actions">
+                <div class="book">
+                  <%= f.submit "add", class: "btn-form"%>
                 </div>
-              <% end %><br/>
-            </div>
+              </div>
+            <% end %>
+            <br>
           </div>
         </div>
+      </div>
     </div>
 
 
