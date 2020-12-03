@@ -39,7 +39,7 @@
       <div class="modal-body">
         <div class="mood-icons" id="mood-form">
           <%= simple_form_for current_user do |f| %>
-            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#6EA7FD", "#74E0EF", "#95DFB7", "#000000"] %>
+            <%= f.input :color, as: :color, label: false %>
           <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
           <% end %>
         </div>
@@ -63,7 +63,7 @@
 
         <h2 class="main-message">
           <% if @message.has_key?("link") %>
-              <%= link_to @message["message"], @message["link"] %>
+              <%= link_to @message["message"], @message["link"], target: "_blank" %>
             <% else %>
               <%= @message["message"] %>
           <% end %>
