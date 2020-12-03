@@ -85,7 +85,7 @@ document.addEventListener('turbolinks:load', () => {
     evt.currentTarget.className += " active";
   }
 
-  const tabopen = document.getElementById("myCustomSets")
+  const tabopen = document.getElementById("defaultOpen")
   if (tabopen) {
     tabopen.addEventListener('click', (event) => {
        openTab(event, 'my-custom-sets');
@@ -110,9 +110,11 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("byConsciousClicks").click();
-
+  //Get the element with id="defaultOpen" and click on it
+  const defaultOpen = document.getElementById("defaultOpen")
+  if (defaultOpen) {
+    defaultOpen.click();
+  }
   const items = document.querySelectorAll('.category-item label')
   console.log(items)
   items.forEach((item) => {
@@ -122,6 +124,7 @@ document.addEventListener('turbolinks:load', () => {
     })
   })
 });
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
