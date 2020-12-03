@@ -49,7 +49,13 @@ document.addEventListener('turbolinks:load', () => {
     tabopen.addEventListener('click', (event) => {
       openTab(event, 'my-custom-sets');
     });
+  }
 
+  const myCurrentMessages = document.getElementById("myCurrentSets")
+  if (myCurrentSets) {
+      myCurrentSets.addEventListener('click', (event) => {
+      openTab(event, 'my-current-messages');
+    });
   }
 
   const byConsciousClicks = document.getElementById("byConsciousClicks")
@@ -58,12 +64,14 @@ document.addEventListener('turbolinks:load', () => {
       openTab(event, 'by-conscious-clicks');
     });
   }
+
   const byOtherClickers = document.getElementById("byOtherClickers")
   if (byOtherClickers) {
       byOtherClickers.addEventListener('click', (event) => {
       openTab(event, 'by-other-clickers');
     });
   }
+
   const addSet = document.getElementById("addSet")
     if (addSet) {
       addSet.addEventListener('click', (event) => {
@@ -76,7 +84,7 @@ document.addEventListener('turbolinks:load', () => {
   if (tabopen && window.location.search.split("=")[1] == "mycustomsets") {
     tabopen.click();
   } else {
-    document.getElementById("byConsciousClicks").click();
+    document.getElementById("myCurrentSets").click();
   }
 
   const items = document.querySelectorAll('.category-item label')

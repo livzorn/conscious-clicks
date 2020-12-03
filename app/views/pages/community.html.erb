@@ -1,25 +1,28 @@
 <div class="community-navbar" style="background: <%= current_user.color %>">
 
-  <div class="navbar-logo" >
-    <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
-    <h1 class="ml-2 mt-2">Conscious Clicks</h1>
-  </div>
+  <%= link_to root_path do %>
+    <div class="navbar-logo" >
+      <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+      <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+    </div>
+  <% end %>
 
   <div class="navbar-buttons">
-    <%= link_to "Home", root_path %>
-    <%= link_to "Dashboard", dashboard_path %>
+    <%= link_to "home", root_path %>
+    <%= link_to "dashboard", dashboard_path %>
     <img class="avatar" alt="avatar" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
   </div>
 </div>
 
 <div class="community-top">
-  <h2>Explore message sets</h2>
+  <h2>explore message sets</h2>
 </div>
 
 <div class="community-content-container">
 
   <div class="tab">
-    <div><button class="tablinks" id="byConsciousClicks">by Conscious Clicks</button></div>
+    <div><button class="tablinks" id="myCurrentSets">my current sets</button></div>
+    <div><button class="tablinks" id="byConsciousClicks">by conscious clicks</button></div>
     <div><button class="tablinks" id="byOtherClickers">by other clickers</button></div>
     <div><button class="tablinks" id="myCustomSets">my custom sets</button></div>
     <div><button class="tablinks" id="addSet">make your own</button></div>
@@ -120,42 +123,74 @@
   </div>
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLongTitle">Edit your message set</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-devise-form">
-          <h2 >Edit your message set</h2>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLongTitle">Edit your message set</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-devise-form">
+            <h2 >Edit your message set</h2>
 
-          <div class="add_message_set">
-            <div class="container">
-              <div class="form-inputs">
-                <%= simple_form_for @message_set do |f| %>
-                  <div class="form-inputs">
-                    <%= f.input :theme, label: "theme" %>
-                    <%= f.input :messages, as: :string, label: "add your messages" %>
-                  </div>
-
-                  <div class="form-actions">
-                    <div class="book">
-                      <%= f.submit "add your message set", class: "btn-form"%>
+            <div class="add_message_set">
+              <div class="container">
+                <div class="form-inputs">
+                  <%= simple_form_for @message_set do |f| %>
+                    <div class="form-inputs">
+                      <%= f.input :theme, label: "theme" %>
+                      <%= f.input :messages, as: :string, label: "add your messages" %>
                     </div>
-                  </div>
-                <% end %>
+
+                    <div class="form-actions">
+                      <div class="book">
+                        <%= f.submit "add your message set", class: "btn-form"%>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div id="my-current-messages" class="tabcontent">
+
+    <% current_user.message_sets.each do |message_set| %>
+
+      <div class="my-message-set">
+        <div class="set-info">
+          <i class="fas fa-chevron-circle-down btn-show mt-1"></i>
+          <h3 class="ml-2"> <%= message_set.theme %> </h3>
+        </div>
+  <!--       we need to create and if statement -- if this message set belongs to this user show delete else show add -->
+        <% if current_user.message_sets.include?(message_set) %>
+          <%=link_to message_set_take_one_path(message_set.id), method: :delete do %>
+            <i class="fas fa-minus-circle btn-minus"></i>
+          <% end %>
+        <% else %>
+          <%=link_to message_set_add_one_path(message_set.id), method: :post do %>
+                <i class="fas fa-plus-circle btn-add"></i>
+          <% end %>
+        <% end %>
+
+      </div>
+
+      <div class="messages-list">
+        <ul>
+        <% message_set.messages.each_key do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 
   <div id="by-conscious-clicks" class="tabcontent">
 
