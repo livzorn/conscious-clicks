@@ -18,6 +18,7 @@
   h2 {
     font-size: 24px;
     font-weight: 300;
+    font-family: 'Spartan', sans-serif;
   }
 }
 
@@ -41,6 +42,8 @@
 
 .manage-buttons {
   display: flex;
+  justify-content: space-around;
+  width: 300px;
   margin-left: 48px;
   margin-bottom: 16px;
   a {
@@ -52,12 +55,13 @@
   a:hover {
     text-decoration: none;
   }
-  p {
-    font-size: 12px;
-    margin-right: 16px;
-  }
 }
 
 .msg-set-tab {
   text-align: center;
+}
+
+textarea#message_set_messages {
+  height: 240px;
+  width: 400px;
 }

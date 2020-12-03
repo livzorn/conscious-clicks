@@ -131,6 +131,10 @@ button:focus {
 .btn-edit {
   color: black;
   font-size: 12px;
+  background: transparent;
+  vertical-align: middle;
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
 .btn-minus {
@@ -156,4 +160,22 @@ button:focus {
   background: transparent;
   font-size: 32px;
   opacity: 80%;
+}
+
+.btn-form {
+  background-color: #A5B9FF;
+  color: white;
+  font-size: 18px;
+  font-family: "Montserrat";
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    box-shadow: rgba(166, 184, 255, 0.85) 0px 1px 8px;
+    transition-property: all;
+    transition-duration: .3s
+  }
 }

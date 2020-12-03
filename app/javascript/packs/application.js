@@ -85,7 +85,7 @@ document.addEventListener('turbolinks:load', () => {
     evt.currentTarget.className += " active";
   }
 
-  const tabopen = document.getElementById("defaultOpen")
+  const tabopen = document.getElementById("myCustomSets")
   if (tabopen) {
     tabopen.addEventListener('click', (event) => {
        openTab(event, 'my-custom-sets');

@@ -5,17 +5,13 @@
   font-family: "Montserrat";
   padding: 24px 24px;
   background-color: $darker-purple;
-  h1 {
-    font-size: 36px;
-    font-family: "Montserrat";
-    font-weight: 300;
-  }
   a {
-    font-size: 28px;
+    font-size: 24px;
     color: white;
-    font-family: "Montserrat";
+    font-family: 'Spartan', sans-serif;
     font-weight: 300;
     margin-right: 32px;
+    vertical-align: middle;
   }
   a:hover {
     text-decoration: none;
@@ -33,7 +29,7 @@
   h1 {
     color: white;
     font-size: 24px;
-    font-family: "Montserrat";
+    font-family: 'Spartan', sans-serif;
     font-weight: 300;
     vertical-align: middle;
   }
