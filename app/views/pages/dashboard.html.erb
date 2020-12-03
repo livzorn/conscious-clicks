@@ -123,15 +123,14 @@
           <div class="d-flex justify-content-center">
 
             <h4 class="text-center">Bookmarked Sites</h4>
-
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 <div id="myDropdown" class="dropdown-content">
-                  <div class="newbookmark_container p-1">
+                  <div class="newbookmark_container p-4">
                     <%= simple_form_for [ @user, @bookmark ] do |f| %>
-                    <%= f.input :name %>
+                    <%= f.input :name %><br/>
                     <%= f.input :link %>
-                    <%= f.submit "add", class: "btn-addbookmark" %>
+                    <%= f.submit "add", class: "btn-addbookmark"%>
                     <% end %>
                   </div>
                 </div>
@@ -149,7 +148,7 @@
                   <% end %>
                 </div>
                 <div class="bookmark-trash">
-                  <%= link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <%= link_to bookmark_path(bookmark.id), method: :delete do %>
                     <i class="far fa-times-circle"></i>
                   <% end %>
                 </div>

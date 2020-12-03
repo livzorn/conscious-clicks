@@ -80,62 +80,7 @@
   }
 }
 
-.dropbtn {
-  // background-color: white;
-  color:grey;
 
-  border-radius: 50%;
-  // padding: 16px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  // background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
-
-.newbookmark_container {
-  background-color:#98abf5;
-  color:white;
-}
-.btn-addbookmark {
-  margin-top: 10px;
-  background-color: white;
-  color:#98abf5;
-  border-style: none;
-}
 
 // .d-flex {
 //   display: flex;
@@ -214,13 +159,70 @@
     transition-duration: 0.4s;
   }
 }
+.dropbtn {
+  // background-color: white;
+  color:grey;
 
-// Sortable.create "(1, {
-//   ghostClass: "ghost",
-//   animation: 150,
-//   onEnd: (event) => {
-//     alert(`${event.oldIndex} moved to ${event.newIndex}`);
-//   }
-// })";
+  border-radius: 50%;
+  // padding: 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: -5px;
+}
 
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  // background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  text-align:center;
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.newbookmark_container {
+  background-color:white;
+  color:black;
+  display:flex;
+  font-family:"Montserrat";
+  font-size:20px;
+  text-align: center;
+}
+.btn-addbookmark {
+  background: linear-gradient(to right, #e2dae1 30%, #c1bdc1 98%);
+  margin-top: 20px;
+  color:black;
+  border-style: none;
+  padding:5px;
+  border-radius: 10px;
+  font-family:"Montserrat";
+}
 
