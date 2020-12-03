@@ -6,17 +6,17 @@ class MessageSetsController < ApplicationController
   end
 
   def create
+    @message_set = MessageSet.new(message_set_params)
+    @message_set.user = current_user
+
     messages = params[:message_set][:messages]
     messages_array = messages.split('~')
-    messages_array_with_links = []
+
     messages_array.each do |message|
       content = message.strip
       next if content == ''
-      messages[content] = ''
+      @message_set.messages[content] = ''
     end
-    @message_set = MessageSet.new(message_set_params)
-    @message_set.messages = messages_array
-    @message_set.user = current_user
 
     if @message_set.save!
       redirect_to community_path
@@ -58,6 +58,6 @@ class MessageSetsController < ApplicationController
 
   private
   def message_set_params
-    params.require(:message_set).permit(:theme, :link)
+    params.require(:message_set).permit(:theme)
   end
 end
