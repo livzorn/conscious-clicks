@@ -54,7 +54,8 @@
 .avatar-large {
   height: 120px;
   width: 120px;
-  border: 3px solid white;
+  border: 2px solid white;
+  opacity: 90%;
 }
 
 .user-name {
@@ -146,15 +147,17 @@
 .house {
   text-align: center;
   margin: 32px auto 48px;
-  height: 172px;
+  height: 170px;
   img {
   width: 150px;
   height: 150px;
   margin: 0 auto;
+  opacity: 75%;
   }
   img:hover {
     width: 165px;
     height: 165px;
+    opacity: 90%;
     transition-property: all;
     transition-duration: 0.4s;
   }
@@ -209,20 +212,20 @@
 .show {display:block;}
 
 .newbookmark_container {
-  background-color:white;
-  color:black;
-  display:flex;
-  font-family:"Montserrat";
-  font-size:20px;
+  background-color: white;
+  color: black;
+  display: flex;
+  font-family: "Montserrat";
+  font-size: 20px;
   text-align: center;
 }
 .btn-addbookmark {
   background: linear-gradient(to right, #e2dae1 30%, #c1bdc1 98%);
   margin-top: 20px;
-  color:black;
+  color: black;
   border-style: none;
-  padding:5px;
+  padding: 5px;
   border-radius: 10px;
-  font-family:"Montserrat";
+  font-family: "Montserrat";
 }
 
