@@ -14,7 +14,7 @@
       <div class="modal-body">
         <div class="mood-icons" id="mood-form">
           <%= simple_form_for current_user do |f| %>
-            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#CAECFF", "#8CE7E9", "#B1D992", "#000000"] %>
+            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#6EA7FD", "#74E0EF", "#95DFB7", "#000000"] %>
           <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
           <% end %>
         </div>

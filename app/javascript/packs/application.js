@@ -111,7 +111,8 @@ document.addEventListener('turbolinks:load', () => {
   }
 
   // Get the element with id="defaultOpen" and click on it
-  // document.getElementById("defaultOpen").click();
+  document.getElementById("byConsciousClicks").click();
+
   const items = document.querySelectorAll('.category-item label')
   console.log(items)
   items.forEach((item) => {
