@@ -1,4 +1,7 @@
-<!--
+
+
+
+<!-- Color scheme nodal: -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -18,33 +21,16 @@
       </div>
     </div>
   </div>
-</div> -->
-
-<div class="dashboard-background" style="background: <%= current_user.color %> >
-<div class="dashboard-background">
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLongTitle">What colors inspire you?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="mood-icons" id="mood-form">
-          <%= simple_form_for current_user do |f| %>
-            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#CAECFF", "#8CE7E9", "#B1D992", "#000000"] %>
-          <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+<!-- Dashboard: -->
+<div class="dashboard-background" style="background: <%= current_user.color %> "
+   <div class="container-dashboard d-flex">
 
-  <div class="container-dashboard d-flex">
+
+
+
     <h1 class="invisible">Dashboard</h1>
+
       <div class="user_info">
         <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
         <h3 class="user-name"><%= current_user.name%></h3>
@@ -52,14 +38,20 @@
           <%= link_to 'Home', root_path, class: 'btn-homepage m-2' %>
           <%= link_to "Messages", community_path, class: 'btn-homepage m-2' %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage m-2' %>
-          <!-- <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Choose Color Scheme</button> -->
+        </div>
+        <br>
+        <div class="dashboard-buttons">
+          <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Choose Color Scheme</button>
         </div>
       </div>
+
+
+
     <div class="">
      <div class="row justify-content-center">
       <div class="col-5 m-1 ">
        <div class="card-dashboard">
-        <p class="text-center">Mood Calendar</p>
+        <p class="text-center" style="text-decoration: underline; font-family: roboto; font-size: 25px;">Mood Calendar</p>
         <div class="grid-calendar">
           <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
           <p class="weekday"> <%= (Date.today - 5).strftime("%A")[0..2] %> </p>
@@ -78,27 +70,30 @@
         </div>
        </div>
       </div>
+
+
+
+
       <div class="col-5 m-1">
-       <div class="card-dashboard my-messages">
-         <div class ="anyClass">
-          <p class="text-center">My Message sets</p>
-            <div class="grid-message-sets">
+       <div class="card-dashboard my-messages" >
+        <p class="text-center margins p-1" style="font-family: roboto; font-size: 25px;" >My Message Sets</p>
+            <div class="messagesets_cardleft scroll" style="vertical-align: center;">
               <% current_user.message_sets.each do |message_set| %>
                 <p> <%= message_set.theme %> </p>
               <% end %>
             </div>
-            <div class="mt-4">
-              <%= link_to 'Update Messages', community_path, class: 'btn-create'  %>
-            </div>
-       </div>
+         <!--  </div> -->
       </div>
      </div>
     </div>
    </div>
-      <div class="card-dashboard" style="width:600px;">
+
+      <div class="card-dashboard" style="width:600px; box-shadow: 0 10px 30px rgba(0,0,0,.1);">
+
         <div class="justify-content-center">
+
           <div class="d-flex justify-content-center">
-            <p class="text-center">Bookmarked sites</p>
+            <p class="text-center" style="text-decoration: underline; font-family: roboto; font-size: 25px;">Bookmarked Sites</p>
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 <div id="myDropdown" class="dropdown-content">
@@ -112,8 +107,10 @@
                 </div>
             </div>
           </div>
-          <div class="bookmarks-all d-flex justify-content-center">
+
+          <div class="bookmarks-all d-flex justify-content-center scrollvertical m-3">
             <% current_user.bookmarks.each do |bookmark| %>
+
               <div class="bookmark-icon-container">
                 <div class="bookmark-icon mr-4">
                   <%= link_to bookmark.link do%>
@@ -127,19 +124,22 @@
                   <% end %>
                 </div>
               </div>
+
             <% end %>
           </div>
+
         </div>
 <!--
       </div> -->
+
     </div>
   </div>
 </div>
+
 <script>
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
      document.querySelector('.dropbtn').onclick = myFunction
 </script>
-
 
