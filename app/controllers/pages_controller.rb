@@ -33,7 +33,8 @@ class PagesController < ApplicationController
 
   def community
     @admin = User.find_by(name: "Conscious Clicks")
-    @message_set = MessageSet.new(messages: "~
+    @message_set = MessageSet.new(messages: "
+      ~
       ~
       ~
       ~
@@ -113,11 +114,10 @@ class PagesController < ApplicationController
     current_user.save!
 
     # current_user.update!(current_message: {message: message})
-
   end
 
   def set_daily_message
-    new_message #unless current_user.current_message_date == Date.today
+    new_message unless current_user.current_message_date == Date.today
   end
 
   def show_typeboxes

@@ -1,6 +1,3 @@
-
-
-
 <!-- Color scheme nodal: -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -22,14 +19,21 @@
     </div>
   </div>
 </div>
-<!-- Dashboard: -->
-<div class="dashboard-background" style="background: <%= current_user.color %> "
-   <div class="container-dashboard d-flex">
 
+<div class="dashboard-background" style="background: <%= current_user.color %>">
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage logout' %>
 
+  <div class="website-name">
+    <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+    <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+  </div>
 
+  <div class="container-dashboard">
 
     <h1 class="invisible">Dashboard</h1>
+
+
+   <!--  <div class="dashboard-top">
 
       <div class="user_info">
         <img class="avatar-large m-3" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
@@ -45,55 +49,81 @@
         </div>
       </div>
 
+    </div> -->
+
+    <div class="dashboard-cards">
+
+      <div class="dashboard-left">
+
+        <div class="user_info">
+          <img class="avatar-large" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4"/>
+          <h3 class="user-name"><%= current_user.name %></h3>
+          <!-- <div class="dashboard-buttons" >
 
 
-    <div class=""><ul id= "shuffle" >
-     <div class="row justify-content-center">
-      <div class="col-5 m-1 ">
-       <div class="card-dashboard">
-        <p class="text-center" style="/*text-decoration: underline;*/ font-family: roboto; font-size: 25px;">Mood Calendar</p>
-        <div class="grid-calendar">
-          <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= (Date.today - 5).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= (Date.today - 4).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= (Date.today - 3).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= (Date.today - 2).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= (Date.today - 1).strftime("%A")[0..2] %> </p>
-          <p class="weekday"> <%= Date.today.strftime("%A")[0..2] %> </p>
-          <p class="mood-day"> <%= @minus_six %> </p>
-          <p class="mood-day"> <%= @minus_five %> </p>
-          <p class="mood-day"> <%= @minus_four %> </p>
-          <p class="mood-day"> <%= @minus_three %> </p>
-          <p class="mood-day"> <%= @minus_two %> </p>
-          <p class="mood-day"> <%= @minus_one %> </p>
-          <p class="mood-day"> <%= @today %> </p>
+          </div> -->
+          <br>
+          <!-- <div class="dashboard-buttons">
+
+          </div> -->
         </div>
-       </div>
-      </div>
 
 
+        <!-- message sets -->
 
+        <div class="col-5 m-1">
+          <div class="card-dashboard vertical-card">
+            <h4 class="text-center margins p-1">My Message Sets</h4>
 
-      <div class="col-5 m-1">
-       <div class="card-dashboard my-messages"><ul id= "shuffle" >
-        <p class="text-center margins p-1" style="font-family: roboto; font-size: 25px;" >My Message Sets</p>
             <div class="messagesets_cardleft scroll" style="vertical-align: center;">
               <% current_user.message_sets.each do |message_set| %>
                 <p> <%= message_set.theme %> </p>
               <% end %>
             </div>
-         <!--  </div> -->
+            <%= link_to "manage", community_path, class: 'btn-create manage' %>
+          </div>
+        </div>
+
       </div>
-     </div>
-    </div>
-   </div>
 
-      <div class="card-dashboard" style="width:600px; box-shadow: 0 10px 30px rgba(0,0,0,.1);"><ul id= "shuffle" >
+      <div class="dashboard-right">
 
-        <div class="justify-content-center">
+        <div class="house">
+          <%= link_to root_path do %>
+            <%= image_tag "house.png", alt: "alttext", class: "mb-3"%>
+          <% end %>
+          <!-- <br> -->
+          <!-- <%= link_to 'Home', root_path, class: 'btn-homepage m-2' %>  -->
+        </div>
+
+        <!-- mood calendar  -->
+
+        <div class="card-dashboard horizontal-card">
+          <h4 class="text-center">Mood Calendar</h4>
+          <div class="grid-calendar">
+            <p class="weekday"> <%= (Date.today - 6).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= (Date.today - 5).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= (Date.today - 4).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= (Date.today - 3).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= (Date.today - 2).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= (Date.today - 1).strftime("%A")[0..2] %> </p>
+            <p class="weekday"> <%= Date.today.strftime("%A")[0..2] %> </p>
+            <p class="mood-day"> <%= @minus_six %> </p>
+            <p class="mood-day"> <%= @minus_five %> </p>
+            <p class="mood-day"> <%= @minus_four %> </p>
+            <p class="mood-day"> <%= @minus_three %> </p>
+            <p class="mood-day"> <%= @minus_two %> </p>
+            <p class="mood-day"> <%= @minus_one %> </p>
+            <p class="mood-day"> <%= @today %> </p>
+          </div>
+        </div>
+
+        <div class="card-dashboard horizontal-card">
 
           <div class="d-flex justify-content-center">
-            <p class="text-center" style="/*text-decoration: underline;*/ font-family: roboto; font-size: 25px;">Bookmarked Sites</p>
+
+            <h4 class="text-center">Bookmarked Sites</h4>
+
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 <div id="myDropdown" class="dropdown-content">
@@ -113,13 +143,13 @@
 
               <div class="bookmark-icon-container">
                 <div class="bookmark-icon mr-4">
-                  <%= link_to bookmark.link do%>
+                  <%= link_to bookmark.link do %>
                     <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "70px" %>
                     <!--  <%= bookmark.name %> -->
                   <% end %>
                 </div>
                 <div class="bookmark-trash">
-                  <%=link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <%= link_to bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                     <i class="far fa-times-circle"></i>
                   <% end %>
                 </div>
@@ -129,17 +159,11 @@
           </div>
 
         </div>
-<!--
-      </div> -->
+
+      </div>
 
     </div>
+
   </div>
+
 </div>
-
-<script>
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-     document.querySelector('.dropbtn').onclick = myFunction
-</script>
-

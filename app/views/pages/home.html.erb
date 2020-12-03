@@ -26,12 +26,38 @@
   </div>
 </div>
 
+<!-- Color scheme nodal: -->
+<div class="modal fade" id="color-change" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">What colors inspire you?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mood-icons" id="mood-form">
+          <%= simple_form_for current_user do |f| %>
+            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#6EA7FD", "#74E0EF", "#95DFB7", "#000000"] %>
+          <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="homepage-background">
   <div class="container-homepage">
+
     <div class="website-name">
       <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
       <h1 class="ml-2 mt-2">Conscious Clicks</h1>
     </div>
+
+    <button class="btn-color-change" id="mood-check-in" type="button" data-toggle="modal" data-target="#color-change"><i class="fas fa-palette"></i></button>
+
     <div class="homepage-top">
       <div class="homepage-left">
 

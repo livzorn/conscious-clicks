@@ -1,5 +1,10 @@
 <div class="community-navbar">
-  <h1>Conscious Clicks</h1>
+
+  <div class="navbar-logo">
+    <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+    <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+  </div>
+
   <div class="navbar-buttons">
     <%= link_to "Home", root_path %>
     <%= link_to "Dashboard", dashboard_path %>
@@ -52,12 +57,14 @@
       </div>
 
       <div class="manage-buttons">
-        <button class="btn-homepage" id="edit-set" type="button" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-        <%= link_to "Edit", edit_message_set_path(message_set), class: "btn-edit"%>
+        <button class="btn-edit" id="edit-set" type="button" data-toggle="modal" data-target="#exampleModalCenter">edit</button>
+        <!-- <%= link_to "Edit", edit_message_set_path(message_set), class: "btn-edit" %> -->
         <% message_set.public ? @publish = "make private" : @publish = "publish" %>
-        <p><%= link_to @publish, publish_message_set_path(message_set), method: :patch %></p>
+        <%= link_to publish_message_set_path(message_set), method: :patch do %>
+          <button class="btn-edit"> <%= @publish %> </button>
+        <% end %>
         <%= link_to message_set_path(message_set.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <p>Delete</p>
+          <button class="btn-edit">delete</button>
         <% end %>
       </div>
 
@@ -84,7 +91,7 @@
 
                         <div class="form-actions">
                           <div class="book">
-                            <%= f.submit "add your message set", class: "btn-pink"%>
+                            <%= f.submit "add your message set", class: "btn-form"%>
                           </div>
                         </div>
                       <% end %>
@@ -113,7 +120,7 @@
       </div>
       <div class="modal-body">
         <div class="container-devise-form">
-          <h2 >Edit your message_set</h2>
+          <h2 >Edit your message set</h2>
 
           <div class="add_message_set">
             <div class="container">
@@ -126,7 +133,7 @@
 
                   <div class="form-actions">
                     <div class="book">
-                      <%= f.submit "add your message set", class: "btn-pink"%>
+                      <%= f.submit "add your message set", class: "btn-form"%>
                     </div>
                   </div>
                 <% end %>
@@ -204,7 +211,7 @@
 
   <div id="add-set" class="tabcontent">
     <div class="container-devise-form msg-set-tab ">
-      <h2 >Add a message_set</h2>
+      <h2 >Add a message set</h2>
 
       <div class="add_message_set">
         <div class="container">
@@ -219,13 +226,12 @@
 
                 <div class="form-actions">
                   <div class="book">
-                    <%= f.submit "ADD", class: "btn-primary"%>
+                    <%= f.submit "add", class: "btn-form"%>
                   </div>
                 </div>
               <% end %><br/>
             </div>
           </div>
-          <%= link_to 'back', root_path, class: "btn-back" %>
         </div>
     </div>
 

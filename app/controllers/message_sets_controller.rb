@@ -7,7 +7,13 @@ class MessageSetsController < ApplicationController
 
   def create
     messages = params[:message_set][:messages]
-    messages_array = messages.split('/')
+    messages_array = messages.split('~')
+    messages_array_with_links = []
+    messages_array.each do |message|
+      content = message.strip
+      next if content == ''
+      messages[content] = ''
+    end
     @message_set = MessageSet.new(message_set_params)
     @message_set.messages = messages_array
     @message_set.user = current_user
