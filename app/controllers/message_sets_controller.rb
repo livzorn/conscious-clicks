@@ -8,14 +8,11 @@ class MessageSetsController < ApplicationController
   def create
     messages = params[:message_set][:messages]
     messages_array = messages.split('~')
-    message_array_with_links = []
+    messages_array_with_links = []
     messages_array.each do |message|
-      if message.strip == ''
-        next
-      else
-        message_with_link = message.strip + ": ''"
-        message_array_with_links << message_with_link
-      end
+      content = message.strip
+      next if content == ''
+      messages[content] = ''
     end
     @message_set = MessageSet.new(message_set_params)
     @message_set.messages = messages_array
