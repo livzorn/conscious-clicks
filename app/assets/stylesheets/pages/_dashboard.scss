@@ -8,12 +8,11 @@
 
 .dashboard-background {
   background-color: #A5B8FF;
-  height: 100%;
+  height: 100vh;
   // height: 2000px;
 }
 
 .container-dashboard {
-
   margin: 0 auto;
   padding-top: 5vh;
   // display: flex;
@@ -46,7 +45,9 @@
 
 .dashboard-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
 }
 
 
@@ -111,8 +112,6 @@
 .newbookmark_container {
   background-color:#98abf5;
   color:white;
-  font-family:"Montserrat";
-  font-size: 20px;
 }
 .btn-addbookmark {
   margin-top: 10px;
@@ -141,9 +140,32 @@
 
 }
 
-.anyClass {
-  height:150px;
+.scroll {
+  height:100px;
   overflow-y: scroll;
+
+}
+.scrollvertical {
+  height:110px;
+  width:500px;
+  overflow-y: scroll
+
 }
 
+.messagesets_cardleft {
+  max-height: 150px;
+  max-width: 200px;
+  background: white;
+  margin-bottom: 50px;
+  margin-left: 300px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  text-align: center;
+
+  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.margins{
+  margin: 0 auto;
+  text-decoration: underline;
+}
 
