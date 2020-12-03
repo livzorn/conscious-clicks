@@ -8,6 +8,7 @@
 
 .dashboard-background {
   background-color: #A5B8FF;
+  // height: 100vh;
   height: 100vh;
   position: relative;
   // height: 2000px;
@@ -81,10 +82,11 @@
 
 .dropbtn {
   // background-color: white;
-  color: #98abf5;
+  color:grey;
+
   border-radius: 50%;
   // padding: 16px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
 }
@@ -175,12 +177,25 @@
   // padding-bottom: 30px;
   // border-radius: 10px;
   // text-align: center;
-
   // box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 .margins {
   margin: 0 auto;
-  text-decoration: underline;
+  color:#353839;
+  // text-decoration: underline;
+}
+
+#shuffle div {
+  cursor: grab;
+}
+
+#shuffle div:active {
+  cursor: grabbing;
+}
+
+#shuffle div.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
 }
 
 .house {
@@ -199,4 +214,13 @@
     transition-duration: 0.4s;
   }
 }
+
+// Sortable.create "(1, {
+//   ghostClass: "ghost",
+//   animation: 150,
+//   onEnd: (event) => {
+//     alert(`${event.oldIndex} moved to ${event.newIndex}`);
+//   }
+// })";
+
 

@@ -32,7 +32,22 @@
 
     <h1 class="invisible">Dashboard</h1>
 
+
    <!--  <div class="dashboard-top">
+
+      <div class="user_info">
+        <img class="avatar-large m-3" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
+        <h3 class="user-name"><%= current_user.name%></h3>
+        <div class="dashboard-buttons" >
+          <%= link_to 'Home', root_path, class: 'btn-homepagedash m-2' %>
+          <%= link_to "Messages", community_path, class: 'btn-homepagedash m-2' %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepagedash m-2' %>
+        </div>
+        <br>
+        <div class="dashboard-buttons">
+          <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Choose Color Scheme</button>
+        </div>
+      </div>
 
     </div> -->
 
@@ -53,11 +68,13 @@
           </div> -->
         </div>
 
+
         <!-- message sets -->
 
         <div class="col-5 m-1">
           <div class="card-dashboard vertical-card">
             <h4 class="text-center margins p-1">My Message Sets</h4>
+
             <div class="messagesets_cardleft scroll" style="vertical-align: center;">
               <% current_user.message_sets.each do |message_set| %>
                 <p> <%= message_set.theme %> </p>
@@ -104,7 +121,9 @@
         <div class="card-dashboard horizontal-card">
 
           <div class="d-flex justify-content-center">
+
             <h4 class="text-center">Bookmarked Sites</h4>
+
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn ml-2"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 <div id="myDropdown" class="dropdown-content">
