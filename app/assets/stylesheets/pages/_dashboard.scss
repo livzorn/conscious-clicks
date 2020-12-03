@@ -9,38 +9,58 @@
 .dashboard-background {
   background-color: #A5B8FF;
   height: 100vh;
+  position: relative;
   // height: 2000px;
 }
 
 .container-dashboard {
   margin: 0 auto;
-  padding-top: 5vh;
+  padding-top: 24px;
+  width: 65vw;
+  justify-content: center;
   // display: flex;
   a:hover {
     text-decoration: none;
   }
 }
 
-.stats {
-  margin-top: 125px;
+.dashboard-top {
+  display: flex;
+  justify-content: center;
+  height: 220px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.dashboard-left {
+  // width: 30vw;
+}
+
+.dashboard-right {
+  // width: 45vw;
 }
 
 .user_info {
   text-align: center;
-  margin: 20px auto;
+  margin: 32px auto 22px;
+  // margin: 20px auto 0;
 }
 
 .avatar-large {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   border: 3px solid white;
 }
 
 .user-name {
-  font-size: 40px;
-  margin: 16px auto 30px;
+  font-size: 32px;
+  margin:8px auto;
   color: white;
-  font-family: Montserrat;
+  font-family: "Montserrat";
 }
 
 .dashboard-buttons {
@@ -48,11 +68,6 @@
   justify-content: center;
   width: 300px;
   margin: 0 auto;
-}
-
-
-.my-messages {
-  text-align: center;
 }
 
 .grid-message-sets {
@@ -132,40 +147,56 @@
 //   padding: 20px;
 //   font-size: 30px;
 // }
-.container-dashboard{
-  flex-direction: column;
+.container-dashboard {
+  // display: flex;
+  // flex-direction: column;
   height:100vh;
-
-
-
 }
 
 .scroll {
-  height:100px;
+  height: 210px;
   overflow-y: scroll;
+  margin-bottom: 28px;
 
 }
 .scrollvertical {
-  height:110px;
-  width:500px;
-  overflow-y: scroll
+  height: 115px;
+  width: 500px;
+  overflow-y: scroll;
 
 }
 
 .messagesets_cardleft {
-  max-height: 150px;
-  max-width: 200px;
-  background: white;
-  margin-bottom: 50px;
-  margin-left: 300px;
-  padding-bottom: 30px;
-  border-radius: 10px;
-  text-align: center;
+  // max-height: 150px;
+  // max-width: 200px;
+  // background: white;
+  // margin-bottom: 50px;
+  // margin-left: 300px;
+  // padding-bottom: 30px;
+  // border-radius: 10px;
+  // text-align: center;
 
   // box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
-.margins{
+.margins {
   margin: 0 auto;
   text-decoration: underline;
+}
+
+.house {
+  text-align: center;
+  margin: 32px auto 48px;
+  height: 172px;
+  img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  }
+  img:hover {
+    width: 165px;
+    height: 165px;
+    transition-property: all;
+    transition-duration: 0.4s;
+  }
 }
 

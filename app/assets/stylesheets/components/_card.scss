@@ -1,9 +1,24 @@
 .card-dashboard {
   background-color: white;
-  padding: 30px;
+  padding: 24px;
   border-radius: 20px;
   margin: 16px auto;
-  height: 234px;
-  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  h4 {
+    text-decoration: underline;
+    font-family: "Montserrat";
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 }
 
+.horizontal-card {
+  height: 180px;
+}
+
+.vertical-card {
+  height: 375px;
+  width: 300px;
+  text-align: center;
+  // margin-right: 50px;
+}

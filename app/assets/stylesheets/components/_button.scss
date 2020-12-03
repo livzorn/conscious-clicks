@@ -137,3 +137,23 @@ button:focus {
   color: #b4dd6f;
   font-size: 18px;
 }
+
+.manage {
+  margin-top: 30px;
+}
+
+.logout {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.btn-color-change {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: white;
+  background: transparent;
+  font-size: 32px;
+  opacity: 80%;
+}
