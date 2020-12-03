@@ -63,7 +63,7 @@
 
         <h2 class="main-message">
           <% if @message.has_key?("link") %>
-              <%= link_to @message["message"], @message["link"] %>
+              <%= link_to @message["message"], @message["link"], target: "_blank" %>
             <% else %>
               <%= @message["message"] %>
           <% end %>
