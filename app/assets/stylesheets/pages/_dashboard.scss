@@ -89,6 +89,7 @@
   font-size: 20px;
   border: none;
   cursor: pointer;
+  margin-top: -5px;
 }
 
 /* Dropdown button on hover & focus */
@@ -104,6 +105,7 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  text-align:center;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -127,14 +129,23 @@
 .show {display:block;}
 
 .newbookmark_container {
-  background-color:#98abf5;
-  color:white;
+  background-color:white;
+  color:black;
+  display:flex;
+  font-family:"Montserrat";
+  font-size:20px;
+  text-align: center;
 }
 .btn-addbookmark {
-  margin-top: 10px;
-  background-color: white;
-  color:#98abf5;
+  background: linear-gradient(to right, #e2dae1 30%, #c1bdc1 98%);
+  margin-top: 20px;
+  color:black;
   border-style: none;
+  padding:5px;
+  border-radius: 10px;
+  font-family:"Montserrat";
+
+
 }
 
 // .d-flex {
@@ -214,6 +225,8 @@
     transition-duration: 0.4s;
   }
 }
+
+
 
 // Sortable.create "(1, {
 //   ghostClass: "ghost",
