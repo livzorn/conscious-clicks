@@ -102,7 +102,7 @@ advertising = MessageSet.new(
     "I won't be tricked into buying things I don't need": '',
     "When you see an ad, take a deep breath and ignore it.": '',
     "How are ads trying to affect me today?": '',
-    "Silly algorithms, you can't mess with me": ''
+    "Silly algorithms, you can't mess with me!": ''
   },
   public: true
 )
@@ -158,7 +158,7 @@ beauty = MessageSet.new(
     "I will continue loving myself everyday regardless of what society thinks!": 'https://medium.com/@ResilientBella/not-letting-society-choose-control-how-i-live-my-life-f59cc3e5f80d',
     "I won't stress about meeting unrealistic beauty standards": '',
     "Inner beauty is all that matters": 'https://medium.com/swlh/why-you-must-focus-on-being-better-looking-on-the-inside-than-the-outside-310d174e408',
-    "I will not let society define beauty for me.": '',
+    "I will not let society write my definition of beauty.": '',
     "I'm beautiful as I am": ''
   },
   public: true

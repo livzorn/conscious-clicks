@@ -28,10 +28,13 @@
 
 <div class="homepage-background">
   <div class="container-homepage">
+    <div class="website-name">
+      <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+      <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+    </div>
     <div class="homepage-top">
       <div class="homepage-left">
 
-        <h1 class="website-name">Conscious Clicks</h1>
         <h2 class="main-message">
           <% if @message.has_key?("link") %>
               <%= link_to @message["message"], @message["link"] %>
