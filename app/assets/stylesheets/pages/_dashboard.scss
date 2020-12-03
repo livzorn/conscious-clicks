@@ -206,12 +206,14 @@
   width: 150px;
   height: 150px;
   margin: 0 auto;
+  opacity: 70%;
   }
   img:hover {
     width: 165px;
     height: 165px;
     transition-property: all;
     transition-duration: 0.4s;
+    opacity: 90%;
   }
 }
 

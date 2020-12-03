@@ -37,6 +37,10 @@
 
     <% end %>
 
+    <div id="active-tab" data-tab="<%= params[:query] %>">
+      <!-- document.querySelector.dataset.tab -->
+    </div>
+
     <% MessageSet.where(user_id: current_user.id).each do |message_set| %>
 
       <div class="my-message-set" id="defaultOpen">
