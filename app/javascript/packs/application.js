@@ -88,9 +88,11 @@ document.addEventListener('turbolinks:load', () => {
   const tabopen = document.getElementById("defaultOpen")
   if (tabopen) {
     tabopen.addEventListener('click', (event) => {
-       openTab(event, 'my-custom-sets');
+      openTab(event, 'my-custom-sets');
     });
+
   }
+
   const byConsciousClicks = document.getElementById("byConsciousClicks")
   if (byConsciousClicks) {
       byConsciousClicks.addEventListener('click', (event) => {
@@ -110,11 +112,14 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
-  //Get the element with id="defaultOpen" and click on it
-  const defaultOpen = document.getElementById("defaultOpen")
-  if (defaultOpen) {
-    defaultOpen.click();
+  // Get the element with id="defaultOpen" and click on it
+
+  if (tabopen && window.location.search.split("=")[1] == "mycustomsets") {
+    tabopen.click();
+  } else {
+    document.getElementById("byConsciousClicks").click();
   }
+
   const items = document.querySelectorAll('.category-item label')
   console.log(items)
   items.forEach((item) => {

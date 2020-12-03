@@ -83,10 +83,11 @@
     color: white;
   }
   a:hover {
+    color: rgb(237, 235, 255);
     text-decoration: none;
-    text-shadow: rgba(255, 255, 255, 0.85) 0.25px 0.75px 1px;
+    text-shadow: rgba(237, 235, 255, 0.85) 0.25px 0.50px 1px;
     transition-property: text-shadow;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
   }
 }
 
