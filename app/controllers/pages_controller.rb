@@ -82,8 +82,7 @@ class PagesController < ApplicationController
   end
 
   def grab_a_treat
-    treats = ['https://www.pixelthoughts.co/', "https://www.catlinseaviewsurvey.com/raja-ampat-second-dive",
-      "https://www.google.com/search?q=unlikely+animal+friends&sxsrf=ALeKk01Wjxzu9x4QoKlugNLRQVWGuRbqlA:1606438391519&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjC7retwaHtAhWKY8AKHVq_A6UQ_AUoAXoECAUQAw&biw=1440&bih=728"]
+    treats = ['https://www.pixelthoughts.co/']
     treats.sample
   end
 
