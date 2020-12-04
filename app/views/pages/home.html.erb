@@ -43,7 +43,7 @@
       <div class="modal-body">
         <div class="mood-icons" id="mood-form">
           <%= simple_form_for current_user do |f| %>
-            <%= f.input :color, as: :color, label: false %>
+            <%= f.input :color, as: :color, label: false, class: "color-box" %>
           <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
           <% end %>
         </div>
