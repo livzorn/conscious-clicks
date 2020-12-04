@@ -208,3 +208,17 @@ button:focus {
     transition-duration: .3s
   }
 }
+
+.btn-quiz {
+  background-color: white;
+  margin-top: 40px;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: $darker-purple;
+  text-decoration: none;
+  font-family: "Montserrat";
+  border: none;
+  outline: none;
+  // position: absolute;
+}
