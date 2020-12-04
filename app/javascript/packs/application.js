@@ -51,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
-  const myCurrentMessages = document.getElementById("myCurrentSets")
+  const myCurrentSets = document.getElementById("myCurrentSets")
   if (myCurrentSets) {
       myCurrentSets.addEventListener('click', (event) => {
       openTab(event, 'my-current-messages');
@@ -81,12 +81,6 @@ document.addEventListener('turbolinks:load', () => {
 
   // Get the element with id="defaultOpen" and click on it
 
-  if (tabopen && window.location.search.split("=")[1] == "mycustomsets") {
-    tabopen.click();
-  } else {
-    document.getElementById("myCurrentSets").click();
-  }
-
   const items = document.querySelectorAll('.category-item label')
   console.log(items)
   items.forEach((item) => {
@@ -95,6 +89,12 @@ document.addEventListener('turbolinks:load', () => {
       event.currentTarget.classList.add('active-emoji')
     })
   })
+
+  if (tabopen && window.location.search.split("=")[1] == "mycustomsets") {
+    tabopen.click();
+  } else {
+    document.getElementById("myCurrentSets").click();
+  }
 });
 
 // const littleGoalsSave = () => {
