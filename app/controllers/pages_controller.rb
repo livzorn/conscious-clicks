@@ -16,7 +16,8 @@ class PagesController < ApplicationController
 
   def quiz
     @user_message_set = UserMessageSet.new
-    @message_sets = MessageSet.all
+    admin = User.find_by(name: "Conscious Clicks")
+    @message_sets = MessageSet.where(user_id: admin.id)
   end
 
   def dashboard

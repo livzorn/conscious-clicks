@@ -1,14 +1,19 @@
 <div class="background-quizpage">
 
+  <div class="website-name">
+    <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo" %>
+    <h1 class="ml-2 mt-2">Conscious Clicks</h1>
+  </div>
+
   <div class="container-top">
-    <h2 class="stress-message">Which of these add stress to your life?</h2>
+    <h2 class="stress-message">What do you want to focus on?</h2>
     <p class="select-message">Select all that apply.</p>
   </div>
 
   <div class="container-bottom">
     <%= simple_form_for @user_message_set do |f| %>
       <div class="form-check grid-options">
-        <%= f.association :message_set, label: false, label_method: :theme, as: :check_boxes, include_hidden: false, :input_html => {class: "form-check-input message-row"} %>
+        <%= f.association :message_set, collection: @message_sets, label: false, label_method: :theme, as: :check_boxes, include_hidden: false, :input_html => {class: "form-check-input message-row"} %>
       </div>
 
       <%= f.submit "Create your homepage!", class: "btn-create" %>

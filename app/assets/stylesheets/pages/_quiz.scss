@@ -1,9 +1,11 @@
 .background-quizpage {
-  background-color: #c5f7dc;
+  // background-image: url("blue-mountains.jpg");
+  background-color: $darker-purple;
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
-  color: black;
+  color: white;
+  position: relative;
 }
 
 .container-top {

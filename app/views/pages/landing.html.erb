@@ -2,8 +2,11 @@
 <%= video_tag "baloon.mp4", autoplay: :autoplay, loop: :loop, muted: :muted %>
 <header class="viewport-header">
   <h1>
-    <span>Conscious Clicks</span>
-    <p><em> helping you change your online habits</em></p>
-      <%= link_to 'Get Started', new_user_registration_path, class: "QuizButton" %>
+    <span>
+      <%= image_tag "white-logo.png", alt: "conscious clicks logo", class: "cc-logo", id: "landing-logo" %>
+      Conscious Clicks
+    </span>
+    <p>make the most of your time online</em></p>
+    <%= link_to 'Get Started', new_user_registration_path, class: "QuizButton" %>
   </h1>
 </header>
