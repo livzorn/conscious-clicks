@@ -1,17 +1,10 @@
-
-
-
-.favicon{
+.favicon {
   border-radius: 50%;
 }
 
-
 .dashboard-background {
-  background-color: #A5B8FF;
-  // height: 100vh;
   height: 100vh;
   position: relative;
-  // height: 2000px;
 }
 
 .container-dashboard {
@@ -19,7 +12,6 @@
   padding-top: 24px;
   width: 65vw;
   justify-content: center;
-  // display: flex;
   a:hover {
     text-decoration: none;
   }
@@ -34,21 +26,11 @@
 .dashboard-cards {
   display: flex;
   justify-content: space-around;
-
-}
-
-.dashboard-left {
-  // width: 30vw;
-}
-
-.dashboard-right {
-  // width: 45vw;
 }
 
 .user_info {
   text-align: center;
   margin: 32px auto 22px;
-  // margin: 20px auto 0;
 }
 
 .avatar-large {
@@ -81,24 +63,8 @@
   }
 }
 
-
-
-// .d-flex {
-//   display: flex;
-//   margin-top: 500px;
-//   padding: 50px;
-
-// }
-
-// .flex-container > div {
-//   margin: 10px;
-//   padding: 20px;
-//   font-size: 30px;
-// }
 .container-dashboard {
-  // display: flex;
-  // flex-direction: column;
-  height:100vh;
+  height: 100vh;
 }
 
 .scroll {
@@ -114,21 +80,9 @@
 
 }
 
-.messagesets_cardleft {
-  // max-height: 150px;
-  // max-width: 200px;
-  // background: white;
-  // margin-bottom: 50px;
-  // margin-left: 300px;
-  // padding-bottom: 30px;
-  // border-radius: 10px;
-  // text-align: center;
-  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
-}
 .margins {
   margin: 0 auto;
   color:#353839;
-  // text-decoration: underline;
 }
 
 #shuffle div {
@@ -163,11 +117,8 @@
   }
 }
 .dropbtn {
-  // background-color: white;
   color:grey;
-
   border-radius: 50%;
-  // padding: 16px;
   font-size: 20px;
   border: none;
   cursor: pointer;
