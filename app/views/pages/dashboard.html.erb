@@ -15,7 +15,7 @@
         <div class="mood-icons" id="mood-form">
           <%= simple_form_for current_user do |f| %>
             <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#6EA7FD", "#74E0EF", "#95DFB7", "#000000"] %>
-          <%= f.submit 'Submit', class: "btn btn-mood-submit" %>
+          <%= f.submit 'Submit', class: "btn-purple" %>
           <% end %>
         </div>
       </div>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="dashboard-background" style="background: linear-gradient(359.61deg, #FFFFFF -186.67%, rgba(255, 255, 255, 0) 99.72%), <%= current_user.color %>;">
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepage logout' %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-transparent', id: 'logout' %>
 
   <%= link_to root_path do %>
     <div class="website-name">
@@ -36,25 +36,6 @@
   <div class="container-dashboard">
 
     <h1 class="invisible">Dashboard</h1>
-
-
-   <!--  <div class="dashboard-top">
-
-      <div class="user_info">
-        <img class="avatar-large m-3" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/70278044?s=460&u=b10537baca681bbc16927765e218f7cb671edcc1&v=4" />
-        <h3 class="user-name"><%= current_user.name%></h3>
-        <div class="dashboard-buttons" >
-          <%= link_to 'Home', root_path, class: 'btn-homepagedash m-2' %>
-          <%= link_to "Messages", community_path, class: 'btn-homepagedash m-2' %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-homepagedash m-2' %>
-        </div>
-        <br>
-        <div class="dashboard-buttons">
-          <button class="btn-homepage" id="mood-check-in" type="button" data-toggle="modal" data-target="#exampleModalCenter">Choose Color Scheme</button>
-        </div>
-      </div>
-
-    </div> -->
 
     <div class="dashboard-cards">
 
@@ -77,7 +58,7 @@
                 <p> <%= message_set.theme %> </p>
               <% end %>
             </div>
-            <%= link_to "manage", community_path, class: 'btn-create manage' %>
+            <%= link_to "manage", community_path, class: 'btn-purple' %>
           </div>
         </div>
 
@@ -90,7 +71,7 @@
             <%= image_tag "house.png", alt: "alttext", class: "mb-3"%>
           <% end %>
           <!-- <br> -->
-          <!-- <%= link_to 'Home', root_path, class: 'btn-homepage m-2' %>  -->
+          <!-- <%= link_to 'Home', root_path, class: 'btn-transparent m-2' %>  -->
         </div>
 
         <!-- mood calendar  -->

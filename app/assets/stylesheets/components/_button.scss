@@ -1,61 +1,31 @@
-.btn-homepage {
-  color: white;
-  font-family: "Montserrat";
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.25);
-  &:hover {
-    text-decoration: none;
-    color: white;
-    box-shadow: rgba(255, 255, 255, 0.85) 0px 1px 8px;
-    transition-property: all;
-    transition-duration: .3s
-    }
-}
-.btn-homepagedash {
-  color: #fffaf0;
-  font-family: "Montserrat";
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.25);
-  &:hover {
-    text-decoration: none;
-    color: #fffaf0;
-    box-shadow: #fffaf0 0px 1px 8px;
-    transition-property: all;
-    transition-duration: .3s
-    }
-}
-
-.btn-dash{
-  color: white;
-  font-family: "Montserrat";
-  font-size: 15px;
-  padding: 5px 15px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.25);
-  // background-color: transparent;
-  &:hover {
-    text-decoration: none;
-    color: white;
-    box-shadow: rgba(255, 255, 255, 0.85) 0px 1px 8px;
-    transition-property: all;
-    transition-duration: .3s
-    }
-}
 button {
   border: none;
-  outline:none;
+  outline: none;
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 
-button:focus {
-  border: none;
-  outline:none;
+// standard buttons
+
+.btn-transparent {
+  color: white;
+  font-family: "Montserrat";
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.25);
+  &:hover {
+    text-decoration: none;
+    color: white;
+    box-shadow: rgba(255, 255, 255, 0.85) 0px 1px 8px;
+    transition-property: all;
+    transition-duration: .3s
+    }
 }
 
-.btn-create {
+.btn-purple {
   background-color: #A5B9FF;
   color: white;
   font-size: 18px;
@@ -64,7 +34,6 @@ button:focus {
   border-radius: 8px;
   border: none;
   outline: none;
-  margin-top: 40px;
   &:hover {
     text-decoration: none;
     color: white;
@@ -74,23 +43,21 @@ button:focus {
   }
 }
 
-.btn-mood-submit {
-  background-color: #A5B9FF;
+// homepage buttons
+
+.btn-color-change {
+  position: absolute;
+  top: 24px;
+  right: 24px;
   color: white;
-  font-size: 18px;
-  font-family: "Montserrat";
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  margin-top: 10px;
-  &:hover {
-    text-decoration: none;
-    color: white;
-    box-shadow: rgba(166, 184, 255, 0.85) 0px 1px 8px;
-    transition-property: all;
-    transition-duration: .3s
-  }
+  background: transparent;
+  font-size: 32px;
+  opacity: 80%;
+}
+
+.btn-refresh {
+  font-size: 28px;
+  color: white;
 }
 
 #lollipop {
@@ -127,10 +94,18 @@ button:focus {
   100% { transform: translate(0px, 0px) rotate(0deg); }
 }
 
-.btn-refresh {
-  font-size: 28px;
-  color: white;
+// dashboard buttons
+
+#logout {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 10px;
 }
+
+// community page buttons
 
 .btn-show {
   font-size: 14px;
@@ -139,6 +114,11 @@ button:focus {
 
 .btn-add {
   color: #FFBF3F;
+  font-size: 18px;
+}
+
+.btn-minus {
+  color: #b4dd6f;
   font-size: 18px;
 }
 
@@ -151,61 +131,7 @@ button:focus {
   font-size: 14px;
 }
 
-.btn-minus {
-  color: #b4dd6f;
-  font-size: 18px;
-}
-
-.manage {
-  margin-top: 30px;
-}
-
-.logout {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  color: white;
-  font-family: "Montserrat";
-  padding: 4px 8px;
-  font-size: 16px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.25);
-}
-.logout:hover {
-  text-decoration: none;
-  color: white;
-  box-shadow: rgba(255, 255, 255, 0.85) 0px 0.5px 6px;
-  transition-property: all;
-  transition-duration: .3s
-}
-
-.btn-color-change {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  color: white;
-  background: transparent;
-  font-size: 32px;
-  opacity: 80%;
-}
-
-.btn-form {
-  background-color: #A5B9FF;
-  color: white;
-  font-size: 18px;
-  font-family: "Montserrat";
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  &:hover {
-    text-decoration: none;
-    color: white;
-    box-shadow: rgba(166, 184, 255, 0.85) 0px 1px 8px;
-    transition-property: all;
-    transition-duration: .3s
-  }
-}
+// quizpage buttons
 
 .btn-quiz {
   background-color: white;
