@@ -1,27 +1,9 @@
+<!-- meta tags -->
+
 <%= content_for :meta_title, "Conscious Clicks" %>
 <%= content_for :meta_description, "Dashboard" %>
 
-<!-- Color scheme nodal: -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLongTitle">What color inspires you?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="mood-icons" id="mood-form">
-          <%= simple_form_for current_user do |f| %>
-            <%= f.input :color, as: :radio_buttons, label: false, collection: ["#A5B8FF", "#6EA7FD", "#74E0EF", "#95DFB7", "#000000"] %>
-          <%= f.submit 'Submit', class: "btn-purple" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- page content -->
 
 <div class="dashboard-background" style="background: linear-gradient(359.61deg, #FFFFFF -186.67%, rgba(255, 255, 255, 0) 99.72%), <%= current_user.color %>;">
   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn-transparent', id: 'logout' %>
@@ -47,7 +29,7 @@
         </div>
 
 
-        <!-- message sets -->
+        <!-- current message sets user is subscribed to -->
 
         <div class="col-5 m-1">
           <div class="card-dashboard vertical-card">
@@ -95,6 +77,8 @@
             <p class="mood-day"> <%= @today %> </p>
           </div>
         </div>
+
+        <!-- bookmarked sites -->
 
         <div class="card-dashboard horizontal-card">
 
