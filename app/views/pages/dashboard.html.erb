@@ -99,7 +99,7 @@
               <div class="bookmark-icon-container">
                 <div class="bookmark-icon mr-4">
                   <%= link_to bookmark.link do %>
-                    <%= image_tag bookmark.favicon_url, alt: "alttext", class: "favicon", width: "70px" %>
+                    <%= image_tag bookmark.favicon_url, alt: "#{bookmark.name}", class: "favicon", width: "70px" %>
                     <!--  <%= bookmark.name %> -->
                   <% end %>
                 </div>
