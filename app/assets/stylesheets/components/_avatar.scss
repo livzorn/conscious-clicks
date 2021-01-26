@@ -1,7 +1,11 @@
 .avatar-large {
   height: 120px;
   width: 120px;
-  // border: 2px solid white;
   opacity: 90%;
+  border-radius: 50%;
+}
+
+.avatar-small {
+  width: 40px;
   border-radius: 50%;
 }
