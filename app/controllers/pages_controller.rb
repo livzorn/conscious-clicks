@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     set_daily_message
     @message = current_user.current_message
     show_typeboxes
-    @treat = grab_a_treat
+    # @treat = grab_a_treat
   end
 
   def quiz
@@ -82,8 +82,19 @@ class PagesController < ApplicationController
   end
 
   def grab_a_treat
-    treats = ['https://www.pixelthoughts.co/']
-    treats.sample
+    treats = ['https://www.pixelthoughts.co/',
+      'https://explore.org/livecams',
+      'http://weavesilk.com/', 'https://mynoise.net/',
+      'https://thisissand.com/', 'https://29a.ch/sandbox/2011/neonflames/',
+      'https://asoftmurmur.com/', 'https://experiments.withgoogle.com/tendrils',
+      'https://musiclab.chromeexperiments.com/Song-Maker/',
+      'http://spielzeugz.de/html5/liquid-particles/', 'http://www.intotime.com/',
+      'https://codepen.io/neave/full/WNvGNez', 'https://www.incredibox.com/demo/',
+      'https://quickdraw.withgoogle.com/', 'https://sketch.io/sketchpad/?',
+      'http://corndog.io/', 'https://longdogechallenge.com/', 'https://mondrianandme.com/',
+      'http://www.republiquedesmangues.fr/', 'https://jacksonpollock.org/',
+      'https://smashthewalls.com/', 'https://pointerpointer.com/']
+    redirect_to treats.sample
   end
 
   def refresh_message
