@@ -8,7 +8,7 @@ Browsing the internet can be a stressful experience. Conscious Clicks is an app 
 
 - Use this [chrome extension](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna/related) to set http://www.consciousclicks.org/ as your new tab page.
 
-And voila! As you're working on your computer as usual, everytime you open a new tab, you'll see your calming, custom homepage with a message from the themes you've chosen. As you continually see these constructive messages, you'll begin to remember them, internalize them, and you'll retrain yourself to live more mindfully. It's as easy as that!
+And voila! As you're working on your computer as usual, everytime you open a new tab, you'll see your calming, customized homepage with a message from the themes you've chosen. As you continually see these constructive messages, you'll begin to remember them, internalize them, and you'll retrain yourself to live more mindfully. It's as easy as that!
 
 ### Customize your homepage
 
