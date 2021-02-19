@@ -93,7 +93,8 @@ class PagesController < ApplicationController
       'https://quickdraw.withgoogle.com/', 'https://sketch.io/sketchpad/?',
       'http://corndog.io/', 'https://longdogechallenge.com/', 'https://mondrianandme.com/',
       'http://www.republiquedesmangues.fr/', 'https://jacksonpollock.org/',
-      'https://smashthewalls.com/', 'https://pointerpointer.com/']
+      'https://smashthewalls.com/', 'https://pointerpointer.com/',
+      'http://www.koalastothemax.com/', 'https://thezen.zone/']
     redirect_to treats.sample
   end
 
