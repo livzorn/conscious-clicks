@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/goals', to: 'pages#home'
   get '/', to: 'pages#new_message', as: :new_message
   get '/refresh_message', to: 'pages#refresh_message', as: :refresh_message
+  get '/treat', to: 'pages#grab_a_treat', as: :grab_a_treat
 
   resources :user_message_sets, only: [:new, :create]
   resources :user_moods, only: [:new, :create]
