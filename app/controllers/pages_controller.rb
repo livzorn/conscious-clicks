@@ -11,7 +11,6 @@ class PagesController < ApplicationController
     set_daily_message
     @message = current_user.current_message
     show_typeboxes
-    # @treat = grab_a_treat
   end
 
   def quiz
