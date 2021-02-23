@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_141413) do
+ActiveRecord::Schema.define(version: 2021_02_23_152216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -40,27 +40,16 @@ ActiveRecord::Schema.define(version: 2021_02_23_141413) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.boolean "public", default: false
-    t.string "message_1"
-    t.string "link_1"
-    t.string "message_2"
-    t.string "link_2"
-    t.string "message_3"
-    t.string "link_3"
-    t.string "message_4"
-    t.string "link_4"
-    t.string "message_5"
-    t.string "link_5"
-    t.string "message_6"
-    t.string "link_6"
-    t.string "message_7"
-    t.string "link_7"
-    t.string "message_8"
-    t.string "link_8"
-    t.string "message_9"
-    t.string "link_9"
-    t.string "message_10"
-    t.string "link_10"
     t.index ["user_id"], name: "index_message_sets_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.string "link"
+    t.bigint "message_set_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_set_id"], name: "index_messages_on_message_set_id"
   end
 
   create_table "moods", force: :cascade do |t|
@@ -109,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_141413) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "message_sets", "users"
+  add_foreign_key "messages", "message_sets"
   add_foreign_key "user_message_sets", "message_sets"
   add_foreign_key "user_message_sets", "users"
   add_foreign_key "user_moods", "moods"

@@ -33,16 +33,7 @@ class PagesController < ApplicationController
 
   def community
     @admin = User.find_by(name: "Conscious Clicks")
-    @message_set = MessageSet.new(messages: "
-      ~
-      ~
-      ~
-      ~
-      ~
-      ~
-      ~
-      ~
-      ")
+    @message_set = MessageSet.new
     @user = current_user
   end
 
@@ -112,13 +103,18 @@ class PagesController < ApplicationController
     message_set = current_user.message_sets.sample
     return if message_set.nil?
 
-    # recommendation_index = rand(1..message_set.messages.length) - 1
-    message = message_set.messages.keys.sample
-    if message_set.messages[message].present?
-      link = message_set.messages[message]
-      current_user.current_message = Hash[message: message, link: link]
+    message = message_set.messages.sample
+
+    # messages = []
+    # messages.push(message_set.message_1, message_set.message_2, message_set.message_3,
+    #               message_set.message_4, message_set.message_5, message_set.message_6,
+    #               message_set.message_7, message_set.message_8, message_set.message_9,
+    #               message_set.message_10)
+
+    if message.link
+      current_user.current_message = Hash[message: message.content, link: message.link]
     else
-      current_user.current_message = Hash[message: message]
+      current_user.current_message = Hash[message: message.content]
     end
 
     current_user.current_message_date = Date.today

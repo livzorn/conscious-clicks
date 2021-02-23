@@ -81,7 +81,7 @@
         <% end %>
       </div>
 
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -116,7 +116,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     <% end %>
 
@@ -141,7 +141,26 @@
                   <%= simple_form_for @message_set do |f| %>
                     <div class="form-inputs">
                       <%= f.input :theme, label: "theme" %>
-                      <%= f.input :messages, as: :string, label: "add your messages" %>
+                      <%= f.input :message_1, as: :string, label: "add your messages" %>
+                      <%= f.input :link_1, as: :string %>
+                      <%= f.input :message_2, as: :string %>
+                      <%= f.input :link_2, as: :string %>
+                      <%= f.input :message_3, as: :string %>
+                      <%= f.input :link_3, as: :string %>
+                      <%= f.input :message_4, as: :string %>
+                      <%= f.input :link_4, as: :string %>
+                      <%= f.input :message_5, as: :string %>
+                      <%= f.input :link_5, as: :string %>
+                      <%= f.input :message_6, as: :string %>
+                      <%= f.input :link_6, as: :string %>
+                      <%= f.input :message_7, as: :string %>
+                      <%= f.input :link_7, as: :string %>
+                      <%= f.input :message_8, as: :string %>
+                      <%= f.input :link_8, as: :string %>
+                      <%= f.input :message_9, as: :string %>
+                      <%= f.input :link_9, as: :string %>
+                      <%= f.input :message_10, as: :string %>
+                      <%= f.input :link_10, as: :string %>
                     </div>
 
                     <div class="form-actions">
@@ -265,8 +284,27 @@
               <div class="form-inputs">
                 <%= f.label :theme , label: 'Message theme'%> <br/>
                 <%= f.input :theme, label: false  %> <br/>
-                <%= f.label :messages, label: 'Your messages' %><br/>
-                <%= f.input :messages, label: false %><br/>
+                <%= f.input :theme, label: "theme" %>
+                <%= f.input :message_1, as: :string, label: "add your messages" %>
+                <%= f.input :link_1, as: :string %>
+                <%= f.input :message_2, as: :string %>
+                <%= f.input :link_2, as: :string %>
+                <%= f.input :message_3, as: :string %>
+                <%= f.input :link_3, as: :string %>
+                <%= f.input :message_4, as: :string %>
+                <%= f.input :link_4, as: :string %>
+                <%= f.input :message_5, as: :string %>
+                <%= f.input :link_5, as: :string %>
+                <%= f.input :message_6, as: :string %>
+                <%= f.input :link_6, as: :string %>
+                <%= f.input :message_7, as: :string %>
+                <%= f.input :link_7, as: :string %>
+                <%= f.input :message_8, as: :string %>
+                <%= f.input :link_8, as: :string %>
+                <%= f.input :message_9, as: :string %>
+                <%= f.input :link_9, as: :string %>
+                <%= f.input :message_10, as: :string %>
+                <%= f.input :link_10, as: :string %>
               </div>
 
               <div class="form-actions">
