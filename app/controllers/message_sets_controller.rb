@@ -9,7 +9,7 @@ class MessageSetsController < ApplicationController
     @message_set.user = current_user
 
     if @message_set.save!
-      redirect_to community_path(params: {tab: "mycustomsets"})
+      redirect_to community_path(params: {tab: "mycustomsets"}, anchor: "message-set-#{@message_set.id}")
       # redirect_to community_path(params: {set: @message_set.id})
     else
       render 'new'

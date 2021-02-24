@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-  before_action :find_message_set, only:
-
   def new
     @message = Message.new
   end
@@ -24,7 +22,7 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-
+    @message = Message.find(params[:id])
   end
 
   private

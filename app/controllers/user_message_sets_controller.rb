@@ -12,12 +12,9 @@ class UserMessageSetsController < ApplicationController
 
   def add_one
     @message_set = MessageSet.find(params[:message_set_id])
-
     user_message_set = UserMessageSet.new(message_set: @message_set, user: current_user)
-
     user_message_set.save
-
-    redirect_to community_path
+    redirect_to community_path()
     # once we have found we hwant to create the user messages
     # connecting them -- many to many interdependent --> then you need to joint table--> which is the user message sets--> has an id of its own but also an id to the user and to the message set
 
