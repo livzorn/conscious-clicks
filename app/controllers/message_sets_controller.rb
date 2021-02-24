@@ -1,5 +1,4 @@
 class MessageSetsController < ApplicationController
-
   def new
     @message_set = MessageSet.new
     @user = current_user
@@ -11,6 +10,7 @@ class MessageSetsController < ApplicationController
 
     if @message_set.save!
       redirect_to community_path(params: {tab: "mycustomsets"})
+      # redirect_to community_path(params: {set: @message_set.id})
     else
       render 'new'
     end
@@ -19,12 +19,14 @@ class MessageSetsController < ApplicationController
   def edit
     @message_set = MessageSet.find(params[:id])
     @user = current_user
+    # this method is not being used
   end
 
   def update
     @message_set = MessageSet.find(params[:id])
     if @message_set.update
       redirect_to dashboard_path
+
     else
       render "edit"
     end
@@ -48,10 +50,8 @@ class MessageSetsController < ApplicationController
   end
 
   private
+
   def message_set_params
-    params.require(:message_set).permit(:theme, :message_1, :link_1, :message_2,
-      :link_2, :message_3, :link_3, :message_4, :link_4, :message_5, :link_5,
-      :message_6, :link_6, :message_7, :link_7, :message_8, :link_8, :message_9,
-      :link_9, :message_10, :link_10)
+    params.require(:message_set).permit(:theme)
   end
 end

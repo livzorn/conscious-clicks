@@ -82,7 +82,6 @@ document.addEventListener('turbolinks:load', () => {
   // Get the element with id="defaultOpen" and click on it
 
   const items = document.querySelectorAll('.category-item label')
-  console.log(items)
   items.forEach((item) => {
     item.addEventListener('click', (event) => {
       items.forEach(item => item.classList.remove('active-emoji'))
@@ -93,7 +92,9 @@ document.addEventListener('turbolinks:load', () => {
   if (tabopen && window.location.search.split("=")[1] == "mycustomsets") {
     tabopen.click();
   } else {
-    document.getElementById("myCurrentSets").click();
+    if (myCurrentSets) {
+      document.getElementById("myCurrentSets").click();
+    }
   }
 });
 

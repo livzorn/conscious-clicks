@@ -1,0 +1,11 @@
+<%= simple_form_for message_set do |f| %>
+  <div class="form-inputs">
+    <%= f.input :theme, label: "theme" %>
+  </div>
+
+  <div class="form-actions">
+    <div class="book">
+      <%= f.submit "save", class: "btn-purple"%>
+    </div>
+  </div>
+<% end %>

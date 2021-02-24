@@ -35,6 +35,7 @@ class PagesController < ApplicationController
     @admin = User.find_by(name: "Conscious Clicks")
     @message_set = MessageSet.new
     @user = current_user
+    @message = Message.new
   end
 
   def save_goal
@@ -104,14 +105,7 @@ class PagesController < ApplicationController
     return if message_set.nil?
 
     message = message_set.messages.sample
-
-    # messages = []
-    # messages.push(message_set.message_1, message_set.message_2, message_set.message_3,
-    #               message_set.message_4, message_set.message_5, message_set.message_6,
-    #               message_set.message_7, message_set.message_8, message_set.message_9,
-    #               message_set.message_10)
-
-    if message.link
+    if !message.link.nil?
       current_user.current_message = Hash[message: message.content, link: message.link]
     else
       current_user.current_message = Hash[message: message.content]
@@ -119,8 +113,6 @@ class PagesController < ApplicationController
 
     current_user.current_message_date = Date.today
     current_user.save!
-
-    # current_user.update!(current_message: {message: message})
   end
 
   def set_daily_message

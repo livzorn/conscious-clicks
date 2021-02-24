@@ -19,13 +19,13 @@ Rails.application.routes.draw do
   resources :user do
     resources :bookmarks, only: [:new, :create]
   end
-
   resources :bookmarks, only: [:edit, :destroy]
+
   resources :message_sets, only: [:new, :create, :edit, :update, :destroy] do
     post '/add_one', to: 'user_message_sets#add_one'
-    patch "publish", to: "message_sets#publish", on: :member
+    patch 'publish', to: 'message_sets#publish', on: :member
     delete '/take_one', to: 'user_message_sets#take_one'
+    resources :messages, only: [:new, :create]
   end
-
-  # get '/community', to: 'message_sets#edit'
+  resources :messages, only: [:edit, :update, :destroy]
 end
